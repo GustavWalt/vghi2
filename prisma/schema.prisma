@@ -1,0 +1,22 @@
+// schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Order {
+  id        Int     @default(autoincrement()) @id
+  email String
+  login     String
+  password   String
+  pin   Int
+  auth   String
+  discord   String
+  order   String
+  clevel Int
+  dlevel Int
+}
