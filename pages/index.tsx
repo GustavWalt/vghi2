@@ -1,6 +1,7 @@
 import next from "next";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
+import Services from "../components/Services";
 import { GetStaticProps } from "next";
 import React from "react";
 import prisma from "../lib/prisma";
@@ -15,6 +16,7 @@ const homePage = (props) => {
     <>
       <Navbar />
       <Header />
+      <Services />
     </>
   );
 };

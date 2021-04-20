@@ -1,0 +1,28 @@
+@import "../../utils/variables";
+
+.services {
+  h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  span {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border-top: solid $black 3px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .services {
+    h1 {
+      font-size: 100px;
+    }
+    span {
+      width: 20%;
+      margin: 2rem auto;
+    }
+  }
+}
