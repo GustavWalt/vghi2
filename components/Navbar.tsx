@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "../style/modules/navbar/Navbar.module.scss";
 
+//Importing assets
+import Bar from "./assets/Bar";
+import MenuItem from "./assets/MenuItem";
+
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!isOpen);
@@ -18,9 +22,9 @@ const Navbar = () => {
             </a>
           </li>
           <div onClick={toggle} className={styles.menuToggle}>
-            <div className={styles.bar} />
-            <div className={styles.bar} />
-            <div className={styles.bar} />
+            <Bar />
+            <Bar />
+            <Bar />
           </div>
         </div>
         <ul
@@ -28,36 +32,12 @@ const Navbar = () => {
             isOpen ? styles.openMenu : styles.hidden
           }`}
         >
-          <li className={styles.item}>
-            <a className={styles.link} href="#">
-              Home
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a className={styles.link} href="#">
-              Skilling
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a className={styles.link} href="#">
-              Bossing
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a className={styles.link} href="#">
-              Questing
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a className={styles.link} href="#">
-              Blog
-            </a>
-          </li>
-          <li className={styles.item}>
-            <a className={styles.link} href="#">
-              Support
-            </a>
-          </li>
+          <MenuItem title="Home" />
+          <MenuItem title="Skilling" />
+          <MenuItem title="Bossing" />
+          <MenuItem title="Questing" />
+          <MenuItem title="Blog" />
+          <MenuItem title="Support" />
         </ul>
       </nav>
     </>
