@@ -1,1 +1,79 @@
 @import "../../utils/variables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+.headerBg {
+  color: $white;
+  background: url("../../images/hydra-header.png");
+  height: 80vh;
+  padding-top: 5rem;
+
+  h1 {
+    font-size: 50px;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  h2 {
+    display: none;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  span {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border-top: solid $white 3px;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem;
+
+    button {
+      margin: 0.5rem auto;
+      width: 50%;
+      background-color: $white-beige;
+      padding: 1rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $blue;
+      border: none;
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .headerBg {
+    height: 60vh;
+
+    .displayNone {
+      display: none;
+    }
+
+    h1 {
+      font-size: 120px;
+    }
+
+    h2 {
+      display: block;
+    }
+
+    span {
+      width: 20%;
+      margin: 2rem auto;
+    }
+
+    .flex {
+      flex-direction: row;
+
+      button {
+        margin: 5rem;
+        width: 15%;
+      }
+    }
+  }
+}
