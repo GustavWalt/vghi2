@@ -1,3 +1,5 @@
+@import "../utils/variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +7,36 @@
   font-family: "Roboto", sans-serif !important;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightButton,
+.darkButton {
+  margin: 1rem auto;
+  width: 50%;
+  background-color: $white-beige;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $blue;
+  border: none;
+  font-size: 20px;
+}
+
+.darkButton {
+  background-color: $black;
+  color: $white;
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+  .flex {
+    flex-direction: row;
+  }
 }

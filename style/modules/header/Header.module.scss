@@ -25,28 +25,12 @@
     width: 50%;
     border-top: solid $white 3px;
   }
-
-  .flex {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 2rem;
-
-    button {
-      margin: 0.5rem auto;
-      width: 50%;
-      background-color: $white-beige;
-      padding: 1rem;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: $blue;
-      border: none;
-      font-size: 20px;
-    }
-  }
 }
 
 @media screen and (min-width: 1024px) {
+  .width {
+    width: 15%;
+  }
   .headerBg {
     height: 60vh;
 
@@ -65,15 +49,6 @@
     span {
       width: 20%;
       margin: 2rem auto;
-    }
-
-    .flex {
-      flex-direction: row;
-
-      button {
-        margin: 5rem;
-        width: 15%;
-      }
     }
   }
 }

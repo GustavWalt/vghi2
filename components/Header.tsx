@@ -9,10 +9,10 @@ const Header = () => {
         <h1 className={styles.displayNone}>Services</h1>
         <h2>SKILLING, BOSSING, & QUESTING SERVICES</h2>
         <span />
-        <div className={styles.flex}>
-          <button>Skilling</button>
-          <button>Bossing</button>
-          <button>Questing</button>
+        <div className="flex">
+          <button className={`${styles.width} lightButton`}>Skilling</button>
+          <button className={`${styles.width} lightButton`}>Bossing</button>
+          <button className={`${styles.width} lightButton`}>Questing</button>
         </div>
       </div>
     </>
