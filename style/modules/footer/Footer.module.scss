@@ -1,0 +1,16 @@
+@import "../../utils/variables";
+
+.footer {
+  color: $white;
+  border-top: solid 1rem $blue;
+  background-color: $black;
+
+  .footerItem {
+    margin: 5rem;
+
+    p,
+    h1 {
+      text-align: center;
+    }
+  }
+}

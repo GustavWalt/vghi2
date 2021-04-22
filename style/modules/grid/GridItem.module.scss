@@ -8,7 +8,21 @@
   text-align: center;
   padding: 0.5rem;
 
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+
   button {
     display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .gridItem {
+    width: 30%;
   }
 }

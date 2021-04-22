@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Services from "../components/Services";
 import About from "../components/About";
 import BlogPosts from "../components/BlogPosts";
+import Footer from "../components/Footer";
 import { GetStaticProps } from "next";
 import React from "react";
 import prisma from "../lib/prisma";
@@ -21,6 +22,7 @@ const homePage = (props) => {
       <Services />
       <About />
       <BlogPosts />
+      <Footer />
     </>
   );
 };
