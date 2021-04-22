@@ -37,6 +37,7 @@ const Navbar = () => {
           <MenuItem title="Bossing" />
           <MenuItem title="Questing" />
           <MenuItem title="Blog" />
+          <MenuItem title="Staff" />
           <MenuItem title="Support" />
         </ul>
       </nav>

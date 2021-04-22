@@ -2,7 +2,7 @@
 
 .topNav {
   background-color: $black;
-  border-bottom: solid 5px $lightblue;
+  border-bottom: solid 0.5rem $lightblue;
 
   .flex {
     display: flex;
@@ -30,6 +30,7 @@
     .link {
       text-decoration: none;
       color: $white;
+      font-weight: bold;
     }
   }
 

@@ -7,10 +7,34 @@
   font-family: "Roboto", sans-serif !important;
 }
 
+.text-color {
+  color: $blue;
+}
+
 .flex {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.flexCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    align-self: center;
+    margin-left: 0.5rem;
+  }
+}
+
+.italic {
+  font-style: italic;
+}
+
+.rounded {
+  border-radius: 500px;
 }
 
 .lightButton,
@@ -38,5 +62,9 @@
 @media screen and (min-width: 1024px) {
   .flex {
     flex-direction: row;
+  }
+
+  .flexCol {
+    flex-direction: column;
   }
 }

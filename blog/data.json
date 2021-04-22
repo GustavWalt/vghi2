@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": "3",
+      "date": "March 9, 2021 · 4 min read",
+      "title": "Social media!",
+      "auth": "Gustav Thurgren",
+      "desc": "Follow us on our social media, we post special offers and interact with our customers. "
+    },
+    {
+      "id": "2",
+      "date": "March 9, 2021 · 4 min read",
+      "title": "Discount!",
+      "auth": "Gustav Thurgren",
+      "desc": "Discount first month of launch. 50% on EVERYTHING!"
+    },
+    {
+      "id": "1",
+      "date": "March 9, 2021 · 4 min read",
+      "title": "Welcome to RSBoosts!",
+      "auth": "Gustav Thurgren",
+      "desc": "Welcome to RSBoosts and to our blog where we post news & special events with discounts."
+    }
+  ]
+}

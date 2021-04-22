@@ -8,12 +8,13 @@ const About = () => {
     <div className={styles.about}>
       <H1 title="ABOUT US" />
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias modi
-        quae ipsum laborum unde odit neque aspernatur sed veniam? Amet sint
-        culpa laborum eligendi consequatur vitae vel veritatis, ratione alias!
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt iste
-        assumenda itaque quas quam quia quod eos eius perferendis, molestias
-        quasi, adipisci velit cumque sed pariatur, quidem sequi esse quisquam.
+        RSBoosts is created by me, the person writing this. My name is Gustav &
+        I’m from Sweden, I just finished high-school focusing on software
+        development. I’m a full-time student heading into college and I’m a huge
+        fan of Old school Runescape and been playing the last 6 years. This is a
+        project for fun, I don’t expect many people buying services but the main
+        reason is to learn software development and handling secure payments and
+        owning a web-shop.
       </p>
     </div>
   );
