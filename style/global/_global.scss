@@ -4,7 +4,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: "Roboto", sans-serif !important;
+  font-family: "RSFont" !important;
+}
+
+@font-face {
+  font-family: "RSFont";
+  src: url("../fonts/RuneScape-UF.woff2") format("woff2"),
+    url("../fonts//RuneScape-UF.woff") format("woff"),
+    url("../fonts/runescape_uf.ttf") format("truetype");
 }
 
 .text-color {
