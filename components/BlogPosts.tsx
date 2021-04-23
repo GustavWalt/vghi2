@@ -17,21 +17,21 @@ const BlogPosts = () => {
           desc={latestPosts[0].desc}
           date={latestPosts[0].date}
           auth={latestPosts[0].auth}
-          btn="CLICK HERE"
+          btn="Read more"
         />
         <GridItem
           title={latestPosts[1].title}
           desc={latestPosts[1].desc}
           date={latestPosts[1].date}
           auth={latestPosts[1].auth}
-          btn="CLICK HERE"
+          btn="Read more"
         />
         <GridItem
           title={latestPosts[2].title}
           desc={latestPosts[2].desc}
           date={latestPosts[2].date}
           auth={latestPosts[2].auth}
-          btn="CLICK HERE"
+          btn="Read more"
         />
       </div>
     </div>

@@ -9,7 +9,7 @@ const GridItem = (props) => {
         <h1 className="text-color">{props.title}</h1>
         {props.date && <p>{props.date}</p>}
         {props.auth && (
-          <div className={`flex ${styles.pb} ${styles.pt}`}>
+          <div className={`flex ${styles.flex} ${styles.pb} ${styles.pt}`}>
             <Image
               className="rounded"
               src="/profile.jpg"
@@ -17,7 +17,9 @@ const GridItem = (props) => {
               width="64"
               height="64"
             />
-            <p className="italic">{props.auth}</p>
+            <p className="text-color">
+              <a href="#">{props.auth}</a>
+            </p>
           </div>
         )}
         <p>{props.desc}</p>

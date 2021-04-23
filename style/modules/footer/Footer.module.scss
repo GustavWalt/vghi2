@@ -5,12 +5,23 @@
   border-top: solid 0.5rem $lightblue;
   background-color: $black;
 
+  p,
+  h1 {
+    text-align: center;
+    line-height: 40px;
+  }
+
   .footerItem {
     margin: 5rem;
+  }
 
-    p,
-    h1 {
-      text-align: center;
-    }
+  .blueBg {
+    background-color: #272727;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footerItem {
+    width: 100%;
   }
 }
