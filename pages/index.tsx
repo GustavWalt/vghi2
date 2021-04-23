@@ -7,6 +7,7 @@ import About from "../components/About";
 import BlogPosts from "../components/BlogPosts";
 import Footer from "../components/Footer";
 import Meta from "../components/Meta";
+import TopBtn from "../components/TopBtn";
 import { GetStaticProps } from "next";
 import React from "react";
 import prisma from "../lib/prisma";
@@ -23,6 +24,7 @@ const homePage = (props) => {
         <title>RSBoosts | Cheap & Reliable</title>
         <Meta />
       </Head>
+      <TopBtn />
       <Navbar />
       <Header />
       <Services />

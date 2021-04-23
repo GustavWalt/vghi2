@@ -1,13 +1,18 @@
 @import "../../utils/variables";
 .about {
   padding: 2rem 0rem;
-  background-color: rgb(235, 235, 235);
+  background: url("/about-bg-img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   p {
-    font-size: $paragraph;
+    padding: 1rem;
+    font-size: $p;
     max-width: 70%;
     margin: 0 auto;
     text-align: center;
-    line-height: 40px;
+    line-height: 35px;
   }
 }
 

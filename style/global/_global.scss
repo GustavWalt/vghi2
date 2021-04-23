@@ -5,6 +5,7 @@
   padding: 0;
   list-style: none;
   font-family: "RSFont" !important;
+  letter-spacing: 3px;
 }
 
 @font-face {
@@ -22,6 +23,10 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .flexCol {
@@ -54,7 +59,7 @@
   font-weight: bold;
   color: $blue;
   border: none;
-  font-size: $paragraph;
+  font-size: $p;
 }
 
 .darkButton {
