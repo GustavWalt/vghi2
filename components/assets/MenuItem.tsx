@@ -1,11 +1,18 @@
 import React from "react";
 import styles from "../../style/modules/navbar/Navbar.module.scss";
+import { useRouter } from "next/router";
 
-const Bar = (props) => {
+const MenuItem = (props) => {
+  const router = useRouter();
+
   return (
     <>
-      <li className={styles.item}>
-        <a className={styles.link} href="#">
+      <li
+        className={`${styles.item} ${
+          router.pathname == props.href ? "active" : ""
+        }`}
+      >
+        <a className={styles.link} href={props.href}>
           {props.title}
         </a>
       </li>
@@ -13,4 +20,4 @@ const Bar = (props) => {
   );
 };
 
-export default Bar;
+export default MenuItem;

@@ -5,7 +5,7 @@ import styles from "../style/modules/navbar/Navbar.module.scss";
 import Bar from "./assets/Bar";
 import MenuItem from "./assets/MenuItem";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [isOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!isOpen);
   useEffect(() => {
@@ -17,7 +17,7 @@ const Navbar = () => {
       <nav className={styles.topNav}>
         <div className={styles.flex}>
           <li className={styles.logo}>
-            <a className={styles.link} href="#">
+            <a className={styles.link} href="/">
               RSBoosts 🚀
             </a>
           </li>
@@ -32,13 +32,13 @@ const Navbar = () => {
             isOpen ? styles.openMenu : styles.hidden
           }`}
         >
-          <MenuItem title="Home" />
-          <MenuItem title="Skilling" />
-          <MenuItem title="Bossing" />
-          <MenuItem title="Questing" />
-          <MenuItem title="Blog" />
-          <MenuItem title="Staff" />
-          <MenuItem title="Support" />
+          <MenuItem href="/" title="Home" />
+          <MenuItem href="/skilling" title="Skilling" />
+          <MenuItem href="/bossing" title="Bossing" />
+          <MenuItem href="/questing" title="Questing" />
+          <MenuItem href="/blog" title="Blog" />
+          <MenuItem href="/staff" title="Staff" />
+          <MenuItem href="/support" title="Support" />
         </ul>
       </nav>
     </>

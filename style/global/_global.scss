@@ -15,6 +15,12 @@
     url("../fonts/runescape_uf.ttf") format("truetype");
 }
 
+.active {
+  a {
+    color: yellow !important;
+  }
+}
+
 .text-color {
   color: $blue;
 }

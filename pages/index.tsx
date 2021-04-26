@@ -21,7 +21,7 @@ const homePage = (props) => {
   return (
     <>
       <Head>
-        <title>RSBoosts | Cheap & Reliable</title>
+        <title>Home | RSBoosts | Cheap & Reliable OSRS Services</title>
         <Meta />
       </Head>
       <TopBtn />
