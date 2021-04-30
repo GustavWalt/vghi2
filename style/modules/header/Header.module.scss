@@ -4,8 +4,7 @@
 .headerBg {
   color: $white;
   background: url("/header.png");
-  height: 80vh;
-  padding-top: 5rem;
+  padding: 2rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -41,8 +40,7 @@
     margin: 0rem 2rem;
   }
   .headerBg {
-    height: 60vh;
-
+    padding: 10rem;
     .displayNone {
       display: none;
     }

@@ -28,7 +28,7 @@ const Services = () => {
         />
         <GridItem
           title="SUPPORT"
-          desc="Do you have questions? Feel free to contact us at any time by contacting our support team. We are available 24/7 either by mail or support directly on the site."
+          desc="Feel free to contact us at any time by contacting our support team. We are available 24/7 by mail & chat."
           btn="Contact us"
         />
       </div>

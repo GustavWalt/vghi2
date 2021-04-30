@@ -8,6 +8,7 @@ import BlogPosts from "../components/BlogPosts";
 import Footer from "../components/Footer";
 import Meta from "../components/Meta";
 import TopBtn from "../components/TopBtn";
+import Fade from "../components/assets/Fade";
 import { GetStaticProps } from "next";
 import React from "react";
 import prisma from "../lib/prisma";
@@ -25,12 +26,14 @@ const homePage = (props) => {
         <Meta />
       </Head>
       <TopBtn />
-      <Navbar />
-      <Header />
-      <Services />
-      <About />
-      <BlogPosts />
-      <Footer />
+      <Fade>
+        <Navbar />
+        <Header />
+        <Services />
+        <About />
+        <BlogPosts />
+        <Footer />
+      </Fade>
     </>
   );
 };
