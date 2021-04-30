@@ -1,8 +1,9 @@
 import Head from "next/head";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import TopBtn from "../../components/TopBtn";
-import Meta from "../../components/TopBtn";
+import Navbar from "../../components/homePage/Navbar";
+import Footer from "../../components/homePage/Footer";
+import TopBtn from "../../components/homePage/TopBtn";
+import Meta from "../../components/homePage/TopBtn";
+import Fade from "../../components/assets/Fade";
 import React from "react";
 const staff = (props) => {
   return (
@@ -12,9 +13,11 @@ const staff = (props) => {
         <Meta />
       </Head>
       <TopBtn />
-      <Navbar />
-      <h1>STAFF</h1>
-      <Footer />
+      <Fade>
+        <Navbar />
+        <h1>STAFF</h1>
+        <Footer />
+      </Fade>
     </>
   );
 };

@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "../style/modules/about/About.module.scss";
+import styles from "../../style/modules/about/About.module.scss";
 
-import H1 from "./assets/H1";
-import Fade from "./assets/Fade";
+import H1 from "../assets/H1";
+import Fade from "../assets/Fade";
 
 const About = () => {
   return (

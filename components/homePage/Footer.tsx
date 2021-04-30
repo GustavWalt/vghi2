@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../style/modules/footer/Footer.module.scss";
-import Fade from "./assets/Fade";
+import styles from "../../style/modules/footer/Footer.module.scss";
+import Fade from "../assets/Fade";
 
 const About = () => {
   return (

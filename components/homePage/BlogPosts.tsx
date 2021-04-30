@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../style/modules/blogposts/BlogPosts.module.scss";
-import data from "../blog/data.json";
+import styles from "../../style/modules/blogposts/BlogPosts.module.scss";
+import data from "../../blog/data.json";
 
-import H1 from "./assets/H1";
-import GridItem from "./assets/GridItem";
+import H1 from "../assets/H1";
+import GridItem from "../assets/GridItem";
 
 const BlogPosts = () => {
   var latestPosts = data.posts.slice(0, 3);

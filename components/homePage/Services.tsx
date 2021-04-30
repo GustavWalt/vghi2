@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "../style/modules/services/Services.module.scss";
+import styles from "../../style/modules/services/Services.module.scss";
 
-import H1 from "./assets/H1";
-import GridItem from "./assets/GridItem";
+import H1 from "../assets/H1";
+import GridItem from "../assets/GridItem";
 
 const Services = () => {
   return (
