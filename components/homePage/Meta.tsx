@@ -22,35 +22,36 @@ const Meta = () => {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
-      <link rel="canonical" href="https://rsboosts.vercel.app/" />
+      <link rel="canonical" href="https://www.rsboosts.com/" />
       <meta
         name="description"
-        content="RSBoosts.com - Cheap & reliable OSRS boosting service with cheap prices."
+        content="RSBoosts.com - Cheap & reliable OSRS boosting service with fast delivery. We're a market leading company in the OSRS boosting market and we provide the best prices for Oldschool Runescape services. Contact us through our support or by email, or use the provided calculators on the site to look up the prices."
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#363636" />
       <meta property="og:title" content="RSBoosts | Cheap & Reliable" />
       <meta property="og:type" content="web" />
-      <meta property="og:url" content="https://rsboosts.vercel.app/" />
+      <meta property="og:url" content="https://www.rsboosts.com/" />
       <meta
         property="og:description"
-        content="RSBoosts.com - Cheap & reliable OSRS boosting service with cheap prices."
+        content="RSBoosts.com - Cheap & reliable OSRS boosting service with fast delivery. We're a market leading company in the OSRS boosting market and we provide the best prices for Oldschool Runescape services. Contact us through our support or by email, or use the provided calculators on the site to look up the prices."
       />
       <meta
         property="og:image"
-        content="https://rsboosts.vercel.app/header.png"
-      ></meta>
+        content="https://www.rsboosts.com/seo-rsboosts.png"
+      />
+      <meta property="og:site_name" content="RSBoosts" />
       <meta name="twitter:card" content="RSBoosts | Cheap & Reliable" />
-      <meta name="twitter:site" content="https://rsboosts.vercel.app/" />
+      <meta name="twitter:site" content="https://www.rsboosts.com/" />
       <meta name="twitter:title" content="RSBoosts | Cheap & Reliable" />
       <meta
         name="twitter:description"
-        content="RSBoosts.com - Cheap & reliable OSRS boosting service with cheap prices."
+        content="RSBoosts.com - Cheap & reliable OSRS boosting service with fast delivery. We're a market leading company in the OSRS boosting market and we provide the best prices for Oldschool Runescape services. Contact us through our support or by email, or use the provided calculators on the site to look up the prices."
       />
       <meta
         name="twitter:image"
-        content="https://rsboosts.vercel.app/header.png"
-      ></meta>
+        content="https://www.rsboosts.com/seo-rsboosts.png"
+      />
     </>
   );
 };
