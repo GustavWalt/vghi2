@@ -41,7 +41,7 @@ const Meta = () => {
         content="https://www.rsboosts.com/RSBoosts-seo.png"
       />
       <meta property="og:site_name" content="RSBoosts" />
-      <meta name="twitter:card" content="RSBoosts | Cheap & Reliable" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="https://www.rsboosts.com/" />
       <meta name="twitter:title" content="RSBoosts | Cheap & Reliable" />
       <meta
