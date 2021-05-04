@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "../../style/modules/navbar/Navbar.module.scss";
 
 //Importing assets
-import Bar from "../assets/Bar";
-import MenuItem from "../assets/MenuItem";
+import Bar from "./Bar";
+import MenuItem from "./MenuItem";
 
 const Navbar = (props) => {
   const [isOpen, setOpen] = useState(false);

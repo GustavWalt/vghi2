@@ -18,6 +18,7 @@ const BlogPosts = () => {
           date={latestPosts[0].date}
           auth={latestPosts[0].auth}
           btn="Read more"
+          authHref="/staff"
         />
 
         <GridItem
@@ -26,6 +27,7 @@ const BlogPosts = () => {
           date={latestPosts[1].date}
           auth={latestPosts[1].auth}
           btn="Read more"
+          authHref="/staff"
         />
 
         <GridItem
@@ -34,6 +36,7 @@ const BlogPosts = () => {
           date={latestPosts[2].date}
           auth={latestPosts[2].auth}
           btn="Read more"
+          authHref="/staff"
         />
       </div>
     </div>

@@ -1,0 +1,38 @@
+.skills {
+  margin: 0 2rem;
+  .items {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 600px) {
+  .skills {
+    .items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .skills {
+    margin: 0 10rem;
+
+    .items {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media screen and (min-width: 1524px) {
+  .skills {
+    margin: 0 10rem;
+
+    .items {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+}

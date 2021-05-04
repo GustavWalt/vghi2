@@ -12,16 +12,11 @@
   }
 
   .footerItem {
-    margin: 5rem;
+    width: 100%;
+    margin: 5rem 0;
   }
 
   .blueBg {
     background-color: #272727;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .footerItem {
-    width: 10rem;
   }
 }

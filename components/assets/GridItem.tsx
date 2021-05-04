@@ -20,7 +20,7 @@ const GridItem = (props) => {
                 height="64"
               />
               <p className="text-color">
-                <a href="#">{props.auth}</a>
+                <a href={props.authHref}>{props.auth}</a>
               </p>
             </div>
           )}

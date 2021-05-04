@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Navbar from "../../components/homePage/Navbar";
-import Footer from "../../components/homePage/Footer";
+import Navbar from "../../components/assets/Navbar";
+import Skills from "../../components/skilling/Skills";
+import Footer from "../../components/assets/Footer";
 import TopBtn from "../../components/homePage/TopBtn";
 import Meta from "../../components/homePage/TopBtn";
 import Fade from "../../components/assets/Fade";
@@ -15,7 +16,7 @@ const skilling = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
-        <h1>SKILLING</h1>
+        <Skills />
         <Footer />
       </Fade>
     </>
