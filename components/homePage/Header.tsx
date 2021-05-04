@@ -10,9 +10,15 @@ const Header = () => {
         <h2>SKILLING, BOSSING, & QUESTING SERVICES</h2>
         <span />
         <div className={`flex ${styles.flex}`}>
-          <button className={`${styles.width} lightButton`}>Skilling</button>
-          <button className={`${styles.width} lightButton`}>Bossing</button>
-          <button className={`${styles.width} lightButton`}>Questing</button>
+          <a className={`${styles.width} lightButton`} href="/skilling">
+            <p>Skilling</p>
+          </a>
+          <a className={`${styles.width} lightButton`} href="/bossing">
+            <p>Bossing</p>
+          </a>
+          <a className={`${styles.width} lightButton`} href="/questing">
+            <p>Questing</p>
+          </a>
         </div>
       </div>
     </>

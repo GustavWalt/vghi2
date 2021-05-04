@@ -8,29 +8,55 @@ const About = () => {
       <div className="flex">
         <div className={styles.footerItem}>
           <h1>INFORMATION</h1>
-          <p>Home</p>
-          <p>Contact us</p>
+          <p>
+            <a href="/">Home</a>
+          </p>
+          <p>
+            <a href="/support">Contact us</a>
+          </p>
         </div>
         <div className={styles.footerItem}>
           <h1>CATEGORIES</h1>
-          <p>Home</p>
-          <p>Skilling services</p>
-          <p>Bossing services</p>
-          <p>Questing services</p>
-          <p>Blog</p>
-          <p>Staff</p>
-          <p>Support</p>
+          <p>
+            <a href="/home">Home</a>
+          </p>
+          <p>
+            <a href="/services">Skilling services</a>
+          </p>
+          <p>
+            <a href="/bossing">Bossing services</a>
+          </p>
+          <p>
+            <a href="/questing">Questing services</a>
+          </p>
+          <p>
+            <a href="/blog">Blog</a>
+          </p>
+          <p>
+            <a href="/staff">Staff</a>
+          </p>
+          <p>
+            <a href="/support">Support</a>
+          </p>
         </div>
         <div className={styles.footerItem}>
           <h1>LEGAL‎‎‎‎‎‎‎</h1>
-          <p>Privacy Policy</p>
-          <p>Terms of Service</p>
-          <p>Refund Policy</p>
-          <p>In-game Policy</p>
+          <p>
+            <a href="#">Privacy Policy</a>
+          </p>
+          <p>
+            <a href="#">Terms of Service</a>
+          </p>
+          <p>
+            <a href="#">Refund Policy</a>
+          </p>
+          <p>
+            <a href="#">In-game Policy</a>
+          </p>
         </div>
       </div>
       <div className={styles.blueBg}>
-        <p>Copyright 2021 RSBoosts</p>
+        <p>© Copyright 2021 RSBoosts ©</p>
       </div>
     </div>
   );

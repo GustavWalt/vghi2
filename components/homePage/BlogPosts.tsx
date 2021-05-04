@@ -18,6 +18,7 @@ const BlogPosts = () => {
           date={latestPosts[0].date}
           auth={latestPosts[0].auth}
           btn="Read more"
+          btnHref="/blog"
           authHref="/staff"
         />
 
@@ -27,6 +28,7 @@ const BlogPosts = () => {
           date={latestPosts[1].date}
           auth={latestPosts[1].auth}
           btn="Read more"
+          btnHref="/blog"
           authHref="/staff"
         />
 
@@ -36,6 +38,7 @@ const BlogPosts = () => {
           date={latestPosts[2].date}
           auth={latestPosts[2].auth}
           btn="Read more"
+          btnHref="/blog"
           authHref="/staff"
         />
       </div>

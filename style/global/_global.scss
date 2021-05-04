@@ -66,6 +66,16 @@
   color: $blue;
   border: none;
   font-size: $p;
+
+  a {
+    text-decoration: none;
+    color: $white;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: yellow;
+  }
 }
 
 .darkButton {

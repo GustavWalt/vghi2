@@ -25,7 +25,9 @@ const GridItem = (props) => {
             </div>
           )}
           <p>{props.desc}</p>
-          <button className="darkButton">{props.btn}</button>
+          <button className="darkButton">
+            <a href={props.btnHref}>{props.btn}</a>
+          </button>
         </div>
       </Fade>
     </>

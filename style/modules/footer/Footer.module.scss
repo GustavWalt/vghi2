@@ -6,9 +6,17 @@
   background-color: $black;
 
   p,
-  h1 {
+  h1,
+  a {
+    text-decoration: none;
+    color: $white;
     text-align: center;
     line-height: 40px;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: yellow;
   }
 
   .footerItem {
