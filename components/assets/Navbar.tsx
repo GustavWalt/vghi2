@@ -16,11 +16,11 @@ const Navbar = (props) => {
     <>
       <nav className={styles.topNav}>
         <div className={styles.flex}>
-          <li className={styles.logo}>
+          <div className={styles.logo}>
             <a className={styles.link} href="/">
               RSBoosts 🚀
             </a>
-          </li>
+          </div>
           <div onClick={toggle} className={styles.menuToggle}>
             <Bar />
             <Bar />

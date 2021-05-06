@@ -13,6 +13,7 @@
   src: url("../fonts/RuneScape-UF.woff2") format("woff2"),
     url("../fonts//RuneScape-UF.woff") format("woff"),
     url("../fonts/runescape_uf.ttf") format("truetype");
+  font-display: swap;
 }
 
 .active {
