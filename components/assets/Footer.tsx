@@ -18,10 +18,10 @@ const About = () => {
         <div className={styles.footerItem}>
           <h1>CATEGORIES</h1>
           <p>
-            <a href="/home">Home</a>
+            <a href="/">Home</a>
           </p>
           <p>
-            <a href="/services">Skilling services</a>
+            <a href="/skilling">Skilling services</a>
           </p>
           <p>
             <a href="/bossing">Bossing services</a>

@@ -1,0 +1,64 @@
+.levels {
+  text-align: center;
+  flex: 1 1 0;
+  margin: 2rem auto;
+
+  h2 {
+    font-size: 40px;
+    margin: 1rem;
+  }
+
+  .current {
+    button {
+      border: none;
+      background-color: #1111;
+      cursor: pointer;
+      font-size: 25px;
+      padding-bottom: 4px;
+    }
+
+    input {
+      border: solid orange 1px;
+      font-size: 35px;
+      width: 40%;
+    }
+  }
+
+  .target {
+    margin-top: 1rem;
+    button {
+      border: none;
+      background-color: #1111;
+      cursor: pointer;
+      font-size: 25px;
+      padding-bottom: 4px;
+    }
+
+    input {
+      border: solid orange 1px;
+      font-size: 35px;
+      width: 40%;
+    }
+  }
+
+  .total {
+    margin-top: 1rem;
+  }
+
+  .price {
+    margin-top: 1rem;
+  }
+
+  .add {
+    margin-top: 1rem;
+    border: none;
+    background-color: #fcb07e;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 0.5rem;
+  }
+
+  input {
+    text-align: center;
+  }
+}
