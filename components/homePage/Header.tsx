@@ -10,13 +10,13 @@ const Header = () => {
         <h2>SKILLING, BOSSING, & QUESTING SERVICES</h2>
         <span />
         <div className={`flex ${styles.flex}`}>
-          <a className={`${styles.width} lightButton`} href="/skilling">
+          <a className={`${styles.width} darkButton`} href="/skilling">
             <p>Skilling</p>
           </a>
-          <a className={`${styles.width} lightButton`} href="/bossing">
+          <a className={`${styles.width} darkButton`} href="/bossing">
             <p>Bossing</p>
           </a>
-          <a className={`${styles.width} lightButton`} href="/questing">
+          <a className={`${styles.width} darkButton`} href="/questing">
             <p>Questing</p>
           </a>
         </div>

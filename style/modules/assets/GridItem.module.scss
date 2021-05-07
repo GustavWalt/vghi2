@@ -8,6 +8,27 @@
   text-align: center;
   padding: 2rem;
 
+  .color {
+    a {
+      text-decoration: none;
+      color: $blue;
+    }
+
+    a:hover {
+      color: $black;
+      text-decoration: underline;
+    }
+  }
+
+  .hover:hover {
+    color: yellow;
+    cursor: pointer;
+
+    a {
+      color: yellow;
+    }
+  }
+
   .none {
     display: none;
   }

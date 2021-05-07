@@ -22,14 +22,14 @@ const GridItem = (props) => {
                 width="64"
                 height="64"
               />
-              <p className="text-color">
+              <p className={`text-color ${styles.color}`}>
                 <a href={props.authHref}>{props.auth}</a>
               </p>
             </div>
           )}
           <p>{props.desc}</p>
           {props.btn && (
-            <button className="darkButton">
+            <button className={`darkButton ${styles.hover}`}>
               <a href={props.btnHref}>{props.btn}</a>
             </button>
           )}
@@ -41,7 +41,7 @@ const GridItem = (props) => {
               >
                 {props.open}
               </p>
-              <button onClick={toggle} className="darkButton">
+              <button onClick={toggle} className={`darkButton ${styles.hover}`}>
                 {isOpen ? "Close" : "Read more"}
               </button>
             </>

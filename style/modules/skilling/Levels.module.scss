@@ -1,3 +1,5 @@
+@import "../../utils/variables";
+
 .levels {
   text-align: center;
   flex: 1 1 0;
@@ -56,6 +58,11 @@
     cursor: pointer;
     font-size: 25px;
     padding: 0.5rem;
+  }
+
+  .add:hover {
+    background-color: $black;
+    color: yellow;
   }
 
   input {
