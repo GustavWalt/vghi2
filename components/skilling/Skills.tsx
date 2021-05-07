@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../../style/modules/skills/Skills.module.scss";
+import styles from "../../style/modules/skilling/Skills.module.scss";
 
+//Assets components
 import SkillsItem from "../assets/SkillsItem";
 import H1 from "../assets/H1";
 import Fade from "../assets/Fade";

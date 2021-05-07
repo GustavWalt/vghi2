@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../../style/modules/about/About.module.scss";
+import styles from "../../style/modules/homePage/About.module.scss";
 
+//Assets components
 import H1 from "../assets/H1";
 import Fade from "../assets/Fade";
 

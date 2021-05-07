@@ -1,8 +1,11 @@
 import React from "react";
-import styles from "../../style/modules/calculator/Calculator.module.scss";
+import styles from "../../style/modules/skilling/Calculator.module.scss";
 
+//Assets components
 import H1 from "../assets/H1";
 import Fade from "../assets/Fade";
+
+//Components
 import Cart from "./Cart";
 import Levels from "./Levels";
 

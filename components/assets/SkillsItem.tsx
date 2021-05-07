@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../style/modules/skillsitem/SkillsItem.module.scss";
+import styles from "../../style/modules/assets/SkillsItem.module.scss";
 
 const Skills = (props) => {
   return (

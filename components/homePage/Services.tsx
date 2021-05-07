@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../../style/modules/services/Services.module.scss";
+import styles from "../../style/modules/homePage/Services.module.scss";
 
+//Assets components
 import H1 from "../assets/H1";
 import GridItem from "../assets/GridItem";
 

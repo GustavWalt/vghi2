@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../../style/modules/levels/Levels.module.scss";
+import styles from "../../style/modules/skilling/Levels.module.scss";
 
+//Assets components
 import Fade from "../assets/Fade";
 
 const Calculator = () => {

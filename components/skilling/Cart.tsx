@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../../style/modules/cart/Cart.module.scss";
+import styles from "../../style/modules/skilling/Cart.module.scss";
 
+//Assets components
 import Fade from "../assets/Fade";
 
 const Cart = () => {

@@ -8,6 +8,14 @@
   text-align: center;
   padding: 2rem;
 
+  .none {
+    display: none;
+  }
+
+  .transition {
+    transition: 0.3s;
+  }
+
   .flex {
     display: block;
   }

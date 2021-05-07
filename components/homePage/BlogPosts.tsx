@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "../../style/modules/blogposts/BlogPosts.module.scss";
+import styles from "../../style/modules/blog/BlogPosts.module.scss";
 import data from "../../blog/data.json";
 
+//Assets components
 import H1 from "../assets/H1";
 import GridItem from "../assets/GridItem";
 

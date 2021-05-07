@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../style/modules/h1/H1.module.scss";
+import styles from "../../style/modules/assets/H1.module.scss";
 import Fade from "./Fade";
 
 const Bar = (props) => {

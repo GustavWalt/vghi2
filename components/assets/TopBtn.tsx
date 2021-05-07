@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../style/modules/topbtn/TopBtn.module.scss";
+import styles from "../../style/modules/assets/TopBtn.module.scss";
 
 const TopBtn = () => {
   const backTop = () => {

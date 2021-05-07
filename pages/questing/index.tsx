@@ -1,10 +1,13 @@
 import Head from "next/head";
+import React from "react";
+
+//Assets
 import Navbar from "../../components/assets/Navbar";
 import Footer from "../../components/assets/Footer";
-import TopBtn from "../../components/homePage/TopBtn";
-import Meta from "../../components/homePage/TopBtn";
+import TopBtn from "../../components/assets/TopBtn";
+import Meta from "../../components/assets/Meta";
 import Fade from "../../components/assets/Fade";
-import React from "react";
+
 const questing = (props) => {
   return (
     <>

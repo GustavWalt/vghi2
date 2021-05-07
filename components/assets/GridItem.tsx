@@ -1,9 +1,12 @@
-import React from "react";
-import styles from "../../style/modules/grid/GridItem.module.scss";
+import React, { useState } from "react";
+import styles from "../../style/modules/assets/GridItem.module.scss";
 import Image from "next/image";
 import Fade from "./Fade";
 
 const GridItem = (props) => {
+  const [isOpen, setOpen] = useState(false);
+  const toggle = () => setOpen(!isOpen);
+
   return (
     <>
       <Fade>
@@ -25,9 +28,24 @@ const GridItem = (props) => {
             </div>
           )}
           <p>{props.desc}</p>
-          <button className="darkButton">
-            <a href={props.btnHref}>{props.btn}</a>
-          </button>
+          {props.btn && (
+            <button className="darkButton">
+              <a href={props.btnHref}>{props.btn}</a>
+            </button>
+          )}
+
+          {props.open && (
+            <>
+              <p
+                className={`${styles.transition} ${isOpen ? "" : styles.none}`}
+              >
+                {props.open}
+              </p>
+              <button onClick={toggle} className="darkButton">
+                {isOpen ? "Close" : "Read more"}
+              </button>
+            </>
+          )}
         </div>
       </Fade>
     </>
