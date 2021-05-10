@@ -74,6 +74,11 @@
   }
 }
 
+.darkButton:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
 .darkButton {
   background-color: $black;
   color: $white;

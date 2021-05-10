@@ -1,6 +1,9 @@
 import Head from "next/head";
 import React from "react";
 
+//Components
+import Header from "../../components/staff/header";
+
 //Assets
 import Navbar from "../../components/assets/Navbar";
 import Footer from "../../components/assets/Footer";
@@ -18,7 +21,7 @@ const staff = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
-        <h1>STAFF</h1>
+        <Header />
         <Footer />
       </Fade>
     </>
