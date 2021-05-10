@@ -14,7 +14,7 @@ const GridItem = (props) => {
           <h2 className="text-color">{props.title}</h2>
           {props.date && <p>{props.date}</p>}
           {props.auth && (
-            <div className={`flex ${styles.flex} ${styles.pb} ${styles.pt}`}>
+            <div className={`flexCol ${styles.flex} ${styles.pb} ${styles.pt}`}>
               <Image
                 className="rounded"
                 src="/profile.jpg"

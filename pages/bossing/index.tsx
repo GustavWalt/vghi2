@@ -1,6 +1,9 @@
 import Head from "next/head";
 import React from "react";
 
+//Components
+import Header from "../../components/bossing/Header";
+
 //Assets
 import Navbar from "../../components/assets/Navbar";
 import Footer from "../../components/assets/Footer";
@@ -18,7 +21,7 @@ const bossing = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
-        <h1>BOSSING</h1>
+        <Header />
         <Footer />
       </Fade>
     </>

@@ -1,6 +1,9 @@
 import Head from "next/head";
 import React from "react";
 
+//Components
+import Header from "../../components/questing/Header";
+
 //Assets
 import Navbar from "../../components/assets/Navbar";
 import Footer from "../../components/assets/Footer";
@@ -18,7 +21,7 @@ const questing = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
-        <h1>QUESTING</h1>
+        <Header />
         <Footer />
       </Fade>
     </>
