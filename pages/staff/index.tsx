@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 //Components
-import Header from "../../components/staff/header";
+import Header from "../../components/staff/Header";
 
 //Assets
 import Navbar from "../../components/assets/Navbar";

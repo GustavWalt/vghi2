@@ -17,6 +17,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-markdown": "5.0.2",
+    "react-responsive-carousel": "^3.2.18",
     "sass": "^1.32.10"
   },
   "devDependencies": {
