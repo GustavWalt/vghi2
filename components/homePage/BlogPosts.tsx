@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "../../style/modules/blog/BlogPosts.module.scss";
-import data from "../../data/blog.json";
+import blogPosts from "../../data/blog.json";
 
 //Assets components
 import H1 from "../assets/H1";
 import GridItem from "../assets/GridItem";
 
 const BlogPosts = () => {
-  var latestPosts = data.posts.slice(0, 3);
+  var latestPosts = blogPosts.posts.slice(0, 3);
 
   return (
     <div className={styles.blogPosts}>

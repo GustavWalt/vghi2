@@ -1,6 +1,9 @@
 import React from "react";
 import styles from "../../style/modules/assets/Table.module.scss";
 
+//Data
+import questsObj from "../../data/quests.json";
+
 const Table = () => {
   return (
     <>
@@ -11,126 +14,16 @@ const Table = () => {
           <th>Price</th>
           <th>Order</th>
         </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
-        <tr>
-          <td>The Hand in the Sand</td>
-          <td>Medium</td>
-          <td>$5,5</td>
-          <td>
-            <button>Order Now</button>
-          </td>
-        </tr>
+        {questsObj.quests.map((quest) => (
+          <tr>
+            <td>{quest.name}</td>
+            <td>{quest.difficulty}</td>
+            <td>{quest.price}</td>
+            <td>
+              <button>Order now</button>
+            </td>
+          </tr>
+        ))}
       </table>
     </>
   );

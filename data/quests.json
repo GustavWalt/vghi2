@@ -1,0 +1,46 @@
+{
+  "quests": [
+    { "name": "Cook's Assistant", "difficulty": "Novice", "price": 2 },
+    { "name": "Demon Slayer", "difficulty": "Novice", "price": "$2" },
+
+    {
+      "name": "The Restless Ghost",
+      "difficulty": "Novice",
+      "price": "$2"
+    },
+
+    {
+      "name": "Romeo Juliet",
+      "difficulty": "Novice",
+      "price": "$2"
+    },
+
+    { "name": "Sheep Shearer", "difficulty": "Novice", "price": "$2" },
+
+    { "name": "Shield of Arrav", "difficulty": "Novice", "price": "$2" },
+
+    { "name": "Ernest the Chicken", "difficulty": "Novice", "price": "$2" },
+
+    { "name": "Vampyre Slayer", "difficulty": "Novice", "price": "$2" },
+
+    { "name": "Imp Catcher", "difficulty": "Novice", "price": "$2" },
+
+    { "name": "Prince Ali Rescue", "difficulty": "Novice", "price": "$2" },
+
+    { "name": "Doric's Quest", "difficulty": "Novice", "price": "$2" },
+
+    {
+      "name": "Black Knights' Fortress",
+      "difficulty": "Novice",
+      "price": "$2"
+    },
+
+    { "name": "Witch's Potion", "difficulty": "Novice", "price": "$2" },
+
+    {
+      "name": "The Knight's Sword",
+      "difficulty": "Intermediate",
+      "price": "$2"
+    }
+  ]
+}

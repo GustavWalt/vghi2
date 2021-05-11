@@ -18,7 +18,7 @@ const Services = () => {
         />
         <GridItem
           title="BOSSING"
-          desc="Do you want a pet but tired of grinding? Let us handle this by letting our professional staff get your desired amount of kc.  "
+          desc="Do you want a pet but tired of grinding? Let us handle this by letting our professional staff get your kc."
           btn="Buy now"
           btnHref="/bossing"
         />
