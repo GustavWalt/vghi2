@@ -5,8 +5,6 @@ import styles from "../../style/modules/assets/Table.module.scss";
 import questsObj from "../../data/quests.json";
 
 const Table = (props) => {
-  console.log(props.data);
-
   return (
     <>
       <table className={styles.table}>

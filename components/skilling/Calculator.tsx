@@ -6,7 +6,6 @@ import H1 from "../assets/H1";
 import Fade from "../assets/Fade";
 
 //Components
-import Cart from "./Cart";
 import Levels from "./Levels";
 
 const Calculator = () => {
@@ -16,7 +15,6 @@ const Calculator = () => {
         <H1 title="CALCULATOR" />
         <div className={`flex`}>
           <Levels />
-          <Cart />
         </div>
       </Fade>
     </div>
