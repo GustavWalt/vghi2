@@ -9,7 +9,7 @@ const Bar = () => {
   return (
     <>
       <div className={styles.carousel}>
-        <Carousel infiniteLoop dynamicHeight width="800px">
+        <Carousel infiniteLoop dynamicHeight>
           <div>
             <img src="header.webp" />
           </div>

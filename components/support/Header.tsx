@@ -13,7 +13,7 @@ const Header = () => {
         <input placeholder="Search ..." type="text" />
       </div>
       <div className={styles.commonQuestions}>
-        <H1 title="Common questions" />
+        <H1 title="Common topics" />
         <div className="flex">
           <GridItem
             title="Trust"

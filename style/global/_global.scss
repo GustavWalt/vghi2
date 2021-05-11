@@ -27,7 +27,8 @@
 }
 
 .carousel-slider {
-  margin: 0 auto !important;
+  margin: 2rem auto 0rem auto !important;
+  width: 300px !important;
 }
 
 .flex {
@@ -95,6 +96,11 @@
 @media screen and (min-width: 1024px) {
   .flex {
     flex-direction: row;
+  }
+
+  .carousel-slider {
+    margin: 0 auto !important;
+    width: 800px !important;
   }
 
   .flexCol {
