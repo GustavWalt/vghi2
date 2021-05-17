@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../../style/modules/homePage/Header.module.scss";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -10,15 +11,21 @@ const Header = () => {
         <h2>SKILLING, BOSSING, & QUESTING SERVICES</h2>
         <span />
         <div className={`flex ${styles.flex}`}>
-          <a className={`${styles.width} darkButton`} href="/skilling">
-            <p>Skilling</p>
-          </a>
-          <a className={`${styles.width} darkButton`} href="/bossing">
-            <p>Bossing</p>
-          </a>
-          <a className={`${styles.width} darkButton`} href="/questing">
-            <p>Questing</p>
-          </a>
+          <Link href="/skilling">
+            <a className={`${styles.width} darkButton`}>
+              <p>Skilling</p>
+            </a>
+          </Link>
+          <Link href="/bossing">
+            <a className={`${styles.width} darkButton`}>
+              <p>Bossing</p>
+            </a>
+          </Link>
+          <Link href="/questing">
+            <a className={`${styles.width} darkButton`}>
+              <p>Questing</p>
+            </a>
+          </Link>
         </div>
       </div>
     </>

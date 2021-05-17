@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../../style/modules/assets/GridItem.module.scss";
 import Image from "next/image";
 import Fade from "./Fade";
+import Link from "next/link";
 
 const GridItem = (props) => {
   const [isOpen, setOpen] = useState(false);
@@ -23,14 +24,18 @@ const GridItem = (props) => {
                 height="64"
               />
               <p className={`text-color ${styles.color}`}>
-                <a href={props.authHref}>{props.auth}</a>
+                <Link href={props.authHref}>
+                  <a>{props.auth}</a>
+                </Link>
               </p>
             </div>
           )}
           <p>{props.desc}</p>
           {props.btn && (
             <button className={`darkButton ${styles.hover}`}>
-              <a href={props.btnHref}>{props.btn}</a>
+              <Link href={props.btnHref}>
+                <a>{props.btn}</a>
+              </Link>
             </button>
           )}
 

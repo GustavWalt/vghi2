@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../style/modules/assets/Footer.module.scss";
 import Fade from "./Fade";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -9,49 +10,75 @@ const About = () => {
         <div className={styles.footerItem}>
           <h1>INFORMATION</h1>
           <p>
-            <a href="/">Home</a>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </p>
           <p>
-            <a href="/support">Contact us</a>
+            <Link href="/support">
+              <a>Contact us</a>
+            </Link>
           </p>
         </div>
         <div className={styles.footerItem}>
           <h1>CATEGORIES</h1>
           <p>
-            <a href="/">Home</a>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </p>
           <p>
-            <a href="/skilling">Skilling services</a>
+            <Link href="/skilling">
+              <a>Skilling services</a>
+            </Link>
           </p>
           <p>
-            <a href="/bossing">Bossing services</a>
+            <Link href="/bossing">
+              <a>Bossing services</a>
+            </Link>
           </p>
           <p>
-            <a href="/questing">Questing services</a>
+            <Link href="/questing">
+              <a>Questing services</a>
+            </Link>
           </p>
           <p>
-            <a href="/blog">Blog</a>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
           </p>
           <p>
-            <a href="/staff">Staff</a>
+            <Link href="/staff">
+              <a>Staff</a>
+            </Link>
           </p>
           <p>
-            <a href="/support">Support</a>
+            <Link href="/support">
+              <a>Support</a>
+            </Link>
           </p>
         </div>
         <div className={styles.footerItem}>
           <h1>LEGAL‎‎‎‎‎‎‎</h1>
           <p>
-            <a href="#">Privacy Policy</a>
+            <Link href="/">
+              <a>Privacy Policy</a>
+            </Link>
           </p>
           <p>
-            <a href="#">Terms of Service</a>
+            <Link href="/">
+              <a>Terms of Service</a>
+            </Link>
           </p>
           <p>
-            <a href="#">Refund Policy</a>
+            <Link href="/">
+              <a>Refund Policy</a>
+            </Link>
           </p>
           <p>
-            <a href="#">In-game Policy</a>
+            <Link href="/">
+              <a>In-game Policy</a>
+            </Link>
           </p>
         </div>
       </div>

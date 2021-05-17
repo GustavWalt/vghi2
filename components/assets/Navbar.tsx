@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../../style/modules/assets/Navbar.module.scss";
+import Link from "next/link";
 
 //Importing assets
 import Bar from "./Bar";
@@ -17,9 +18,9 @@ const Navbar = (props) => {
       <nav className={styles.topNav}>
         <div className={styles.flex}>
           <div className={styles.logo}>
-            <a className={styles.link} href="/">
-              RSBoosts 🚀
-            </a>
+            <Link href="/">
+              <a className={styles.link}>RSBoosts 🚀</a>
+            </Link>
           </div>
           <div onClick={toggle} className={styles.menuToggle}>
             <Bar />
