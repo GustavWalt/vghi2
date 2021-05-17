@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className={styles.bossing}>
       <H1 title="Bossing Service" />
-      <div className="flex">
+      <div className="flexCol">
         <Table data="bossing" />
       </div>
     </div>

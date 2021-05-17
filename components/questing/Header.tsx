@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className={styles.questing}>
       <H1 title="Questing Service" />
-      <div className="flex">
+      <div className="flexCol">
         <Table data="questing" />
       </div>
     </div>
