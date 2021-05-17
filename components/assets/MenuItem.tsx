@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../style/modules/assets/Navbar.module.scss";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const MenuItem = (props) => {
   const router = useRouter();
@@ -12,9 +13,9 @@ const MenuItem = (props) => {
           router.pathname == props.href ? "active" : ""
         }`}
       >
-        <a className={styles.link} href={props.href}>
-          {props.title}
-        </a>
+        <Link href={props.href}>
+          <a className={styles.link}>{props.title}</a>
+        </Link>
       </li>
     </>
   );

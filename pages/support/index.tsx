@@ -7,6 +7,7 @@ import Footer from "../../components/assets/Footer";
 import TopBtn from "../../components/assets/TopBtn";
 import Meta from "../../components/assets/Meta";
 import Fade from "../../components/assets/Fade";
+import Btn from "../../components/btn";
 
 //Components
 import Header from "../../components/support/Header";
@@ -21,6 +22,7 @@ const support = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
+        <Btn />
         <Header />
         <Footer />
       </Fade>
