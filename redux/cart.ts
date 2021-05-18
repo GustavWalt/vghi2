@@ -29,7 +29,6 @@ export const counterSlice = createSlice({
         product: product,
         amount: 1,
       });
-      console.log(current(state));
     },
   },
 });

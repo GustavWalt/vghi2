@@ -2,14 +2,34 @@
   display: flex;
   border-radius: 200px;
 
+  .cartItems {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 3px;
+    line-height: 15px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(249, 93, 122);
+    position: absolute;
+    right: 180px;
+    top: 40px;
+    transition: transform 200ms ease-in-out 0s;
+    transform: scale(1);
+  }
+
   button {
+    cursor: pointer;
     color: white;
     background-color: transparent;
-    border-radius: 200px;
     border: none;
 
     span {
       font-size: 1.2rem;
     }
+  }
+  button:hover {
+    color: yellow;
   }
 }
