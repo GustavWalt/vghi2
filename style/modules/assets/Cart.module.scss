@@ -1,0 +1,15 @@
+.cart {
+  display: flex;
+  border-radius: 200px;
+
+  button {
+    color: white;
+    background-color: transparent;
+    border-radius: 200px;
+    border: none;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}

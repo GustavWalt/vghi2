@@ -5,6 +5,7 @@ import Link from "next/link";
 //Importing assets
 import Bar from "./Bar";
 import MenuItem from "./MenuItem";
+import Cart from "./Cart";
 
 const Navbar = (props) => {
   const [isOpen, setOpen] = useState(false);
@@ -40,6 +41,7 @@ const Navbar = (props) => {
           <MenuItem href="/blog" title="Blog" />
           <MenuItem href="/staff" title="Staff" />
           <MenuItem href="/support" title="Support" />
+          <Cart />
         </ul>
       </nav>
     </>

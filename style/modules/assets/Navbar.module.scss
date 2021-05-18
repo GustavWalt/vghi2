@@ -26,7 +26,7 @@
   .logo {
     list-style-type: none;
     font-size: $h1;
-    margin: 1rem;
+    margin: 0.5rem;
     .link {
       text-decoration: none;
       color: $white;
@@ -67,7 +67,7 @@
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1310px) {
   .topNav {
     display: flex;
     align-items: center;

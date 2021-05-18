@@ -5,6 +5,9 @@ import styles from "../../style/modules/assets/Table.module.scss";
 import questsObj from "../../data/quests.json";
 import bossesObj from "../../data/bosses.json";
 
+//Assets
+import Order from "./order";
+
 const search = () => {
   // Declare variables
   var input, filter, table, tr, td, i, txtValue;
@@ -49,7 +52,7 @@ const Table = (props) => {
               <td>{quest.difficulty}</td>
               <td>{quest.price}</td>
               <td>
-                <button>Order now</button>
+                <Order name={quest.name} price={quest.price} />
               </td>
             </tr>
           ))}
@@ -59,7 +62,7 @@ const Table = (props) => {
               <td>{boss.name}</td>
               <td>{boss.price}</td>
               <td>
-                <button>Order now</button>
+                <Order name={boss.name} price={boss.price} />
               </td>
             </tr>
           ))}
