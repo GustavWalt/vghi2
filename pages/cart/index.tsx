@@ -11,7 +11,7 @@ import TopBtn from "../../components/assets/TopBtn";
 import Meta from "../../components/assets/Meta";
 import Fade from "../../components/assets/Fade";
 
-const bossing = (props) => {
+const cart = (props) => {
   return (
     <>
       <Head>
@@ -28,4 +28,4 @@ const bossing = (props) => {
   );
 };
 
-export default bossing;
+export default cart;
