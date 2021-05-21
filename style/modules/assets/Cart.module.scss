@@ -2,21 +2,24 @@
   display: flex;
   border-radius: 200px;
 
-  .cartItems {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    font-size: 15px;
-    padding: 3px;
-    line-height: 15px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    background-color: rgb(249, 93, 122);
-    position: absolute;
-    right: 180px;
-    top: 40px;
-    transition: transform 200ms ease-in-out 0s;
-    transform: scale(1);
+  .btn {
+    position: relative;
+    .cartItems {
+      position: absolute;
+      top: 50;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      font-size: 15px;
+      padding: 3px;
+      line-height: 15px;
+      text-align: center;
+      color: rgb(255, 255, 255);
+      background-color: rgb(249, 93, 122);
+      transition: transform 200ms ease-in-out 0s;
+      transform: scale(1);
+    }
   }
 
   button {
@@ -31,5 +34,22 @@
   }
   button:hover {
     color: yellow;
+  }
+}
+
+@media screen and (min-width: 1310px) {
+  .cartItems {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 15px;
+    padding: 3px;
+    line-height: 15px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    background-color: rgb(249, 93, 122);
+    position: absolute;
+    transition: transform 200ms ease-in-out 0s;
+    transform: scale(1);
   }
 }

@@ -9,7 +9,7 @@ const TopBtn = () => {
   return (
     <>
       <button className={styles.scrollTop} onClick={backTop}>
-        🡹
+        &#8593;
       </button>
     </>
   );

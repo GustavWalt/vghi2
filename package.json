@@ -21,6 +21,7 @@
     "react-markdown": "5.0.2",
     "react-redux": "^7.2.4",
     "react-responsive-carousel": "^3.2.18",
+    "react-toast-notifications": "^2.4.4",
     "sass": "^1.32.10"
   },
   "devDependencies": {

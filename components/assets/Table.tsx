@@ -41,7 +41,6 @@ const Table = (props) => {
         />
         <tr>
           <th>Name</th>
-          {props.data == "questing" && <th>Difficulty</th>}
           <th>Price</th>
           <th>Order</th>
         </tr>
@@ -49,7 +48,6 @@ const Table = (props) => {
           questsObj.quests.map((quest) => (
             <tr>
               <td>{quest.name}</td>
-              <td>{quest.difficulty}</td>
               <td>{quest.price}</td>
               <td>
                 <Order name={quest.name} price={quest.price} />

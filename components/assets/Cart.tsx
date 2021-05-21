@@ -9,7 +9,7 @@ const Cart = (props) => {
   return (
     <>
       <div className={styles.cart}>
-        <button>
+        <button className={styles.btn}>
           <Link href="/cart">
             <svg
               width="50px"
