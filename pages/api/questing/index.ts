@@ -21,7 +21,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       response.end(JSON.stringify({ orders: orders }));
     }
     if (request.method === "POST") {
-      const orders = "test";
+      //Logik för att sätta in i db te.x
+      const orders = request.body;
+
+      //Response till client
       response.statusCode = 201;
       response.setHeader("Content-Type", "application/json");
       response.end(JSON.stringify({ orders: orders }));

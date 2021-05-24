@@ -1,3 +1,36 @@
 .header {
   margin-top: 1rem;
+  text-align: center;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .cart {
+    background-color: red;
+    padding: 0.5rem;
+    margin: 0px 3rem;
+
+    .cartItem {
+      margin: 1rem 0;
+    }
+  }
+
+  .payment {
+    background-color: green;
+    margin: 0px 3rem;
+    padding: 0.5rem;
+    height: 300px;
+    button {
+      border: none;
+      font-size: 30px;
+      padding: 1rem;
+      transition: ease-in-out 0.2s;
+      background-color: rgb(255, 255, 146);
+    }
+    button:hover {
+      cursor: pointer;
+      background-color: yellow;
+    }
+  }
 }
