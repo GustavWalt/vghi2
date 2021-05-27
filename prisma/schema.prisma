@@ -8,15 +8,37 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model User {
+  id       Int     @id @default(autoincrement())
+  email    String
+  login    String
+  password String
+  pin      Int
+  auth     String
+  discord  String
+  orders   Order[]
+}
+
+model Product {
+  id        Int         @id @default(autoincrement())
+  name      String
+  price     Int
+  orderItems OrderItem[]
+}
+
+model OrderItem {
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int // relation scalar field (used in the `@relation` attribute above)
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   Int // relation scalar field (used in the `@relation` attribute above)
+  amount    Int
+
+  @@id([productId, orderId])
+}
+
 model Order {
-  id        Int     @default(autoincrement()) @id
-  email String
-  login     String
-  password   String
-  pin   Int
-  auth   String
-  discord   String
-  order   String
-  clevel Int
-  dlevel Int
+  id        Int         @id @default(autoincrement())
+  user      User        @relation(fields: [userId], references: [id])
+  userId    Int
+  OrderItem OrderItem[]
 }
