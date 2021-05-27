@@ -2,151 +2,151 @@
   "bosses": [
     {
       "name": "Grotesque Guardians (req task)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Kraken (req task)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Thermonuclear smoke devil (req task)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Cerberus (req task)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Abyssal Sire (req task)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Alchemical Hydra (req task)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Chaos Fanatic",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Crazy archaeologist",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Scorpia",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "King Black Dragon",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Chaos Elemental",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Chaos Elemental",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Venenatis",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Callisto",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Tempoross",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Wintertodt",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Zalcano",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Chambers of Xeric",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Theatre of Blood",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Gauntlet",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Corrupted Gauntlet",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Jad",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Zuk",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Giant Mole",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Deranged Archaeologist",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Dagannoth Supreme/Rex/Prime",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Dagannoth Rex (only)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Sarachnis",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Kalphite Queen",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Kree'arra (aramdyl)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Commander Zilyana (sara)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "General Graardor (bandos)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "K'ril Tsutsaroth (zammy)",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Zulrah",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Vorkath",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "Corporeal Beast",
-      "price": "$0.1/kill"
+      "price": "1"
     },
     {
       "name": "The Nightmare",
-      "price": "$0.1/kill"
+      "price": "1"
     }
   ]
 }

@@ -18,11 +18,6 @@ import About from "../components/homePage/About";
 import BlogPosts from "../components/homePage/BlogPosts";
 import Btn from "../components/assets/order";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const orders = await prisma.order.findMany();
-  return { props: { orders } };
-};
-
 const homePage = (props) => {
   return (
     <>

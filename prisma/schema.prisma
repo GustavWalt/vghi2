@@ -1,11 +1,10 @@
-// schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = "postgres://bktdhgevjzflzw:83e2b280ee8be3e33818775fe6b53bb3a7e6bdfff056481506be402356d3f16f@ec2-54-216-185-51.eu-west-1.compute.amazonaws.com:5432/ddtilfs2dvfvnh"
-}
-
-generator client {
-  provider = "prisma-client-js"
 }
 
 model User {
@@ -20,25 +19,25 @@ model User {
 }
 
 model Product {
-  id        Int         @id @default(autoincrement())
-  name      String
-  price     Int
+  id         Int         @id @default(autoincrement())
+  name       String
+  price      Int
   orderItems OrderItem[]
 }
 
 model OrderItem {
-  product   Product @relation(fields: [productId], references: [id])
-  productId Int // relation scalar field (used in the `@relation` attribute above)
-  order     Order   @relation(fields: [orderId], references: [id])
-  orderId   Int // relation scalar field (used in the `@relation` attribute above)
   amount    Int
+  productId Int
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
 
   @@id([productId, orderId])
 }
 
 model Order {
   id        Int         @id @default(autoincrement())
-  user      User        @relation(fields: [userId], references: [id])
   userId    Int
+  user      User        @relation(fields: [userId], references: [id])
   OrderItem OrderItem[]
 }

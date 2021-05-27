@@ -2,949 +2,949 @@
   "quests": [
     {
       "name": "Cook's Assistant",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Demon Slayer",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "The Restless Ghost",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Romeo & Juliet",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Sheep Shearer",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Shield of Arrav",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Ernest the Chicken",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Vampyre Slayer",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Imp Catcher",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Prince Ali Rescue",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Doric's Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Very short"
     },
     {
       "name": "Black Knights' Fortress",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Witch's Potion",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "The Knight's Sword",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Goblin Diplomacy",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Pirate's Treasure",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Dragon Slayer I",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Long"
     },
     {
       "name": "Rune Mysteries",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Misthalin Mystery",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "The Corsair Curse",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "X Marks the Spot",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Below Ice Mountain",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Druidic Ritual",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Lost City",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Short"
     },
     {
       "name": "Witch's House",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Merlin's Crystal",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Heroes' Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium – Long"
     },
     {
       "name": "Scorpion Catcher",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short – Medium"
     },
     {
       "name": "Family Crest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Tribal Totem",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Fishing Contest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Monk's Friend",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Temple of Ikov",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Clock Tower",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Holy Grail",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Tree Gnome Village",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Fight Arena",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Short"
     },
     {
       "name": "Hazeel Cult",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Sheep Herder",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Plague City",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Sea Slug",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Waterfall Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Biohazard",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Jungle Potion",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "The Grand Tree",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Shilo Village",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium – Long"
     },
     {
       "name": "Underground Pass",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Long – Very long"
     },
     {
       "name": "Observatory Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "The Tourist Trap",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Watchtower",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Dwarf Cannon",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Murder Mystery",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "The Dig Site",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Gertrude's Cat",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Legends' Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Very long"
     },
     {
       "name": "Big Chompy Bird Hunting",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Elemental Workshop I",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Priest in Peril",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Nature Spirit",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Death Plateau",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Troll Stronghold",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Short – Medium"
     },
     {
       "name": "Tai Bwo Wannai Trio",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Regicide",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Long"
     },
     {
       "name": "Eadgar's Ruse",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium – Long"
     },
     {
       "name": "Shades of Mort'ton",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "The Fremennik Trials",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Horror from the Deep",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Short"
     },
     {
       "name": "Throne of Miscellania",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Monkey Madness I",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Long"
     },
     {
       "name": "Haunted Mine",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium – Long"
     },
     {
       "name": "Troll Romance",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "In Search of the Myreque",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Creature of Fenkenstrain",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Roving Elves",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Short – Medium"
     },
     {
       "name": "Ghosts Ahoy",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "One Small Favour",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Very long"
     },
     {
       "name": "Mountain Daughter",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Between a Rock...",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium – Long"
     },
     {
       "name": "The Feud",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "The Golem",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Desert Treasure",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Very long"
     },
     {
       "name": "Icthlarin's Little Helper",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "Tears of Guthix",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Zogre Flesh Eaters",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "The Lost Tribe",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "The Giant Dwarf",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "Recruitment Drive",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Mourning's End Part I",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Long – Very long"
     },
     {
       "name": "Forgettable Tale...",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Garden of Tranquillity",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Very long"
     },
     {
       "name": "A Tail of Two Cats",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Wanted!",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Mourning's End Part II",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Medium – Long"
     },
     {
       "name": "Rum Deal",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Shadow of the Storm",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Making History",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short – Long"
     },
     {
       "name": "Ratcatchers",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Spirits of the Elid",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Devious Minds",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Short"
     },
     {
       "name": "The Hand in the Sand",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Enakhra's Lament",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Cabin Fever",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Fairytale I - Growing Pains",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Long"
     },
     {
       "name": "Recipe for Disaster",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Very long"
     },
     {
       "name": "Another Cook's Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Short"
     },
     {
       "name": "Defeating the Culinaromancer",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Short"
     },
     {
       "name": "Freeing the Mountain Dwarf",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Short"
     },
     {
       "name": "Freeing the Goblin generals",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Short"
     },
     {
       "name": "Freeing Pirate Pete",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Medium"
     },
     {
       "name": "Freeing the Lumbridge Guide",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Short"
     },
     {
       "name": "Freeing Evil Dave",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Medium"
     },
     {
       "name": "Freeing King Awowogei",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Medium – Long"
     },
     {
       "name": "Freeing Sir Amik Varze",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Medium"
     },
     {
       "name": "Freeing Skrach Uglogwee",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Special",
       "length": "Medium"
     },
     {
       "name": "In Aid of the Myreque",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "A Soul's Bane",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Rag and Bone Man I",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Rag and Bone Man II",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Long"
     },
     {
       "name": "Swan Song",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Medium"
     },
     {
       "name": "Royal Trouble",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Death to the Dorgeshuun",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Fairytale II - Cure a Queen",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Short – Medium"
     },
     {
       "name": "Lunar Diplomacy",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Long"
     },
     {
       "name": "The Eyes of Glouphrie",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "Darkness of Hallowvale",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Very long"
     },
     {
       "name": "The Slug Menace",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "Elemental Workshop II",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "My Arm's Big Adventure",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Enlightened Journey",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short – Long"
     },
     {
       "name": "Eagles' Peak",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Animal Magnetism",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "Contact!",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Medium"
     },
     {
       "name": "Cold War",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium – Long"
     },
     {
       "name": "The Fremennik Isles",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Long"
     },
     {
       "name": "Tower of Life",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "The Great Brain Robbery",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "What Lies Below",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short – Medium"
     },
     {
       "name": "Olaf's Quest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short – Long"
     },
     {
       "name": "Another Slice of H.A.M.",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "Dream Mentor",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Short – Medium"
     },
     {
       "name": "Grim Tales",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Medium"
     },
     {
       "name": "King's Ransom",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Medium"
     },
     {
       "name": "Monkey Madness II",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Grandmaster",
       "length": "Very Long"
     },
     {
       "name": "Client of Kourend",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Medium"
     },
     {
       "name": "Bone Voyage",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "The Queen of Thieves",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "The Depths of Despair",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Dragon Slayer II",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Grandmaster",
       "length": "Very Long"
     },
     {
       "name": "Tale of the Righteous",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Medium"
     },
     {
       "name": "A Taste of Hope",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Experienced",
       "length": "Long"
     },
     {
       "name": "Making Friends with My Arm",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Medium"
     },
     {
       "name": "The Forsaken Tower",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "The Ascent of Arceuus",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     },
     {
       "name": "Song of the Elves",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Grandmaster",
       "length": "Very Long"
     },
     {
       "name": "The Fremennik Exiles",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Long"
     },
     {
       "name": "Sins of the Father",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Master",
       "length": "Long"
     },
     {
       "name": "A Porcine of Interest",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Novice",
       "length": "Short"
     },
     {
       "name": "Getting Ahead",
-      "price": "$2",
+      "price": "2",
       "difficulty": "Intermediate",
       "length": "Short"
     }
