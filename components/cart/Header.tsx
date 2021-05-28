@@ -57,7 +57,7 @@ const Header = () => {
     );
 
     // Making API request to /api/questing to post the order.
-    const response = await axios.post("/api/questing", {
+    const response = await axios.post("/api/checkout", {
       email: apiData.email,
       login: apiData.login,
       password: apiData.password,

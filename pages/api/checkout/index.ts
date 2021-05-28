@@ -13,10 +13,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       response.end(JSON.stringify({ orders: "orders" }));
     }
     if (request.method === "POST") {
-      //Getting the data from client
+      // Getting the data from client
       const bodyData = request.body;
 
-      //Creating the user
+      // Creating the user
       const user = await prisma.user.create({
         data: {
           email: bodyData.email,
@@ -28,35 +28,35 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         },
       });
 
-      //Creating the order with the userId
+      // Creating the order with the userId
       const order = await prisma.order.create({
         data: {
           userId: user.id,
         },
       });
 
-      // Look at what the cart includes, store them in an object to then check in the database that it exists
+      // Getting the orders into an array with the names
       const orders = [];
       bodyData.order.map((order) => {
         orders.push(order.product.name);
       });
 
-      // Get the product ID's from the cart
-      const products = await prisma.product.findMany({
-        where: {
-          name: "The Corsair Cove", //orders.name
-        },
-      });
+      // SQL query to get the ID's from the product table in DB.
+      orders.map(async (name) => {
+        const response = await prisma.product.findUnique({
+          where: {
+            name: name,
+          },
+        });
 
-      // Find the id
-      // Assign the productId to orderItem
-
-      const orderItem = await prisma.orderItem.create({
-        data: {
-          amount: bodyData.order.length,
-          productId: 1, //Correct product ID
-          orderId: order.id,
-        },
+        // Creating an orderItem in the table with correct data.
+        await prisma.orderItem.create({
+          data: {
+            amount: bodyData.order.length,
+            productId: response.id,
+            orderId: order.id,
+          },
+        });
       });
 
       // Resonse to client.
