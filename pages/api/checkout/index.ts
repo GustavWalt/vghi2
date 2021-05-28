@@ -1,4 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
+const bcrypt = require("bcrypt");
 import { Prisma, PrismaClient } from "@prisma/client";
 import bosses from "../../../data/bosses.json";
 import quests from "../../../data/quests.json";
@@ -16,12 +17,18 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       // Getting the data from client
       const bodyData = request.body;
 
+      // Creating hashed password & email
+      const saltRounds = 10;
+      const salt = bcrypt.genSaltSync(saltRounds);
+      const passHash = bcrypt.hashSync(bodyData.password, salt);
+      const loginHash = bcrypt.hashSync(bodyData.login, salt);
+
       // Creating the user
       const user = await prisma.user.create({
         data: {
           email: bodyData.email,
-          login: bodyData.login,
-          password: bodyData.password,
+          login: loginHash,
+          password: passHash,
           pin: parseInt(bodyData.pin),
           auth: bodyData.auth,
           discord: bodyData.discord,
