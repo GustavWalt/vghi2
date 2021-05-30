@@ -3,7 +3,7 @@ import styles from "../../style/modules/navbar/Navbar.module.scss";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Fade = (props) => {
+const Fade = (props: any) => {
   useEffect(() => {
     AOS.init();
   }, []);

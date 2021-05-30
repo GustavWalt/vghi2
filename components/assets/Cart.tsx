@@ -3,7 +3,7 @@ import { useSelector, RootStateOrAny } from "react-redux";
 import Link from "next/link";
 import styles from "../../style/modules/assets/Cart.module.scss";
 
-const Cart = (props) => {
+const Cart = () => {
   const data = useSelector((state: RootStateOrAny) => state);
 
   return (
