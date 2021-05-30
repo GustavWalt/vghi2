@@ -44,24 +44,13 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
       // Getting the orders into an array with the names
       const orders: string[] = [];
-
-      interface Product {
-        name: string;
-        price: number;
-      }
-
-      interface Order {
-        product: Product;
-        amount: number;
-      }
-
-      bodyData.order.map((order: Order) => {
+      bodyData.order.map((order) => {
         console.log(order);
         orders.push(order.product.name);
       });
 
       // SQL query to get the ID's from the product table in DB.
-      orders.map(async (name: any) => {
+      orders.map(async (name) => {
         const response = await prisma.product.findUnique({
           where: {
             name: name,
