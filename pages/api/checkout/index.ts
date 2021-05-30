@@ -61,7 +61,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       });
 
       // SQL query to get the ID's from the product table in DB.
-      orders.map(async (name: string) => {
+      orders.map(async (name: any) => {
         const response = await prisma.product.findUnique({
           where: {
             name: name,
