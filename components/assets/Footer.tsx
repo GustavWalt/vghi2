@@ -83,7 +83,7 @@ const About = () => {
         </div>
       </div>
       <div className={styles.blueBg}>
-        <p>© Copyright 2021 RSBoosts ©</p>
+        <p>Copyright 2021 RSBoosts ©</p>
       </div>
     </div>
   );
