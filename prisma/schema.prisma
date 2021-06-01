@@ -1,12 +1,15 @@
+// Creating a generator for the client, this is to create a client-side database with the correct data.
 generator client {
   provider = "prisma-client-js"
 }
 
+// Database information, what type (postgres) and what host (heroku).
 datasource db {
   provider = "postgresql"
   url      = "postgres://bktdhgevjzflzw:83e2b280ee8be3e33818775fe6b53bb3a7e6bdfff056481506be402356d3f16f@ec2-54-216-185-51.eu-west-1.compute.amazonaws.com:5432/ddtilfs2dvfvnh"
 }
 
+// Creating the database tables/modules with relations.
 model User {
   id       Int     @id @default(autoincrement())
   email    String

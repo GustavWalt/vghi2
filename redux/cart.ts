@@ -1,5 +1,6 @@
 import { createSlice, current, PayloadAction } from "@reduxjs/toolkit";
 
+// Skapar TypeScript typer för alla delar i Redux store.
 interface Product {
   name: string;
   price: number;
