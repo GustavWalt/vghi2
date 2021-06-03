@@ -61,22 +61,22 @@ const About = () => {
         <div className={styles.footerItem}>
           <h1>LEGAL‎‎‎‎‎‎‎</h1>
           <p>
-            <Link href="/">
+            <Link href="/gdpr">
               <a>Privacy Policy</a>
             </Link>
           </p>
           <p>
-            <Link href="/">
+            <Link href="/gdpr">
               <a>Terms of Service</a>
             </Link>
           </p>
           <p>
-            <Link href="/">
+            <Link href="/gdpr">
               <a>Refund Policy</a>
             </Link>
           </p>
           <p>
-            <Link href="/">
+            <Link href="/gdpr">
               <a>In-game Policy</a>
             </Link>
           </p>
