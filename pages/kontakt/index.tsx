@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 //Components
-import Header from "../../components/blog/Header";
+import Header from "../../components/gdpr/Header";
 
 //Assets
 import Navbar from "../../components/assets/Navbar";
@@ -11,7 +11,7 @@ import TopBtn from "../../components/assets/TopBtn";
 import Meta from "../../components/assets/Meta";
 import Fade from "../../components/assets/Fade";
 
-const blog = (props) => {
+const kontakt = (props) => {
   return (
     <>
       <Head>
@@ -21,11 +21,10 @@ const blog = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
-        <Header />
         <Footer />
       </Fade>
     </>
   );
 };
 
-export default blog;
+export default kontakt;

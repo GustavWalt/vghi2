@@ -20,7 +20,7 @@ const Navbar = (props) => {
         <div className={styles.flex}>
           <div className={styles.logo}>
             <Link href="/">
-              <a className={styles.link}>RSBoosts 🚀</a>
+              <a className={styles.link}>VGHI</a>
             </Link>
           </div>
           <div onClick={toggle} className={styles.menuToggle}>
@@ -34,13 +34,11 @@ const Navbar = (props) => {
             isOpen ? styles.openMenu : styles.hidden
           }`}
         >
-          <MenuItem href="/" title="Home" />
-          <MenuItem href="/skilling" title="Skilling" />
-          <MenuItem href="/bossing" title="Bossing" />
-          <MenuItem href="/questing" title="Questing" />
-          <MenuItem href="/blog" title="Blog" />
-          <MenuItem href="/staff" title="Staff" />
-          <MenuItem href="/support" title="Support" />
+          <MenuItem href="/" title="Hem" />
+          <MenuItem href="/information" title="Information" />
+          <MenuItem href="/kunder" title="Kunder" />
+          <MenuItem href="/shop" title="Shop" />
+          <MenuItem href="/kontakt" title="Kontakt" />
           <Cart />
         </ul>
       </nav>

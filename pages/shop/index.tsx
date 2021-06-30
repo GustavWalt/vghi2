@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 //Components
-import Header from "../../components/staff/Header";
+import Header from "../../components/shop/Header";
 
 //Assets
 import Navbar from "../../components/assets/Navbar";
@@ -11,11 +11,11 @@ import TopBtn from "../../components/assets/TopBtn";
 import Meta from "../../components/assets/Meta";
 import Fade from "../../components/assets/Fade";
 
-const staff = (props) => {
+const shop = (props) => {
   return (
     <>
       <Head>
-        <title>Staff | RSBoosts | Cheap & Reliable OSRS Services</title>
+        <title>Blog | RSBoosts | Cheap & Reliable OSRS Services</title>
         <Meta />
       </Head>
       <TopBtn />
@@ -28,4 +28,4 @@ const staff = (props) => {
   );
 };
 
-export default staff;
+export default shop;

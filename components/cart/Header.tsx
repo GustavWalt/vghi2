@@ -6,12 +6,11 @@ import styles from "../../style/modules/cart/Header.module.scss";
 // Assigning type-safe for the form data.
 interface FormTypes {
   email: string;
-  login: string;
-  password: string;
-  pin: number;
-  auth: string;
-  discord: string;
-  order: string;
+  name: String;
+  phone: Number;
+  address: String;
+  neighbourhood: String;
+  zip: Number;
 }
 
 // Handles the state.
@@ -59,11 +58,11 @@ const Header = () => {
     // Making API request to /api/questing to post the order.
     const response = await axios.post("/api/checkout", {
       email: apiData.email,
-      login: apiData.login,
-      password: apiData.password,
-      pin: apiData.pin,
-      auth: apiData.auth,
-      discord: apiData.discord,
+      name: apiData.name,
+      phone: apiData.phone,
+      address: apiData.address,
+      neighbourhood: apiData.neighbourhood,
+      zip: apiData.zip,
       order: cart,
     });
     // Logging response
@@ -89,32 +88,28 @@ const Header = () => {
       <div className={styles.payment}>
         <form onSubmit={handleSubmit}>
           <label>
+            <p>Namn</p>
+            <input type="text" name="name" onChange={handleChange} />
+          </label>
+          <label>
             <p>Email</p>
             <input type="text" name="email" onChange={handleChange} />
           </label>
           <label>
-            <p>Login</p>
-            <input type="text" name="login" onChange={handleChange} />
+            <p>Telefonnummer</p>
+            <input type="text" name="phone" onChange={handleChange} />
           </label>
           <label>
-            <p>Password</p>
-            <input type="text" name="password" onChange={handleChange} />
+            <p>Adress</p>
+            <input type="text" name="address" onChange={handleChange} />
           </label>
           <label>
-            <p>Pin</p>
-            <input type="text" name="pin" onChange={handleChange} />
+            <p>Ort</p>
+            <input type="text" name="neighbourhood" onChange={handleChange} />
           </label>
           <label>
-            <p>Auth</p>
-            <select name="auth" onChange={handleChange}>
-              <option value="">--Please choose an option--</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </select>
-          </label>
-          <label>
-            <p>Discord</p>
-            <input type="text" name="discord" onChange={handleChange} />
+            <p>Postnummer</p>
+            <input type="text" name="zip" onChange={handleChange} />
           </label>
           <br />
           <button type="submit" onClick={() => checkout()}>

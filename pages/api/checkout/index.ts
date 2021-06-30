@@ -17,21 +17,15 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       // Getting the data from client
       const bodyData = request.body;
 
-      // Creating hashed password & email
-      const saltRounds = 10;
-      const salt = bcrypt.genSaltSync(saltRounds);
-      const passHash = bcrypt.hashSync(bodyData.password, salt);
-      const loginHash = bcrypt.hashSync(bodyData.login, salt);
-
       // Creating the user
       const user = await prisma.user.create({
         data: {
+          name: bodyData.name,
+          phone: parseInt(bodyData.phone),
+          address: bodyData.address,
+          neighbourhood: bodyData.neighbourhood,
+          zip: parseInt(bodyData.zip),
           email: bodyData.email,
-          login: loginHash,
-          password: passHash,
-          pin: parseInt(bodyData.pin),
-          auth: bodyData.auth,
-          discord: bodyData.discord,
         },
       });
 
@@ -56,6 +50,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
             name: name,
           },
         });
+
+        console.log("!=!=! response from product", response);
 
         // Creating an orderItem in the table with correct data.
         if (response?.id) {

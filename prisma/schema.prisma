@@ -12,12 +12,12 @@ datasource db {
 // Creating the database tables/modules with relations.
 model User {
   id       Int     @id @default(autoincrement())
+  name     String
+  phone    Int
+  address  String
+  neighbourhood String
+  zip      Int
   email    String
-  login    String
-  password String
-  pin      Int
-  auth     String
-  discord  String
   orders   Order[]
 }
 
