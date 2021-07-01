@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../style/modules/support/Header.module.scss";
+import styles from "../../style/modules/information/Header.module.scss";
 
 //Assets components
 import H1 from "../assets/H1";

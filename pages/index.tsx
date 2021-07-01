@@ -31,7 +31,6 @@ const homePage = (props) => {
         <Header />
         <Services />
         <About />
-        <BlogPosts />
         <Footer />
       </Fade>
     </>

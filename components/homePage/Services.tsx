@@ -8,33 +8,33 @@ import GridItem from "../assets/GridItem";
 const Services = () => {
   return (
     <div className={styles.services}>
-      <H1 title="OSRS SERVICES" />
+      <H1 title="INFORMTION OM HEMSIDAN" />
       <div className="flex">
         <GridItem
-          title="SKILLING"
-          desc="Our skilling service is the most popular choice, with our reliable prices you can expect great service and fast delivery. "
-          btn="Buy now"
-          btnHref="/skilling"
+          title="Information"
+          desc="Här kan du hitta information om mig och vem jag är."
+          btn="Klicka här"
+          btnHref="/information"
         />
         <GridItem
-          title="BOSSING"
-          desc="Do you want a pet but tired of grinding? Let us handle this by letting our professional staff get your kc."
-          btn="Buy now"
-          btnHref="/bossing"
+          title="Kunder"
+          desc="Här kan du läsa om vilka kunder jag har föreläst för."
+          btn="Klicka här"
+          btnHref="/kunder"
         />
       </div>
       <div className="flex">
         <GridItem
-          title="QUESTING"
-          desc="Questing is boring, we know. That’s why we’re here to solve the issue for you, cheap prices and fast delivery. "
-          btn="Buy now"
-          btnHref="/questing"
+          title="Shop"
+          desc="Intresserad av att köpa en av mina böcker? Klicka nedan."
+          btn="Klicka här"
+          btnHref="/shop"
         />
         <GridItem
-          title="SUPPORT"
-          desc="Feel free to contact us at any time by contacting our support team. We are available 24/7 by mail & chat."
-          btn="Contact us"
-          btnHref="/support"
+          title="Kontakt"
+          desc="Kontakta mig genom att klicka på knappen nedan och fyll i formuläret."
+          btn="Klicka här"
+          btnHref="/kontakt"
         />
       </div>
     </div>

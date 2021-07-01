@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .headerBg {
-  color: $white;
+  color: $black;
   background: url("/header.webp");
   padding: 2rem;
   background-repeat: no-repeat;
@@ -38,7 +38,7 @@
     display: block;
     margin: 0 auto;
     width: 50%;
-    border-top: solid $white 3px;
+    border-top: solid $black 3px;
     margin-top: 1rem;
   }
 }

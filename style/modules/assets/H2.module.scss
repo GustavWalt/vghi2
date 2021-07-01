@@ -1,9 +1,9 @@
 @import "../../utils/variables";
 
 .h1 {
-  font-size: $h1;
+  font-size: $h2;
   text-align: center;
-  margin: 4rem 0rem 1rem 0rem;
+  margin-bottom: 1rem;
 }
 
 .span {
@@ -15,10 +15,10 @@
 
 @media screen and (min-width: 1024px) {
   .h1 {
-    font-size: $h1wide;
+    font-size: $h2wide;
   }
   .span {
     width: 20%;
-    margin: 1rem auto 4rem auto;
+    margin: 2rem auto;
   }
 }

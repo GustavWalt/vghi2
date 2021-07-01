@@ -1,0 +1,11 @@
+@import "../../utils/variables";
+
+.section {
+  max-width: 60rem;
+  line-height: 1.7rem;
+  text-align: center;
+  margin: 0rem auto 5rem auto;
+  p {
+    margin: 1rem 0rem;
+  }
+}

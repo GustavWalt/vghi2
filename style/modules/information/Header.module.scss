@@ -1,0 +1,20 @@
+@import "../../utils/variables";
+
+.header {
+  margin: 0rem 0rem 4rem 0rem;
+  .section {
+    max-width: 60rem;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0rem auto 5rem auto;
+    p {
+      margin: 1rem 0rem;
+    }
+  }
+  .imgWrap {
+    display: flex;
+    justify-content: center;
+    .profile {
+    }
+  }
+}

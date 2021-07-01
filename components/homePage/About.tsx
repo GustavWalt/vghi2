@@ -8,16 +8,16 @@ import Fade from "../assets/Fade";
 const About = () => {
   return (
     <div className={styles.about}>
-      <H1 title="ABOUT US" />
+      <H1 title="Om mig" />
       <Fade>
         <p>
-          RSBoosts is created by me, the person writing this. My name is Gustav
-          & I’m from Sweden, I just finished high-school focusing on software
-          development. I’m a full-time student heading into college and I’m a
-          huge fan of Old school Runescape and been playing the last 6 years.
-          This is a project for fun, I don’t expect many people buying services
-          but the main reason is to learn software development and handling
-          secure payments and owning a web-shop.
+          Jag är utbildad forensisk undersköterska samt jour kvinna med gedigen
+          spetskunskap om våld i nära relationer. Med kunskap i tid minimeras
+          risken för att falla offer för sina egna känslor och det möjliggör för
+          en förändring. Jag arbetar för att stötta utsatta kvinnor i deras kamp
+          om att bli fria från våld, hot och trakasserier. Förändringsarbetet är
+          svårt, skört och arbetsam men med rätt verktyg, stöttning och
+          hjälpinsats är det fullt möjligt.
         </p>
       </Fade>
     </div>
