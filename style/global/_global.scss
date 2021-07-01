@@ -6,16 +6,9 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: "RSFont" !important;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   letter-spacing: 3px;
-}
-
-@font-face {
-  font-family: "RSFont";
-  src: url("../fonts/RuneScape-UF.woff2") format("woff2"),
-    url("../fonts//RuneScape-UF.woff") format("woff"),
-    url("../fonts/runescape_uf.ttf") format("truetype");
-  font-display: swap;
 }
 
 .active {
