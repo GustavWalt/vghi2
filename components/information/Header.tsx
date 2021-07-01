@@ -6,6 +6,7 @@ import Image from "next/image";
 import H1 from "../assets/H1";
 import H2 from "../assets/H2";
 import Section from "../assets/Section";
+import Fade from "../assets/Fade";
 
 const Header = () => {
   return (
@@ -41,20 +42,22 @@ const Header = () => {
           att öppna upp för dialog samt sprida kunskap kring detta tabubelagda
           ämne. Jag arbetar mobilt i hela Sverige."
         />
-        <div className={styles.section}>
-          <p>Några som redan bokat min föreläsning:</p>
-          <ul>
-            <li>- Svenska kyrkan</li>
-            <li>- Akutmottagningen för våldtagna Södersjukhuset </li>
-            <li>- Friskis & svettis</li>
-            <li>- Stadsmissionen Folkhögskola</li>
-            <li>- Tyresö tjej- och kvinnojour</li>
-            <li>- Katrineholm och Vingåkers socialförvaltning </li>
-            <li>- UngFritid Nynäshamn</li>
-            <li>- Brännpunkten Tyresö</li>
-            <li>- Handens sjukhus</li>
-          </ul>
-        </div>
+        <Fade>
+          <div className={styles.section}>
+            <p>Några som redan bokat min föreläsning:</p>
+            <ul>
+              <li>- Svenska kyrkan</li>
+              <li>- Akutmottagningen för våldtagna Södersjukhuset </li>
+              <li>- Friskis & svettis</li>
+              <li>- Stadsmissionen Folkhögskola</li>
+              <li>- Tyresö tjej- och kvinnojour</li>
+              <li>- Katrineholm och Vingåkers socialförvaltning </li>
+              <li>- UngFritid Nynäshamn</li>
+              <li>- Brännpunkten Tyresö</li>
+              <li>- Handens sjukhus</li>
+            </ul>
+          </div>
+        </Fade>
         <Section
           paragraph="För bokning av föreläsning, mejla till varforgarhoninte@outlook.com
           så gör vi tillsammans ett upplägg som passar just er verksamhet

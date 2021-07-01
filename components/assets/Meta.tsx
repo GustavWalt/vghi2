@@ -3,7 +3,12 @@ import React from "react";
 const Meta = () => {
   return (
     <>
-      <meta name="language" content="English" />
+      <meta name="language" content="SE" />
+      <meta name="author" content="Gustav Walter" />
+      <meta
+        name="keywords"
+        content="VGHI, Frida, Frida Walter, Varför går hon inte?"
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
