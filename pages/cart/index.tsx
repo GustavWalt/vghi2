@@ -23,6 +23,7 @@ const cart = (props) => {
         <Navbar />
         <Header />
         <Footer />
+        {console.log("test")}
       </Fade>
     </>
   );
