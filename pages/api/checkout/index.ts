@@ -51,7 +51,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
           },
         });
 
-        console.log("!=!=! response from product", response);
+        console.log("!=!=!= response from product", response);
 
         // Creating an orderItem in the table with correct data.
         if (response?.id) {
