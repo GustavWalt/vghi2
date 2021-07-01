@@ -2,7 +2,7 @@
 
 # npx prisma studio - starting prisma studio to visualize data
 
-Ändra content på hemsidann
+Ändra content på hemsidannn
 Skapa informations-sida
 Skapa kunder sida
 Fixa styling på böckerna
