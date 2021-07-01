@@ -11,55 +11,45 @@ const About = () => {
           <h1>INFORMATION</h1>
           <p>
             <Link href="/">
-              <a>Home</a>
+              <a>Hem</a>
             </Link>
           </p>
           <p>
-            <Link href="/support">
-              <a>Contact us</a>
+            <Link href="/kontakt">
+              <a>Kontakta mig</a>
             </Link>
           </p>
         </div>
         <div className={styles.footerItem}>
-          <h1>CATEGORIES</h1>
+          <h1>KATEGORIER</h1>
           <p>
             <Link href="/">
-              <a>Home</a>
+              <a>Hem</a>
             </Link>
           </p>
           <p>
-            <Link href="/skilling">
-              <a>Skilling services</a>
+            <Link href="/information">
+              <a>Information</a>
             </Link>
           </p>
           <p>
-            <Link href="/bossing">
-              <a>Bossing services</a>
+            <Link href="/kunder">
+              <a>Kunder</a>
             </Link>
           </p>
           <p>
-            <Link href="/questing">
-              <a>Questing services</a>
+            <Link href="/Shop">
+              <a>Shop</a>
             </Link>
           </p>
           <p>
-            <Link href="/blog">
-              <a>Blog</a>
-            </Link>
-          </p>
-          <p>
-            <Link href="/staff">
-              <a>Staff</a>
-            </Link>
-          </p>
-          <p>
-            <Link href="/support">
-              <a>Support</a>
+            <Link href="/kontakt">
+              <a>Kontakt</a>
             </Link>
           </p>
         </div>
         <div className={styles.footerItem}>
-          <h1>LEGAL‎‎‎‎‎‎‎</h1>
+          <h1>Köpvillkor</h1>
           <p>
             <Link href="/gdpr">
               <a>Privacy Policy</a>
@@ -73,11 +63,6 @@ const About = () => {
           <p>
             <Link href="/gdpr">
               <a>Refund Policy</a>
-            </Link>
-          </p>
-          <p>
-            <Link href="/gdpr">
-              <a>In-game Policy</a>
             </Link>
           </p>
         </div>

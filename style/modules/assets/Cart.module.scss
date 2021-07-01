@@ -1,13 +1,17 @@
 .cart {
   display: flex;
   border-radius: 200px;
+  .cartText {
+    color: white;
+    margin-left: 0.5rem;
+  }
 
   .btn {
     position: relative;
     .cartItems {
       position: absolute;
-      top: 50;
-      left: 0;
+      top: 5px;
+      left: 55px;
       width: 15px;
       height: 15px;
       border-radius: 50%;
@@ -42,6 +46,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    top: 0px;
     font-size: 15px;
     padding: 3px;
     line-height: 15px;

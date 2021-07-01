@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, RootStateOrAny } from "react-redux";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../../style/modules/assets/Cart.module.scss";
 
 const Cart = () => {
@@ -11,12 +12,15 @@ const Cart = () => {
       <div className={styles.cart}>
         <button className={styles.btn}>
           <Link href="/cart">
-            <img
-              width="50"
-              height="50"
-              src="/shopping-cart.png"
-              alt="Shopping cart icon"
-            />
+            <a>
+              <Image
+                width="50"
+                height="50"
+                src="/shopping-cart.png"
+                alt="Shopping cart icon"
+              />
+              <p className={styles.cartText}>Kundvagn</p>
+            </a>
           </Link>
           {data.cart.items.length > 0 && (
             <span className={styles.cartItems}>{data.cart.items.length}</span>

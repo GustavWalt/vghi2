@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 //Components
-import Header from "../../components/cart/Header";
+import Header from "../../components/gdpr/Header";
 
 //Assets
 import Navbar from "../../components/assets/Navbar";
@@ -11,21 +11,20 @@ import TopBtn from "../../components/assets/TopBtn";
 import Meta from "../../components/assets/Meta";
 import Fade from "../../components/assets/Fade";
 
-const cart = (props) => {
+const vf = (props) => {
   return (
     <>
       <Head>
-        <title>Bossing | RSBoosts | Cheap & Reliable OSRS Services</title>
+        <title>Blog | RSBoosts | Cheap & Reliable OSRS Services</title>
         <Meta />
       </Head>
       <TopBtn />
       <Fade>
         <Navbar />
-        <Header />
         <Footer />
       </Fade>
     </>
   );
 };
 
-export default cart;
+export default vf;

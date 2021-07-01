@@ -8,6 +8,13 @@
   text-align: center;
   padding: 2rem;
 
+  .link:hover {
+    cursor: pointer;
+    h2 {
+      color: red;
+    }
+  }
+
   .color {
     a {
       text-decoration: none;
@@ -46,12 +53,13 @@
   }
 
   p {
-    font-size: $p;
-    margin-left: 1rem;
+    font-size: 18px;
+    margin-bottom: 0.8rem;
   }
 
   button {
     display: block;
+    margin: 0 auto;
   }
 
   img {

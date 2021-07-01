@@ -1,0 +1,15 @@
+@import "../../utils/variables";
+
+.header {
+  margin: 4rem 0rem 4rem 0rem;
+  font-size: 15px;
+  a {
+    text-decoration: none;
+    color: $black;
+  }
+  .author {
+    font-size: 15px;
+    padding: 10px 0px;
+    font-style: italic;
+  }
+}

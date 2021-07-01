@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useMemo } from "react";
 import axios from "axios";
 import { useSelector, RootStateOrAny } from "react-redux";
 import styles from "../../style/modules/cart/Header.module.scss";
@@ -69,6 +69,15 @@ const Header = () => {
     console.log("API RESPONSE ", response);
   };
 
+  const itemTotal = useMemo(
+    () =>
+      data.cart.items.reduce(
+        (total, item) => (total += parseInt(item?.product?.price)),
+        0
+      ),
+    [data.cart]
+  );
+
   // Frontend
   return (
     <div className={`flex ${styles.header}`}>
@@ -78,12 +87,13 @@ const Header = () => {
           <>
             <div className={`flexCol ${styles.cartItem}`}>
               <p>{item?.product?.name}</p>
-              <p>{item?.product?.price}</p>
-              <span>Amount: 1</span>
+              <p>{item?.product?.price}kr</p>
+              <span>Antal: 1</span>
               <span>-----------------</span>
             </div>
           </>
         ))}
+        <h1>Total: {itemTotal}</h1>
       </div>
       <div className={styles.payment}>
         <form onSubmit={handleSubmit}>

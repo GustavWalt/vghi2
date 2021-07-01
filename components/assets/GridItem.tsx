@@ -13,6 +13,7 @@ const GridItem = (props) => {
       <Fade>
         <div className={styles.gridItem}>
           <h2 className="text-color">{props.title}</h2>
+
           {props.date && <p>{props.date}</p>}
           {props.auth && (
             <div className={`flexCol ${styles.flex} ${styles.pb} ${styles.pt}`}>

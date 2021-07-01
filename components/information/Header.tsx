@@ -65,15 +65,17 @@ const Header = () => {
         />
         <Section title="VÄLKOMNA!" />
       </div>
-      <div className={styles.imgWrap}>
-        <Image
-          className={styles.profile}
-          src="/profile.jpg"
-          alt="me"
-          width="272.5"
-          height="346"
-        />
-      </div>
+      <Fade>
+        <div className={styles.imgWrap}>
+          <Image
+            className={styles.profile}
+            src="/profile.jpg"
+            alt="me"
+            width="272.5"
+            height="346"
+          />
+        </div>
+      </Fade>
     </div>
   );
 };
