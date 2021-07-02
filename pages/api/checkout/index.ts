@@ -18,6 +18,21 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       const bodyData = request.body;
 
       // Creating the user
+      console.log(
+        "name",
+        bodyData.name,
+        "phone",
+        parseInt(bodyData.phone),
+        "address",
+        bodyData.address,
+        "neighbourhood",
+        bodyData.neighbourhood,
+        "zip",
+        parseInt(bodyData.zip),
+        "email",
+        bodyData.email
+      );
+
       const user = await prisma.user.create({
         data: {
           name: bodyData.name,
@@ -30,6 +45,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
       });
 
       // Creating the order with the userId
+      console.log("user id for order creation", user.id);
+
       const order = await prisma.order.create({
         data: {
           userId: user.id,
@@ -44,6 +61,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
       // SQL query to get the ID's from the product table in DB.
       bodyData.order.map(async (book) => {
+        console.log("book name in find product", book.name);
+
         const response = await prisma.product.findUnique({
           where: {
             name: book.name,
@@ -53,6 +72,15 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         // Creating an orderItem in the table with correct data.
 
         if (response?.id) {
+          console.log(
+            "order id",
+            order.id,
+            "response id",
+            response.id,
+            "book amount",
+            book.amount
+          );
+
           await prisma.orderItem.create({
             data: {
               amount: book.amount,
