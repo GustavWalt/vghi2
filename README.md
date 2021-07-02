@@ -4,3 +4,4 @@
 
 Skapa kontakt sida (eget API)
 Skapa cart design
+Fixa så man kan ändra antal böcker

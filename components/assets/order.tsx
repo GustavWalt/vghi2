@@ -14,7 +14,7 @@ const btn = (props) => {
 
   const { addToast } = useToasts();
   const notification = () => {
-    addToast(props.name + " has been added to the cart.", {
+    addToast(props.name + "  är nu tillagd i kundvagnen.", {
       appearance: "success",
       autoDismiss: true,
     });

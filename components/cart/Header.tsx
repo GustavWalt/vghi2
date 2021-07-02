@@ -1,5 +1,6 @@
 import React, { useReducer, useMemo } from "react";
 import axios from "axios";
+import Image from "next/image";
 import { useSelector, RootStateOrAny } from "react-redux";
 import styles from "../../style/modules/cart/Header.module.scss";
 
@@ -44,6 +45,7 @@ const Header = () => {
   data.cart.items.map((item) => {
     cart.push(item);
   });
+  console.log("THIS GOES IN API", cart);
 
   // Function for checkout, runs when you submit the form.
   const checkout = async () => {
@@ -63,7 +65,7 @@ const Header = () => {
       address: apiData.address,
       neighbourhood: apiData.neighbourhood,
       zip: apiData.zip,
-      order: cart,
+      order: finalCart,
     });
     // Logging response
     console.log("API RESPONSE ", response);
@@ -78,19 +80,42 @@ const Header = () => {
     [data.cart]
   );
 
+  var finalCart = [
+    { name: "Nu går jag!", amount: 0, img: "/bok1.jpg" },
+    { name: "Våga fråga!", amount: 0, img: "/bok2.jpg" },
+  ];
+  data.cart.items.map((item) => {
+    finalCart.map((book) => {
+      if (item.product.name == book.name) {
+        book.amount += 1;
+      }
+    });
+  });
+
   // Frontend
   return (
     <div className={`flex ${styles.header}`}>
       <div className={styles.cart}>
         <h1>Cart</h1>
-        {data.cart.items.map((item) => (
+        {finalCart.map((item) => (
           <>
-            <div className={`flexCol ${styles.cartItem}`}>
-              <p>{item?.product?.name}</p>
-              <p>{item?.product?.price}kr</p>
-              <span>Antal: 1</span>
-              <span>-----------------</span>
-            </div>
+            {console.log(item)}
+            {item.amount > 0 && (
+              <div className={`flexCol ${styles.cartItem}`}>
+                <p>{item.name}</p>
+                <Image
+                  width="350"
+                  height="200"
+                  src={item.img}
+                  alt="Shopping cart icon"
+                />
+                <p>149kr</p>
+                <p>Antal: {item.amount}</p>
+                {item.name == "Nu går jag!" && (
+                  <span>------------------------------------ </span>
+                )}
+              </div>
+            )}
           </>
         ))}
         <h1>Total: {itemTotal}</h1>
