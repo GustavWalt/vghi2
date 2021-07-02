@@ -72,24 +72,22 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         // Creating an orderItem in the table with correct data.
         console.log("response id above if statement", response.id);
 
-        if (response?.id) {
-          console.log(
-            "order id",
-            order.id,
-            "response id",
-            response.id,
-            "book amount",
-            book.amount
-          );
+        console.log(
+          "order id",
+          order.id,
+          "response id",
+          response.id,
+          "book amount",
+          book.amount
+        );
 
-          await prisma.orderItem.create({
-            data: {
-              amount: book.amount,
-              productId: response.id,
-              orderId: order.id,
-            },
-          });
-        }
+        await prisma.orderItem.create({
+          data: {
+            amount: book.amount,
+            productId: response.id,
+            orderId: order.id,
+          },
+        });
       });
 
       // Resonse to client.
