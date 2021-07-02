@@ -70,6 +70,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         });
 
         // Creating an orderItem in the table with correct data.
+        console.log("response id above if statement", response.id);
 
         if (response?.id) {
           console.log(
