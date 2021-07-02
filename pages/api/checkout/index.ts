@@ -61,7 +61,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       });
 
       // SQL query to get the ID's from the product table in DB.
-      bodyData.order.map(async (book) => {
+      for (const book of bodyData.order) {
         console.log("book name in find product", book.name);
 
         const response = await prisma.product.findUnique({
@@ -82,15 +82,14 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           book.amount
         );
 
-        await prisma.orderItem.create({
+        const orderItem = await prisma.orderItem.create({
           data: {
             amount: book.amount,
             productId: response.id,
             orderId: order.id,
           },
         });
-      });
-
+      }
       // Resonse to client.
       response.statusCode = 201;
       response.setHeader("Content-Type", "application/json");
