@@ -3,10 +3,11 @@ const bcrypt = require("bcrypt");
 import { Prisma, PrismaClient } from "@prisma/client";
 import bosses from "../../../data/bosses.json";
 import quests from "../../../data/quests.json";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const prisma = new PrismaClient();
 
-export default async (request: VercelRequest, response: VercelResponse) => {
+export default async (request: NextApiRequest, response: NextApiResponse) => {
   try {
     if (request.method === "GET") {
       response.statusCode = 201;
