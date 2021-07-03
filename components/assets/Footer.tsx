@@ -49,20 +49,25 @@ const About = () => {
           </p>
         </div>
         <div className={styles.footerItem}>
-          <h1>Köpvillkor</h1>
+          <h1>KUNDSERVICE</h1>
           <p>
             <Link href="/gdpr">
-              <a>Privacy Policy</a>
+              <a>Kontakt</a>
             </Link>
           </p>
           <p>
             <Link href="/gdpr">
-              <a>Terms of Service</a>
+              <a>Köpvillkor</a>
             </Link>
           </p>
           <p>
             <Link href="/gdpr">
-              <a>Refund Policy</a>
+              <a>Behandling av personuppgifter</a>
+            </Link>
+          </p>
+          <p>
+            <Link href="/gdpr">
+              <a>Vanliga frågor & svar</a>
             </Link>
           </p>
         </div>

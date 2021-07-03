@@ -8,28 +8,22 @@ import GridItem from "../assets/GridItem";
 const Services = () => {
   return (
     <div className={styles.services}>
-      <H1 title="INFORMTION OM HEMSIDAN" />
+      <H1 title="INFORMATION" />
       <div className="flex">
         <GridItem
-          title="Information"
-          desc="Här kan du hitta information om mig och vem jag är."
+          title="Om mig"
+          desc="Här kan du läsa mer om mig och mina föreläsningar och böcker."
           btn="Klicka här"
           btnHref="/information"
         />
         <GridItem
           title="Kunder"
-          desc="Här kan du läsa om vilka kunder jag har föreläst för."
+          desc="Här kan du hitta ett urval av de kunder som har bokat en föreläsning med mig."
           btn="Klicka här"
           btnHref="/kunder"
         />
       </div>
       <div className="flex">
-        <GridItem
-          title="Shop"
-          desc="Intresserad av att köpa en av mina böcker? Klicka nedan."
-          btn="Klicka här"
-          btnHref="/shop"
-        />
         <GridItem
           title="Kontakt"
           desc="Kontakta mig genom att klicka på knappen nedan och fyll i formuläret."
