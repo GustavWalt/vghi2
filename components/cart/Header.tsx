@@ -4,6 +4,10 @@ import Image from "next/image";
 import { useSelector, RootStateOrAny } from "react-redux";
 import styles from "../../style/modules/cart/Header.module.scss";
 
+//Components
+import GridItem from "../assets/GridItem";
+import H1 from "../assets/H1";
+import Fade from "../assets/Fade";
 // Assigning type-safe for the form data.
 interface FormTypes {
   email: string;
@@ -45,7 +49,6 @@ const Header = () => {
   data.cart.items.map((item) => {
     cart.push(item);
   });
-  console.log("THIS GOES IN API", cart);
 
   // Function for checkout, runs when you submit the form.
   const checkout = async () => {
@@ -71,18 +74,9 @@ const Header = () => {
     console.log("API RESPONSE ", response);
   };
 
-  const itemTotal = useMemo(
-    () =>
-      data.cart.items.reduce(
-        (total, item) => (total += parseInt(item?.product?.price)),
-        0
-      ),
-    [data.cart]
-  );
-
   var finalCart = [
-    { name: "Nu går jag!", amount: 0, img: "/bok1.jpg" },
-    { name: "Våga fråga!", amount: 0, img: "/bok2.jpg" },
+    { name: "Nu går jag!", amount: 0, img: "/bok1.jpg", totalPrice: 0 },
+    { name: "Våga fråga!", amount: 0, img: "/bok2.jpg", totalPrice: 0 },
   ];
   data.cart.items.map((item) => {
     finalCart.map((book) => {
@@ -92,65 +86,86 @@ const Header = () => {
     });
   });
 
+  const itemTotal = useMemo(
+    () =>
+      data.cart.items.reduce(
+        (total, item) => (total += parseInt(item?.product?.price)),
+        0
+      ),
+    [data.cart]
+  );
+  finalCart[0].totalPrice = finalCart[0].amount * 149;
+  finalCart[1].totalPrice = finalCart[1].amount * 149;
   // Frontend
   return (
-    <div className={`flex ${styles.header}`}>
+    <div className={`${styles.header}`}>
       <div className={styles.cart}>
-        <h1>Cart</h1>
+        <H1 title="Steg 1 - Din Kundvagn" />
         {finalCart.map((item) => (
           <>
-            {console.log(item)}
-            {item.amount > 0 && (
-              <div className={`flexCol ${styles.cartItem}`}>
-                <p>{item.name}</p>
-                <Image
-                  width="350"
-                  height="200"
-                  src={item.img}
-                  alt="Shopping cart icon"
-                />
-                <p>149kr</p>
-                <p>Antal: {item.amount}</p>
-                {item.name == "Nu går jag!" && (
-                  <span>------------------------------------ </span>
-                )}
+            {item.amount > 0 ? (
+              <div className={`flex ${styles.bookItem}`}>
+                <Image src={item.img} alt="me" width="250" height="200" />
+                <div className={styles.bookData}>
+                  <h1>{item.name}</h1>
+                  <p>
+                    <i>Frida Walter</i>
+                  </p>
+                  <div className={`flex ${styles.price}`}>
+                    <span>Antal: {item.amount}</span>
+                    <span>{item.totalPrice}kr</span>
+                  </div>
+                </div>
+                <h2>
+                  <b>Att betala inkl moms: {itemTotal}kr</b>
+                </h2>
               </div>
+            ) : (
+              ""
             )}
           </>
         ))}
-        <h1>Total: {itemTotal}</h1>
+        <hr />
       </div>
+
       <div className={styles.payment}>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <p>Namn</p>
-            <input type="text" name="name" onChange={handleChange} />
-          </label>
-          <label>
-            <p>Email</p>
-            <input type="text" name="email" onChange={handleChange} />
-          </label>
-          <label>
-            <p>Telefonnummer</p>
-            <input type="text" name="phone" onChange={handleChange} />
-          </label>
-          <label>
-            <p>Adress</p>
-            <input type="text" name="address" onChange={handleChange} />
-          </label>
-          <label>
-            <p>Ort</p>
-            <input type="text" name="neighbourhood" onChange={handleChange} />
-          </label>
-          <label>
-            <p>Postnummer</p>
-            <input type="text" name="zip" onChange={handleChange} />
-          </label>
-          <br />
-          <button type="submit" onClick={() => checkout()}>
-            Checkout
-          </button>
-        </form>
+        <H1 title="Steg 2 - Kontaktuppgifter" />
+        <Fade>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <p>Fullständigt namn</p>
+              <input type="text" name="name" onChange={handleChange} />
+            </label>
+            <label>
+              <p>Email</p>
+              <input type="text" name="email" onChange={handleChange} />
+            </label>
+            <label>
+              <p>Telefonnummer</p>
+              <input type="text" name="phone" onChange={handleChange} />
+            </label>
+            <label>
+              <p>Adress</p>
+              <input type="text" name="address" onChange={handleChange} />
+            </label>
+            <label>
+              <p>Ort</p>
+              <input type="text" name="neighbourhood" onChange={handleChange} />
+            </label>
+            <label>
+              <p>Postnummer</p>
+              <input type="text" name="zip" onChange={handleChange} />
+            </label>
+            <br />
+            <button
+              className={styles.checkoutBtn}
+              type="submit"
+              onClick={() => checkout()}
+            >
+              Köp nu
+            </button>
+          </form>
+        </Fade>
       </div>
     </div>
   );

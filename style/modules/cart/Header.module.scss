@@ -1,35 +1,68 @@
 .header {
-  margin: 1rem 0rem;
-  text-align: center;
-
-  h1 {
-    font-size: 50px;
-  }
+  margin: 2rem 0rem;
 
   .cart {
-    background-color: rgb(200, 200, 200);
-    padding: 0.5rem;
-    margin: 0px 3rem;
+    text-align: center;
+    .bookItem {
+      margin: 2rem 2rem;
+      background-color: rgb(219, 219, 219);
+      border: solid 1px black;
+      padding-bottom: 1rem;
+      .bookData {
+        text-align: center;
 
-    .cartItem {
-      margin: 1rem 0;
+        .price {
+          span:nth-child(1) {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+    h2 {
+      text-align: center;
+    }
+    hr {
+      margin: 3rem auto;
     }
   }
 
   .payment {
-    background-color: green;
-    margin: 0px 3rem;
-    padding: 0.5rem;
-    button {
-      border: none;
-      font-size: 30px;
-      padding: 1rem;
-      transition: ease-in-out 0.2s;
-      background-color: rgb(255, 255, 146);
-    }
-    button:hover {
-      cursor: pointer;
-      background-color: yellow;
+    display: block;
+    text-align: center;
+
+    form {
+      margin: 2rem 0rem;
+      display: inline-block;
+      text-align: left;
+
+      label {
+        input {
+          border: solid 1px rgb(141, 141, 141);
+          border-radius: 5px;
+          font-size: 18px;
+          padding: 10px;
+          margin-bottom: 0.8rem;
+          font-weight: bold;
+        }
+      }
+      .checkoutBtn {
+        cursor: pointer;
+        background-color: white; /* Green */
+        border: none;
+        color: rgb(0, 0, 0);
+        border: solid 1px black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        transition: ease-in 0.3s;
+        &:hover {
+          border: solid 1px white;
+          color: white;
+          background-color: #4caf50;
+        }
+      }
     }
   }
 }
