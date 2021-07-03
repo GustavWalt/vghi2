@@ -31,7 +31,7 @@ interface FormTypes {
 }
 
 //Yup
-const SignupSchema = Yup.object().shape({
+const schema = Yup.object().shape({
   name: Yup.string()
     .max(100, "För lång text.")
     .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
@@ -222,7 +222,7 @@ const Header = () => {
               zip: "",
               neighbourhood: "",
             }}
-            validationSchema={SignupSchema}
+            validationSchema={schema}
             onSubmit={(values) => {
               checkout(values);
               console.log(values);
