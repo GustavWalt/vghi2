@@ -83,6 +83,12 @@
         }
         .bookData {
           .price {
+            .plusMinus {
+              cursor: pointer;
+              border: solid 1px black;
+              padding: 0px 1rem;
+              margin: 0rem 1rem;
+            }
             justify-content: space-between !important;
             span:nth-child(1) {
             }

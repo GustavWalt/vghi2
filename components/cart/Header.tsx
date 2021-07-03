@@ -1,8 +1,10 @@
 import React, { useReducer, useMemo } from "react";
 import axios from "axios";
 import Image from "next/image";
-import { useSelector, RootStateOrAny } from "react-redux";
+import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
+import { removeFromCart, addToCart } from "../../redux/cart";
 import styles from "../../style/modules/cart/Header.module.scss";
+import { ToastProvider, useToasts } from "react-toast-notifications";
 
 //Components
 import GridItem from "../assets/GridItem";
@@ -29,6 +31,10 @@ const formReducer = (state, event) => {
 const Header = () => {
   // useReducer hook to set/get formData.
   const [formData, setFormData] = useReducer(formReducer, {});
+
+  const { addToast } = useToasts();
+
+  const dispatch = useDispatch();
 
   // Runs when you submit the form.
   const handleSubmit = (event) => {
@@ -105,7 +111,10 @@ const Header = () => {
           {finalCart.map((item) => (
             <>
               {item.amount > 0 ? (
-                <div className={`flexCol ${styles.bookItem}`}>
+                <div
+                  className={`flexCol ${styles.bookItem}`}
+                  key={Date.now().toString()}
+                >
                   <Image src={item.img} alt="me" width="350" height="200" />
                   <div className={styles.bookData}>
                     <h1>{item.name}</h1>
@@ -114,7 +123,43 @@ const Header = () => {
                     </p>
                     <hr />
                     <div className={` ${styles.price}`}>
+                      <span
+                        className={styles.plusMinus}
+                        onClick={() => {
+                          dispatch(removeFromCart(item.name));
+                          const notification = () => {
+                            addToast(
+                              item.name + "  är nu borttagen i kundvagnen.",
+                              {
+                                appearance: "error",
+                                autoDismiss: true,
+                              }
+                            );
+                          };
+                          notification();
+                        }}
+                      >
+                        -
+                      </span>
                       <span>Antal:{item.amount}</span>
+                      <span
+                        className={styles.plusMinus}
+                        onClick={() => {
+                          dispatch(addToCart({ name: item.name, price: 149 }));
+                          const notification = () => {
+                            addToast(
+                              item.name + "  är nu tillagd i kundvagnen.",
+                              {
+                                appearance: "success",
+                                autoDismiss: true,
+                              }
+                            );
+                          };
+                          notification();
+                        }}
+                      >
+                        +
+                      </span>
                       <br />
                       <span>{item.totalPrice}kr</span>
                     </div>
@@ -131,7 +176,6 @@ const Header = () => {
         </h2>
         <hr />
       </div>
-
       <div className={styles.payment}>
         <H1 title="Steg 2 - Leveransuppgifter" />
         <Fade>

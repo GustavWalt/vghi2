@@ -23,7 +23,18 @@ export const counterSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    removeFromCart: (state, amount) => {},
+    removeFromCart: (state, action) => {
+      const productToRemove = action.payload;
+      console.log(current(state.items));
+      let deletedOne = false;
+      state.items = state.items.filter((item) => {
+        if (!deletedOne && item.product.name === productToRemove) {
+          deletedOne = true;
+          return false;
+        }
+        return true;
+      });
+    },
     addToCart: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
       state.items.push({
