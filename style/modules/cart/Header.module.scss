@@ -37,21 +37,29 @@
     display: block;
     text-align: center;
 
-    form {
-      margin: 2rem 0rem;
-      display: inline-block;
-      text-align: left;
+    .form {
+      display: flex;
+      flex-direction: column;
+      max-width: 30%;
+      margin: 0 auto;
 
-      label {
-        input {
-          border: solid 1px rgb(141, 141, 141);
-          border-radius: 5px;
-          font-size: 18px;
-          padding: 10px;
-          margin-bottom: 0.8rem;
-          font-weight: bold;
-        }
+      .error {
+        color: red;
       }
+
+      .input {
+        border: solid 1px rgb(141, 141, 141);
+        border-radius: 5px;
+        font-size: 18px;
+        padding: 10px;
+        margin-bottom: 0.8rem;
+        font-weight: bold;
+      }
+
+      .inputError {
+        border: solid 3px red;
+      }
+
       .checkoutBtn {
         cursor: pointer;
         background-color: white; /* Green */

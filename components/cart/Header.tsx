@@ -1,15 +1,25 @@
+//React/Next/Styling stuff
 import React, { useReducer, useMemo } from "react";
-import axios from "axios";
 import Image from "next/image";
+import styles from "../../style/modules/cart/Header.module.scss";
+
+//API packages
+import axios from "axios";
+
+//Redux
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
 import { removeFromCart, addToCart } from "../../redux/cart";
-import styles from "../../style/modules/cart/Header.module.scss";
-import { ToastProvider, useToasts } from "react-toast-notifications";
+
+//External packages (form/notifications)
+import { useToasts } from "react-toast-notifications";
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 
 //Components
 import GridItem from "../assets/GridItem";
 import H1 from "../assets/H1";
 import Fade from "../assets/Fade";
+//---------------------------------------------------------
 // Assigning type-safe for the form data.
 interface FormTypes {
   email: string;
@@ -19,6 +29,38 @@ interface FormTypes {
   neighbourhood: String;
   zip: Number;
 }
+
+//Yup
+const SignupSchema = Yup.object().shape({
+  name: Yup.string()
+    .max(100, "För lång text.")
+    .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
+    .required("Vänligen fyll i ett fullständigt namn."),
+
+  email: Yup.string()
+    .max(100, "För lång text.")
+    .email("Felaktig email.")
+    .required("Vänligen fyll i en korrekt email."),
+
+  phone: Yup.string()
+    .max(100, "För lång text.")
+    .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
+    .required("Vänligen fyll i ett korrekt telefonnummer."),
+
+  address: Yup.string()
+    .max(100, "För lång text.")
+    .required("Vänligen fyll i en korrekt adress."),
+
+  zip: Yup.string()
+    .max(5, "För många siffror.")
+    .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
+    .required("Vänligen fyll i ett korrekt postnummer."),
+
+  neighbourhood: Yup.string()
+    .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
+    .max(100, "För lång text.")
+    .required("Vänligen fyll i en korrekt ort."),
+});
 
 // Handles the state.
 const formReducer = (state, event) => {
@@ -57,23 +99,15 @@ const Header = () => {
   });
 
   // Function for checkout, runs when you submit the form.
-  const checkout = async () => {
-    // Creating an apiData object with correct types.
-    const apiData: Partial<FormTypes> = {};
-
-    // Looping through formData and assigning the values to apiData object.
-    Object.entries(formData).map(([name, value]) =>
-      Object.assign(apiData, { [name]: value })
-    );
-
+  const checkout = async (props) => {
     // Making API request to /api/questing to post the order.
     const response = await axios.post("/api/checkout", {
-      email: apiData.email,
-      name: apiData.name,
-      phone: apiData.phone,
-      address: apiData.address,
-      neighbourhood: apiData.neighbourhood,
-      zip: apiData.zip,
+      email: props.email,
+      name: props.name,
+      phone: props.phone,
+      address: props.address,
+      neighbourhood: props.neighbourhood,
+      zip: props.zip,
       order: finalCart,
     });
     // Logging response
@@ -179,40 +213,98 @@ const Header = () => {
       <div className={styles.payment}>
         <H1 title="Steg 2 - Leveransuppgifter" />
         <Fade>
-          <form onSubmit={handleSubmit}>
-            <label>
-              <p>Fullständigt namn</p>
-              <input type="text" name="name" onChange={handleChange} />
-            </label>
-            <label>
-              <p>Email</p>
-              <input type="text" name="email" onChange={handleChange} />
-            </label>
-            <label>
-              <p>Telefonnummer</p>
-              <input type="text" name="phone" onChange={handleChange} />
-            </label>
-            <label>
-              <p>Adress</p>
-              <input type="text" name="address" onChange={handleChange} />
-            </label>
-            <label>
-              <p>Postnummer</p>
-              <input type="text" name="zip" onChange={handleChange} />
-            </label>
-            <label>
-              <p>Ort</p>
-              <input type="text" name="neighbourhood" onChange={handleChange} />
-            </label>
-            <br />
-            <button
-              className={styles.checkoutBtn}
-              type="submit"
-              onClick={() => checkout()}
-            >
-              Köp nu
-            </button>
-          </form>
+          <Formik
+            initialValues={{
+              name: "",
+              email: "",
+              phone: "",
+              address: "",
+              zip: "",
+              neighbourhood: "",
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={(values) => {
+              checkout(values);
+              console.log(values);
+            }}
+          >
+            {({ errors, touched }) => (
+              <Form className={styles.form}>
+                <label htmlFor="name">Fullständigt namn</label>
+                <Field
+                  className={`${styles.input} ${
+                    errors.name && touched.name ? styles.inputError : ""
+                  }`}
+                  name="name"
+                  placeholder="Förnamn Efternamn"
+                />
+                {errors.name && touched.name ? (
+                  <div className={styles.error}>{errors.name}</div>
+                ) : null}
+                <label htmlFor="email">Email</label>
+                <Field
+                  className={`${styles.input} ${
+                    errors.email && touched.email ? styles.inputError : ""
+                  }`}
+                  name="email"
+                  type="email"
+                  placeholder="Exempel@gmail.com"
+                />
+                {errors.email && touched.email ? (
+                  <div className={styles.error}>{errors.email}</div>
+                ) : null}
+                <label htmlFor="phone">Telefonnummer</label>
+                <Field
+                  className={`${styles.input} ${
+                    errors.phone && touched.phone ? styles.inputError : ""
+                  }`}
+                  name="phone"
+                  placeholder="07X-XXX XX XX"
+                />
+                {errors.phone && touched.phone ? (
+                  <div className={styles.error}>{errors.phone}</div>
+                ) : null}
+                <label htmlFor="address">Adress</label>
+                <Field
+                  className={`${styles.input} ${
+                    errors.address && touched.address ? styles.inputError : ""
+                  }`}
+                  name="address"
+                  placeholder="Gatan 87"
+                />
+                {errors.address && touched.address ? (
+                  <div className={styles.error}>{errors.address}</div>
+                ) : null}
+                <label htmlFor="zip">Postnummer</label>
+                <Field
+                  className={`${styles.input} ${
+                    errors.zip && touched.zip ? styles.inputError : ""
+                  }`}
+                  name="zip"
+                  placeholder="XXXXX"
+                />
+                {errors.zip && touched.zip ? (
+                  <div className={styles.error}>{errors.zip}</div>
+                ) : null}
+                <label htmlFor="neighbourhood">Ort</label>
+                <Field
+                  className={`${styles.input} ${
+                    errors.neighbourhood && touched.neighbourhood
+                      ? styles.inputError
+                      : ""
+                  }`}
+                  name="neighbourhood"
+                  placeholder="Ort"
+                />
+                {errors.neighbourhood && touched.neighbourhood ? (
+                  <div className={styles.error}>{errors.neighbourhood}</div>
+                ) : null}
+                <button className={styles.checkoutBtn} type="submit">
+                  Submit
+                </button>
+              </Form>
+            )}
+          </Formik>
         </Fade>
       </div>
     </div>
