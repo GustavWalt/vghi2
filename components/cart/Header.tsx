@@ -77,7 +77,7 @@ const Header = () => {
       order: finalCart,
     });
     // Logging response
-    console.log("API RESPONSE ", response);
+    console.log("API RESPONSE ", response.status);
   };
 
   var finalCart = [

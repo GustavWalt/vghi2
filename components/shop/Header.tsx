@@ -17,14 +17,18 @@ const Header = () => {
           <Image src="/bok1.jpg" alt="me" width="350" height="200" />
           <p className={styles.author}>Frida Walter</p>
           <p>Pris: 149kr + frakt</p>
-          <Order name={"Nu går jag!"} price={"149"} />
+          <div className={styles.order}>
+            <Order name={"Nu går jag!"} price={"149"} />
+          </div>
         </GridItem>
         <div>
           <GridItem title="Våga fråga!">
             <Image src="/bok2.jpg" alt="me" width="350" height="200" />
             <p className={styles.author}>Frida Walter</p>
             <p>Pris: 149kr + frakt</p>
-            <Order name={"Våga fråga!"} price={"149"} />
+            <div className={styles.order}>
+              <Order name={"Våga fråga!"} price={"149"} />
+            </div>
           </GridItem>
         </div>
       </div>
