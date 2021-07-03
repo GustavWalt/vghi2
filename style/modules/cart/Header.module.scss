@@ -4,14 +4,20 @@
   .cart {
     text-align: center;
     .bookItem {
-      margin: 2rem 2rem;
+      margin: 2rem auto;
       background-color: rgb(219, 219, 219);
       border: solid 1px black;
       padding-bottom: 1rem;
+      width: 350px;
       .bookData {
         text-align: center;
 
+        hr {
+          margin: 1rem;
+        }
         .price {
+          margin-top: 2rem;
+          font-weight: bold;
           span:nth-child(1) {
             margin-top: 1rem;
           }
@@ -19,6 +25,7 @@
       }
     }
     h2 {
+      font-size: 40px;
       text-align: center;
     }
     hr {
@@ -61,6 +68,42 @@
           border: solid 1px white;
           color: white;
           background-color: #4caf50;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1310px) {
+  .header {
+    .cart {
+      .bookItem {
+        justify-content: space-around;
+        span {
+          align-self: flex-end;
+        }
+        .bookData {
+          .price {
+            justify-content: space-between !important;
+            span:nth-child(1) {
+            }
+          }
+        }
+      }
+      h2 {
+      }
+      hr {
+      }
+    }
+
+    .payment {
+      form {
+        label {
+          input {
+          }
+        }
+        .checkoutBtn {
+          &:hover {
+          }
         }
       }
     }

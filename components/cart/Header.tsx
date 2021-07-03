@@ -104,32 +104,34 @@ const Header = () => {
         {finalCart.map((item) => (
           <>
             {item.amount > 0 ? (
-              <div className={`flex ${styles.bookItem}`}>
-                <Image src={item.img} alt="me" width="250" height="200" />
+              <div className={`flexCol ${styles.bookItem}`}>
+                <Image src={item.img} alt="me" width="350" height="200" />
                 <div className={styles.bookData}>
                   <h1>{item.name}</h1>
                   <p>
                     <i>Frida Walter</i>
                   </p>
-                  <div className={`flex ${styles.price}`}>
-                    <span>Antal: {item.amount}</span>
+                  <hr />
+                  <div className={` ${styles.price}`}>
+                    <span>Antal:{item.amount}</span>
+                    <br />
                     <span>{item.totalPrice}kr</span>
                   </div>
                 </div>
-                <h2>
-                  <b>Att betala inkl moms: {itemTotal}kr</b>
-                </h2>
               </div>
             ) : (
               ""
             )}
           </>
         ))}
+        <h2>
+          <b>Att betala inkl moms: {itemTotal}kr</b>
+        </h2>
         <hr />
       </div>
 
       <div className={styles.payment}>
-        <H1 title="Steg 2 - Kontaktuppgifter" />
+        <H1 title="Steg 2 - Leveransuppgifter" />
         <Fade>
           <form onSubmit={handleSubmit}>
             <label>
@@ -149,12 +151,12 @@ const Header = () => {
               <input type="text" name="address" onChange={handleChange} />
             </label>
             <label>
-              <p>Ort</p>
-              <input type="text" name="neighbourhood" onChange={handleChange} />
-            </label>
-            <label>
               <p>Postnummer</p>
               <input type="text" name="zip" onChange={handleChange} />
+            </label>
+            <label>
+              <p>Ort</p>
+              <input type="text" name="neighbourhood" onChange={handleChange} />
             </label>
             <br />
             <button
