@@ -28,6 +28,12 @@ const Header = () => {
           </GridItem>
         </div>
       </div>
+      <p>
+        För bokning av föreläsning,{" "}
+        <a href="mailto:varforgarhoninte@outlook.com">mejla</a> eller kontakta
+        via <Link href="/kontakt">kontaktformuläret</Link> så gör vi tillsammans
+        ett upplägg som passar just er verksamhet bäst.
+      </p>
     </div>
   );
 };

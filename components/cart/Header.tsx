@@ -101,29 +101,31 @@ const Header = () => {
     <div className={`${styles.header}`}>
       <div className={styles.cart}>
         <H1 title="Steg 1 - Din Kundvagn" />
-        {finalCart.map((item) => (
-          <>
-            {item.amount > 0 ? (
-              <div className={`flexCol ${styles.bookItem}`}>
-                <Image src={item.img} alt="me" width="350" height="200" />
-                <div className={styles.bookData}>
-                  <h1>{item.name}</h1>
-                  <p>
-                    <i>Frida Walter</i>
-                  </p>
-                  <hr />
-                  <div className={` ${styles.price}`}>
-                    <span>Antal:{item.amount}</span>
-                    <br />
-                    <span>{item.totalPrice}kr</span>
+        <div className="flex">
+          {finalCart.map((item) => (
+            <>
+              {item.amount > 0 ? (
+                <div className={`flexCol ${styles.bookItem}`}>
+                  <Image src={item.img} alt="me" width="350" height="200" />
+                  <div className={styles.bookData}>
+                    <h1>{item.name}</h1>
+                    <p>
+                      <i>Frida Walter</i>
+                    </p>
+                    <hr />
+                    <div className={` ${styles.price}`}>
+                      <span>Antal:{item.amount}</span>
+                      <br />
+                      <span>{item.totalPrice}kr</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              ""
-            )}
-          </>
-        ))}
+              ) : (
+                ""
+              )}
+            </>
+          ))}
+        </div>
         <h2>
           <b>Att betala inkl moms: {itemTotal}kr</b>
         </h2>
