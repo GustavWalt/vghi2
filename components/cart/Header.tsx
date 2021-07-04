@@ -300,7 +300,8 @@ const Header = () => {
                 neighbourhood: "",
               }}
               validationSchema={schema}
-              onSubmit={(values) => {
+              onSubmit={(values, { resetForm }) => {
+                resetForm();
                 setModalData(values);
                 checkout(values);
               }}
