@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 import { Prisma, PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import * as Yup from "yup";
+import { userInfo } from "os";
 
 const prisma = new PrismaClient();
 
@@ -51,48 +52,103 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
       const isValid = await schema.isValid(bodyData);
       if (isValid === true) {
-        // Creating the user
-        const user = await prisma.user.create({
-          data: {
-            name: bodyData.name,
-            phone: parseInt(bodyData.phone),
-            address: bodyData.address,
-            neighbourhood: bodyData.neighbourhood,
-            zip: parseInt(bodyData.zip),
+        // See if you find a user with the provided email
+        const dupe = await prisma.user.findUnique({
+          where: {
             email: bodyData.email,
           },
         });
 
-        // Creating the order with the userId
-        const order = await prisma.order.create({
-          data: {
-            userId: user.id,
-          },
-        });
-
-        // Getting the orders into an array with the names
-        const orders: string[] = [];
-        bodyData.order.map((book) => {
-          orders.push(book.name);
-        });
-
-        // SQL query to get the ID's from the product table in DB.
-        for (const book of bodyData.order) {
-          const response = await prisma.product.findUnique({
-            where: {
-              name: book.name,
+        if (dupe === null) {
+          // Creating the user
+          var user = await prisma.user.create({
+            data: {
+              name: bodyData.name,
+              phone: parseInt(bodyData.phone),
+              address: bodyData.address,
+              neighbourhood: bodyData.neighbourhood,
+              zip: parseInt(bodyData.zip),
+              email: bodyData.email,
             },
           });
 
-          // Creating an orderItem in the table with correct data.
-          if (book.amount > 0) {
-            const orderItem = await prisma.orderItem.create({
-              data: {
-                amount: book.amount,
-                productId: response.id,
-                orderId: order.id,
+          // Creating the order with the userId
+          const order = await prisma.order.create({
+            data: {
+              userId: user.id,
+            },
+          });
+
+          // Getting the orders into an array with the names
+          const orders: string[] = [];
+          bodyData.order.map((book) => {
+            orders.push(book.name);
+          });
+
+          // SQL query to get the ID's from the product table in DB.
+          for (const book of bodyData.order) {
+            const response = await prisma.product.findUnique({
+              where: {
+                name: book.name,
               },
             });
+
+            // Creating an orderItem in the table with correct data.
+            if (book.amount > 0) {
+              const orderItem = await prisma.orderItem.create({
+                data: {
+                  amount: book.amount,
+                  productId: response.id,
+                  orderId: order.id,
+                },
+              });
+            }
+          }
+        } else {
+          // Update the user and create a new order
+          const user = await prisma.user.update({
+            where: {
+              email: bodyData.email,
+            },
+            data: {
+              orders: {
+                create: {},
+              },
+            },
+          });
+
+          // Find all the users orders
+          const orders = await prisma.order.findMany({
+            where: {
+              userId: user.id,
+            },
+          });
+
+          // Find the latest order
+          var latestOrderArr = [];
+          for (const order of orders) {
+            latestOrderArr.push(order.id);
+          }
+          const latestOrder = Math.max(...latestOrderArr);
+
+          // Creating OrderItems
+          for (const book of bodyData.order) {
+            const response = await prisma.product.findUnique({
+              where: {
+                name: book.name,
+              },
+            });
+
+            // Creating an orderItem in the table with correct data.
+            if (book.amount > 0) {
+              const orderItem = await prisma.orderItem.create({
+                data: {
+                  amount: book.amount,
+                  productId: response.id,
+                  orderId: latestOrder,
+                },
+              });
+            }
           }
         }
       }

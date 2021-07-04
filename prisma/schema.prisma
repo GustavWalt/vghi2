@@ -17,7 +17,7 @@ model User {
   address  String
   neighbourhood String
   zip      Int
-  email    String
+  email    String @unique
   orders   Order[]
 }
 
@@ -40,7 +40,7 @@ model OrderItem {
 
 model Order {
   id        Int         @id @default(autoincrement())
-  userId    Int
+  userId    Int 
   user      User        @relation(fields: [userId], references: [id])
   OrderItem OrderItem[]
 }
