@@ -29,10 +29,10 @@ import Fade from "../assets/Fade";
 interface FormTypes {
   email: string;
   name: String;
-  phone: Number;
+  phone: String;
   address: String;
   neighbourhood: String;
-  zip: Number;
+  zip: String;
 }
 
 //Yup
@@ -87,7 +87,14 @@ const Header = () => {
   const onOpenModal = () => setOpenModal(true);
   const onCloseModal = () => setOpenModal(false);
 
-  const [modalData, setModalData] = useState({});
+  const [modalData, setModalData] = useState<FormTypes>({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    zip: "",
+    neighbourhood: "",
+  });
 
   // useReducer hook to set/get formData.
   const [formData, setFormData] = useReducer(formReducer, {});
@@ -184,7 +191,6 @@ const Header = () => {
       )}
 
       <Modal open={openModal} onClose={onCloseModal} center>
-        {console.log(modalData)}
         <h2>Tack för ditt köp {modalData.name}!</h2>
         <p>Fraktsätt: Postpaket</p>
         <p>Betalning: Faktura</p>
