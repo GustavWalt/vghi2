@@ -94,6 +94,7 @@ const Header = () => {
       </Modal>
 
       <div className={`${styles.header}`}>
+        <H1 title="KONTAKT" />
         <div className={styles.payment}>
           <Fade>
             <Formik

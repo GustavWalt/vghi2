@@ -8,7 +8,7 @@ import Fade from "../assets/Fade";
 const About = () => {
   return (
     <div className={styles.about}>
-      <H1 title="Om mig" />
+      <H1 title="OM MIG" />
       <Fade>
         <p>
           Jag är utbildad forensisk undersköterska samt jourkvinna med gedigen
