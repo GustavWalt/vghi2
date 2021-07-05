@@ -18,7 +18,6 @@ const shop = (props) => {
         <title>Blog | RSBoosts | Cheap & Reliable OSRS Services</title>
         <Meta />
       </Head>
-      <TopBtn />
       <Fade>
         <Navbar />
         <Header />

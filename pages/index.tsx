@@ -25,7 +25,6 @@ const homePage = (props) => {
         <title>Home | RSBoosts | Cheap & Reliable OSRS Services</title>
         <Meta />
       </Head>
-      <TopBtn />
       <Fade>
         <Navbar />
         <Header />

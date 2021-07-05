@@ -18,7 +18,6 @@ const cart = (props) => {
         <title>Bossing | RSBoosts | Cheap & Reliable OSRS Services</title>
         <Meta />
       </Head>
-      <TopBtn />
       <Fade>
         <Navbar />
         <Header />

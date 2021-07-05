@@ -90,7 +90,9 @@ const Header = () => {
         <p>Namn: {modalData.name}</p>
         <p>Ämne: {modalData.subject}</p>
         <p>Beskrivning: {modalData.description}</p>
-        <button onClick={onCloseModal}>Stäng</button>
+        <button className={styles.checkoutBtn} onClick={onCloseModal}>
+          Stäng
+        </button>
       </Modal>
 
       <div className={`${styles.header}`}>
