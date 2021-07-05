@@ -1,6 +1,7 @@
 //React/Next/Styling stuff
 import React, { useReducer, useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../../style/modules/cart/Header.module.scss";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "react-responsive-modal/styles.css";
@@ -205,7 +206,9 @@ const Header = () => {
       <Modal open={failedCheckout} onClose={onCloseFailedCheckout} center>
         <h1 style={{ color: "red" }}>Hej {modalData.name}!</h1>
         <h4 style={{ color: "red" }}>Din varukorg är tom.</h4>
-        <button onClick={onCloseFailedCheckout}>Stäng</button>
+        <Link href="/shop">
+          <button className={styles.checkoutBtn}>Gå till shop</button>
+        </Link>
       </Modal>
 
       <Modal open={successCheckout} onClose={onCloseSuccessCheckout} center>
@@ -234,7 +237,9 @@ const Header = () => {
         <p>
           Vid några funderingar tveka inte att kontakta mig på vghi@gmail.com
         </p>
-        <button onClick={onCloseSuccessCheckout}>Stäng</button>
+        <button className={styles.checkoutBtn} onClick={onCloseSuccessCheckout}>
+          STÄNG
+        </button>
       </Modal>
 
       <div className={`${styles.header}`}>
@@ -308,7 +313,13 @@ const Header = () => {
           </div>
           <h2 style={{ marginTop: "20px" }}>
             {itemTotal === 0 ? (
-              <b>Kundvagnen är tom</b>
+              <>
+                <b>Kundvagnen är tom</b>
+                <br />
+                <Link href="/shop">
+                  <button className={styles.checkoutBtn}>Gå till shop</button>
+                </Link>
+              </>
             ) : (
               <b>Att betala inkl moms: {itemTotal}kr</b>
             )}
