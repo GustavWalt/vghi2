@@ -15,7 +15,7 @@ const Header = () => {
         <H1 title="INFORMATION" />
         <Section
           title="Om mig"
-          paragraph="Jag är utbildad forensisk undersköterska samt jourkvinna med
+          paragraph="Mitt namn är Frida Walter. Jag är utbildad forensisk undersköterska samt jourkvinna med
             gedigen spetskunskap om våld i nära relationer. Med kunskap i tid
             minimeras risken för att falla offer för sina egna känslor och det
             möjliggör för en förändring. Jag arbetar för att stötta utsatta

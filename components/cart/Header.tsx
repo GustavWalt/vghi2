@@ -82,13 +82,16 @@ var dateRightNow = rightNow.toISOString().slice(0, 10).replace(/-/g, "/");
 const Header = () => {
   //States
   const [checkingOut, setCheckingOut] = useState(false);
+  const [failedCheckout, setFailedCheckout] = useState(false);
+  const [successCheckout, setSuccessCheckout] = useState(false);
 
-  const [openModal, setOpenModal] = useState(false);
-  const onOpenModal = () => setOpenModal(true);
-  const onCloseModal = () => {
-    setOpenModal(false);
+  const onCloseSuccessCheckout = () => {
+    setSuccessCheckout(false);
     //Remove items from Redux
     dispatch(clearCart());
+  };
+  const onCloseFailedCheckout = () => {
+    setFailedCheckout(false);
   };
 
   const [modalData, setModalData] = useState<FormTypes>({
@@ -129,31 +132,36 @@ const Header = () => {
 
   // Function for checkout, runs when you submit the form.
   const checkout = async (props) => {
-    // Display spinner
-    setCheckingOut(true);
-    document.body.classList.toggle("overflow-hidden");
-
-    // Making API request to /api/questing to post the order.
-    const response = await axios.post("/api/checkout", {
-      email: props.email,
-      name: props.name,
-      phone: props.phone,
-      address: props.address,
-      neighbourhood: props.neighbourhood,
-      zip: props.zip,
-      order: finalCart,
-    });
-
-    //Remove spinner
-    setCheckingOut(false);
-    document.body.classList.toggle("overflow-hidden");
-
-    // Logging response
-    if (response.status === 201) {
-      //Visa att köpet gick igenom
-      setOpenModal(true);
+    if (finalCart[0].amount === 0 || finalCart[1].amount === 0) {
+      console.log("Din varukorg är tom. Vänligen lägg till produkter.");
+      setFailedCheckout(true);
     } else {
-      setOpenModal(false);
+      // Display spinner
+      setCheckingOut(true);
+      document.body.classList.toggle("overflow-hidden");
+
+      // Making API request to /api/questing to post the order.
+      const response = await axios.post("/api/checkout", {
+        email: props.email,
+        name: props.name,
+        phone: props.phone,
+        address: props.address,
+        neighbourhood: props.neighbourhood,
+        zip: props.zip,
+        order: finalCart,
+      });
+
+      //Remove spinner
+      setCheckingOut(false);
+      document.body.classList.toggle("overflow-hidden");
+
+      // Logging response
+      if (response.status === 201) {
+        //Visa att köpet gick igenom
+        setSuccessCheckout(true);
+      } else {
+        setFailedCheckout(true);
+      }
     }
   };
 
@@ -194,7 +202,13 @@ const Header = () => {
         </div>
       )}
 
-      <Modal open={openModal} onClose={onCloseModal} center>
+      <Modal open={failedCheckout} onClose={onCloseFailedCheckout} center>
+        <h1 style={{ color: "red" }}>Hej {modalData.name}!</h1>
+        <h4 style={{ color: "red" }}>Din varukorg är tom.</h4>
+        <button onClick={onCloseFailedCheckout}>Stäng</button>
+      </Modal>
+
+      <Modal open={successCheckout} onClose={onCloseSuccessCheckout} center>
         <h2>Tack för ditt köp {modalData.name}!</h2>
         <p>Fraktsätt: Postpaket</p>
         <p>Betalning: Faktura</p>
@@ -220,7 +234,7 @@ const Header = () => {
         <p>
           Vid några funderingar tveka inte att kontakta mig på vghi@gmail.com
         </p>
-        <button onClick={onCloseModal}>Stäng</button>
+        <button onClick={onCloseSuccessCheckout}>Stäng</button>
       </Modal>
 
       <div className={`${styles.header}`}>
