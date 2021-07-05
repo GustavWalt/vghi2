@@ -31,20 +31,20 @@ const schema = Yup.object().shape({
   name: Yup.string()
     .max(100, "För lång text.")
     .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
-    .required("Vänligen fyll i ett fullständigt namn."),
+    .required("Vänligen fyll i ditt fullständiga namn."),
 
   email: Yup.string()
     .max(100, "För lång text.")
     .email("Felaktig email.")
-    .required("Vänligen fyll i en korrekt email."),
+    .required("Vänligen fyll i korrekt email."),
 
   subject: Yup.string()
     .max(100, "För lång text.")
-    .required("Vänligen fyll i en titel."),
+    .required("Vänligen fyll i ämne."),
 
   description: Yup.string()
     .max(500, "För lång text.")
-    .required("Vänligen fyll i en beskrivning."),
+    .required("Beskriv ditt ärende."),
 });
 
 // Get current date
@@ -142,7 +142,7 @@ const Header = () => {
                       errors.subject && touched.subject ? styles.inputError : ""
                     }`}
                     name="subject"
-                    placeholder="Beskriv vilket ämne detta handlar om ..."
+                    placeholder="Ämne"
                   />
                   {errors.subject && touched.subject ? (
                     <div className={styles.error}>{errors.subject}</div>
@@ -157,14 +157,14 @@ const Header = () => {
                         : ""
                     }`}
                     name="description"
-                    placeholder="Beskrivning om vad som du behöver hjälp med ..."
+                    placeholder="Beskriv ditt ärende."
                   />
                   {errors.description && touched.description ? (
                     <div className={styles.error}>{errors.description}</div>
                   ) : null}
 
                   <button className={styles.checkoutBtn} type="submit">
-                    Köp
+                    Skicka
                   </button>
                 </Form>
               )}

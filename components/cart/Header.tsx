@@ -40,31 +40,31 @@ const schema = Yup.object().shape({
   name: Yup.string()
     .max(100, "För lång text.")
     .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
-    .required("Vänligen fyll i ett fullständigt namn."),
+    .required("Vänligen fyll i ditt fullständiga namn."),
 
   email: Yup.string()
     .max(100, "För lång text.")
     .email("Felaktig email.")
-    .required("Vänligen fyll i en korrekt email."),
+    .required("Vänligen fyll i korrekt email."),
 
   phone: Yup.string()
     .max(100, "För lång text.")
     .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
-    .required("Vänligen fyll i ett korrekt telefonnummer."),
+    .required("Vänligen fyll i ditt telefonnummer."),
 
   address: Yup.string()
     .max(100, "För lång text.")
-    .required("Vänligen fyll i en korrekt adress."),
+    .required("Vänligen fyll i din adress."),
 
   zip: Yup.string()
     .max(5, "För många siffror.")
     .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
-    .required("Vänligen fyll i ett korrekt postnummer."),
+    .required("Vänligen fyll i ditt postnummer."),
 
   neighbourhood: Yup.string()
     .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
     .max(100, "För lång text.")
-    .required("Vänligen fyll i en korrekt ort."),
+    .required("Vänligen fyll i din ort."),
 });
 
 // Handles the state.
