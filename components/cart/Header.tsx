@@ -388,7 +388,7 @@ const Header = () => {
                     <div className={styles.error}>{errors.neighbourhood}</div>
                   ) : null}
                   <button className={styles.checkoutBtn} type="submit">
-                    Submit
+                    Köp
                   </button>
                 </Form>
               )}

@@ -1,6 +1,8 @@
+@import "../../utils/variables";
 .cart {
   display: flex;
   border-radius: 200px;
+  background-color: $black;
   .cartText {
     color: white;
     margin-left: 0.5rem;
@@ -8,6 +10,7 @@
 
   .btn {
     position: relative;
+    background-color: $black;
     .cartItems {
       position: absolute;
       top: 5px;
