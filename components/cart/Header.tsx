@@ -85,7 +85,11 @@ const Header = () => {
 
   const [openModal, setOpenModal] = useState(false);
   const onOpenModal = () => setOpenModal(true);
-  const onCloseModal = () => setOpenModal(false);
+  const onCloseModal = () => {
+    setOpenModal(false);
+    //Remove items from Redux
+    dispatch(clearCart());
+  };
 
   const [modalData, setModalData] = useState<FormTypes>({
     name: "",
@@ -148,9 +152,6 @@ const Header = () => {
     if (response.status === 201) {
       //Visa att köpet gick igenom
       setOpenModal(true);
-
-      //Remove items from Redux
-      dispatch(clearCart());
     } else {
       setOpenModal(false);
     }

@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 
 //Components
-import Header from "../../components/gdpr/Header";
+import Header from "../../components/kontakt/Header";
 
 //Assets
 import Navbar from "../../components/assets/Navbar";
@@ -21,6 +21,7 @@ const kontakt = (props) => {
       <TopBtn />
       <Fade>
         <Navbar />
+        <Header />
         <Footer />
       </Fade>
     </>

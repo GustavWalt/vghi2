@@ -44,3 +44,11 @@ model Order {
   user      User        @relation(fields: [userId], references: [id])
   OrderItem OrderItem[]
 }
+
+model Contact {
+  id        Int         @id @default(autoincrement())
+  name String
+  email String
+  subject String
+  description String
+}
