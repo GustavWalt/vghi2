@@ -6,8 +6,11 @@ import Link from "next/link";
 import Bar from "./Bar";
 import MenuItem from "./MenuItem";
 import Cart from "./Cart";
+import useWindowDimensions from "../assets/hooks/useWindowDimensions";
 
 const Navbar = (props) => {
+  const { width } = useWindowDimensions();
+
   const [isOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!isOpen);
   useEffect(() => {
@@ -23,10 +26,13 @@ const Navbar = (props) => {
               <a className={styles.link}>VGHI</a>
             </Link>
           </div>
-          <div onClick={toggle} className={styles.menuToggle}>
-            <Bar />
-            <Bar />
-            <Bar />
+          <div className="permFlex">
+            {width < 1310 && <Cart />}
+            <div onClick={toggle} className={styles.menuToggle}>
+              <Bar className="bar1" />
+              <Bar className="bar2" />
+              <Bar className="bar3" />
+            </div>
           </div>
         </div>
         <ul
@@ -39,7 +45,7 @@ const Navbar = (props) => {
           <MenuItem href="/kunder" title="Kunder" />
           <MenuItem href="/shop" title="Shop" />
           <MenuItem href="/kontakt" title="Kontakt" />
-          <Cart />
+          {width >= 1310 && <Cart />}
         </ul>
       </nav>
     </>

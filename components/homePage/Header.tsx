@@ -17,7 +17,7 @@ const Header = () => {
           </Link>
           <Link href="/information">
             <a className={`${styles.width} darkButton`}>
-              <p>INFORMATION</p>
+              <p>INFO</p>
             </a>
           </Link>
         </div>

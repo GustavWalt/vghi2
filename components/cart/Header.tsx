@@ -288,13 +288,17 @@ const Header = () => {
               </>
             ))}
           </div>
-          <h2>
-            <b>Att betala inkl moms: {itemTotal}kr</b>
+          <h2 style={{ marginTop: "20px" }}>
+            {itemTotal === 0 ? (
+              <b>Kundvagnen är tom</b>
+            ) : (
+              <b>Att betala inkl moms: {itemTotal}kr</b>
+            )}
           </h2>
           <hr />
         </div>
         <div className={styles.payment}>
-          <H1 title="Steg 2 - Leveransuppgifter" />
+          <H1 title="Steg 2 - Leverans-uppgifter" />
           <Fade>
             <Formik
               initialValues={{

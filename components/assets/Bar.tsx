@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "../../style/modules/assets/Navbar.module.scss";
 
-const Bar = () => {
+const Bar = (props) => {
   return (
     <>
-      <div className={styles.bar} />
+      <div className={styles[props.className]} />
     </>
   );
 };
