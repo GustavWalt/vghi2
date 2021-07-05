@@ -9,7 +9,9 @@ import Cart from "./Cart";
 import useWindowDimensions from "../assets/hooks/useWindowDimensions";
 
 const Navbar = (props) => {
-  const { width } = useWindowDimensions();
+  if (typeof window !== "undefined") {
+    var { width } = useWindowDimensions();
+  }
 
   const [isOpen, setOpen] = useState(false);
   const toggle = () => setOpen(!isOpen);
