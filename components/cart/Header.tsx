@@ -10,7 +10,7 @@ import axios from "axios";
 
 //Redux
 import { useSelector, RootStateOrAny, useDispatch } from "react-redux";
-import { removeFromCart, addToCart } from "../../redux/cart";
+import { removeFromCart, addToCart, clearCart } from "../../redux/cart";
 
 //External packages (form/notifications/spinner/modal)
 import { useToasts } from "react-toast-notifications";
@@ -148,6 +148,9 @@ const Header = () => {
     if (response.status === 201) {
       //Visa att köpet gick igenom
       setOpenModal(true);
+
+      //Remove items from Redux
+      dispatch(clearCart());
     } else {
       setOpenModal(false);
     }

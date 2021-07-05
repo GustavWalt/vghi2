@@ -29,7 +29,7 @@ const Navbar = (props) => {
             </Link>
           </div>
           <div className="permFlex">
-            {width < 1310 && <Cart />}
+            <Cart className="deskNone" />
             <div onClick={toggle} className={styles.menuToggle}>
               <Bar className="bar1" />
               <Bar className="bar2" />

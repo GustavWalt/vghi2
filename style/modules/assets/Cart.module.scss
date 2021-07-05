@@ -2,7 +2,6 @@
 .cart {
   display: flex;
   border-radius: 200px;
-  background-color: $black;
   .cartText {
     color: white;
     margin-left: 0.5rem;
@@ -10,7 +9,6 @@
 
   .btn {
     position: relative;
-    background-color: $black;
     border: none;
     .cartItems {
       position: absolute;
@@ -46,6 +44,9 @@
 }
 
 @media screen and (min-width: 1310px) {
+  .deskNone {
+    display: none;
+  }
   .cartItems {
     width: 15px;
     height: 15px;

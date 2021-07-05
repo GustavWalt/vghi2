@@ -38,7 +38,7 @@ const About = () => {
             </Link>
           </p>
           <p>
-            <Link href="/Shop">
+            <Link href="/shop">
               <a>Shop</a>
             </Link>
           </p>
@@ -51,22 +51,22 @@ const About = () => {
         <div className={styles.footerItem}>
           <h1>KUNDSERVICE</h1>
           <p>
-            <Link href="/gdpr">
+            <Link href="">
               <a>Kontakt</a>
             </Link>
           </p>
           <p>
-            <Link href="/gdpr">
+            <Link href="">
               <a>Köpvillkor</a>
             </Link>
           </p>
           <p>
-            <Link href="/gdpr">
+            <Link href="">
               <a>Behandling av personuppgifter</a>
             </Link>
           </p>
           <p>
-            <Link href="/gdpr">
+            <Link href="">
               <a>Vanliga frågor & svar</a>
             </Link>
           </p>

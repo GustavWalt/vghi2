@@ -4,13 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../style/modules/assets/Cart.module.scss";
 
-const Cart = () => {
+const Cart = (props) => {
   const data = useSelector((state: RootStateOrAny) => state);
 
   return (
-    <>
+    <div className={styles[props.className]}>
       <div className={styles.cart}>
-        <button className={styles.btn}>
+        <button className={`${styles.btn}`}>
           <Link href="/cart">
             <a>
               <Image
@@ -27,7 +27,7 @@ const Cart = () => {
           )}
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

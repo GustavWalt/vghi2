@@ -35,6 +35,9 @@ export const counterSlice = createSlice({
         return true;
       });
     },
+    clearCart: (state) => {
+      state.items.length = 0;
+    },
     addToCart: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
       state.items.push({
@@ -46,6 +49,6 @@ export const counterSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { removeFromCart, addToCart } = counterSlice.actions;
+export const { removeFromCart, addToCart, clearCart } = counterSlice.actions;
 
 export default counterSlice.reducer;

@@ -18,7 +18,7 @@
   .cart {
     text-align: center;
     .bookItem {
-      margin: 2rem auto;
+      margin: 2rem;
       background-color: rgb(243, 243, 243);
       border: solid 1px black;
       padding-bottom: 1rem;
@@ -34,6 +34,13 @@
           font-weight: bold;
           span:nth-child(1) {
             margin-top: 1rem;
+          }
+
+          .plusMinus {
+            cursor: pointer;
+            border: solid 1px black;
+            padding: 0px 1rem;
+            margin: 0rem 1rem;
           }
         }
       }
@@ -106,12 +113,6 @@
         }
         .bookData {
           .price {
-            .plusMinus {
-              cursor: pointer;
-              border: solid 1px black;
-              padding: 0px 1rem;
-              margin: 0rem 1rem;
-            }
             justify-content: space-between !important;
             span:nth-child(1) {
             }
