@@ -18,7 +18,7 @@
   .cart {
     text-align: center;
     .bookItem {
-      margin: 2rem;
+      margin: 2rem auto;
       background-color: rgb(243, 243, 243);
       border: solid 1px black;
       padding-bottom: 1rem;
@@ -108,6 +108,7 @@
       .bookItem {
         justify-content: space-around;
         width: 350px;
+        margin: 2rem;
         span {
           align-self: flex-end;
         }
