@@ -133,7 +133,7 @@ const Header = () => {
 
   // Function for checkout, runs when you submit the form.
   const checkout = async (props) => {
-    if (finalCart[0].amount === 0 || finalCart[1].amount === 0) {
+    if (cart.length === 0) {
       console.log("Din varukorg är tom. Vänligen lägg till produkter.");
       setFailedCheckout(true);
     } else {
@@ -229,7 +229,11 @@ const Header = () => {
         {finalCart.map((item) => (
           <>
             <p>
-              {item.name}: {item.amount}
+              {item.amount > 0 && (
+                <>
+                  {item.name}: {item.amount}
+                </>
+              )}
             </p>
           </>
         ))}
