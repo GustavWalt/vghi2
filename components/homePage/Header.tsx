@@ -12,7 +12,7 @@ const Header = () => {
         <div className={`flex ${styles.flex}`}>
           <Link href="/shop">
             <a className={`${styles.width} darkButton`}>
-              <p>HANDLA</p>
+              <p>BESTÄLL</p>
             </a>
           </Link>
           <Link href="/information">
