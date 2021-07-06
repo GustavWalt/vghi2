@@ -11,7 +11,7 @@ import Order from "../assets/order";
 const Header = () => {
   return (
     <div className={styles.header}>
-      <H1 title="SHOP" />
+      <H1 title="BESTÄLL DIN BOK HÄR" />
       <div className="flex">
         <GridItem title="Nu går jag!">
           <Image src="/bok1.jpg" alt="me" width="350" height="200" />

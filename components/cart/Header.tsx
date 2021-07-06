@@ -325,7 +325,10 @@ const Header = () => {
                 </Link>
               </>
             ) : (
-              <b>Att betala inkl moms: {itemTotal}kr</b>
+              <>
+                <b>Att betala inkl moms: {itemTotal}kr</b>
+                <p>&#129047;</p>
+              </>
             )}
           </h2>
           <hr />
