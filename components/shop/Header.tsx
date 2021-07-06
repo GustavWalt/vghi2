@@ -15,8 +15,8 @@ const Header = () => {
       <div className="flex">
         <GridItem title="Nu går jag!">
           <Image src="/bok1.jpg" alt="me" width="350" height="200" />
-          <p className={styles.author}>Frida Walter</p>
-          <p>Pris: 149kr + frakt</p>
+          <p className={styles.author}>av Frida Walter</p>
+          <p>Pris: 149 kr</p>
           <div className={styles.order}>
             <Order name={"Nu går jag!"} price={"149"} />
           </div>
@@ -24,8 +24,8 @@ const Header = () => {
         <div>
           <GridItem title="Våga fråga!">
             <Image src="/bok2.jpg" alt="me" width="350" height="200" />
-            <p className={styles.author}>Frida Walter</p>
-            <p>Pris: 149kr + frakt</p>
+            <p className={styles.author}>av Frida Walter</p>
+            <p>Pris: 149 kr</p>
             <div className={styles.order}>
               <Order name={"Våga fråga!"} price={"149"} />
             </div>

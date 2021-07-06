@@ -12,7 +12,7 @@ const Fade = (props: any) => {
     <>
       <div
         data-aos="fade-zoom-in"
-        data-aos-offset="100"
+        data-aos-offset="40"
         data-aos-easing="ease-in-sine"
         data-aos-duration="1000"
       >
