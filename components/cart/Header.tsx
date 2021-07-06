@@ -58,7 +58,7 @@ const schema = Yup.object().shape({
     .required("Vänligen fyll i din adress."),
 
   zip: Yup.string()
-    .max(5, "För många siffror.")
+    .max(6, "För många siffror.")
     .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
     .required("Vänligen fyll i ditt postnummer."),
 
@@ -383,12 +383,12 @@ const Header = () => {
                       errors.phone && touched.phone ? styles.inputError : ""
                     }`}
                     name="phone"
-                    placeholder="07X-XXX XX XX"
+                    placeholder="07XXXXXXXX"
                   />
                   {errors.phone && touched.phone ? (
                     <div className={styles.error}>{errors.phone}</div>
                   ) : null}
-                  <label htmlFor="address">Adress</label>
+                  <label htmlFor="address">Leveransadress</label>
                   <Field
                     className={`${styles.input} ${
                       errors.address && touched.address ? styles.inputError : ""

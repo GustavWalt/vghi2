@@ -31,7 +31,7 @@ const btn = (props) => {
           add();
         }}
       >
-        Lägg till i varukorgen
+        Lägg till i kundvagnen
       </button>
     </div>
   );
