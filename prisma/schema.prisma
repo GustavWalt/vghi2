@@ -50,3 +50,11 @@ model invoiceInfo {
   Order                  Order? @relation(fields: [orderOrderId], references: [orderId])
   orderOrderId           Int?
 }
+
+model Contact {
+  id        Int         @id @default(autoincrement())
+  name String
+  email String
+  subject String
+  description String
+}
