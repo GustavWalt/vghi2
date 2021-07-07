@@ -371,7 +371,9 @@ const Header = () => {
           </div>
           {itemTotal === 0 ? (
             <>
-              <b>Kundvagnen är tom</b>
+              <h2 style={{ color: "red", marginTop: "2rem" }}>
+                <b>Kundvagnen är tom</b>
+              </h2>
               <br />
               <Link href="/shop">
                 <button className={styles.checkoutBtn}>Beställ böcker</button>
@@ -386,7 +388,7 @@ const Header = () => {
                 Fraktkostnader tillkommer och kan variera beroende antal
                 beställda böcker.
               </li>
-              <p>&#129047;</p>
+              <h2>&#129047;</h2>
             </>
           )}
           <hr />
