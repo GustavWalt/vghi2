@@ -13,13 +13,13 @@ const Services = () => {
         <GridItem
           title="Om mig"
           desc="Här kan du läsa mer om mig och mina föreläsningar och böcker."
-          btn="LÄS HÄR"
+          btn="OM MIG"
           btnHref="/information"
         />
         <GridItem
           title="Kunder"
           desc="Här kan du hitta ett urval av de kunder som har bokat en föreläsning med mig."
-          btn="LÄS HÄR"
+          btn="KUNDER"
           btnHref="/kunder"
         />
       </div>
@@ -27,7 +27,7 @@ const Services = () => {
         <GridItem
           title="Kontakt"
           desc="Kontakta mig genom att klicka på knappen nedan och fyll i formuläret."
-          btn="LÄS HÄR"
+          btn="KONTAKT"
           btnHref="/kontakt"
         />
       </div>

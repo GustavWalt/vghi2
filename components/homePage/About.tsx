@@ -11,13 +11,13 @@ const About = () => {
       <H1 title="OM MIG" />
       <Fade>
         <p>
-          Jag är utbildad forensisk undersköterska samt jourkvinna med gedigen
-          spetskunskap om våld i nära relationer. Med kunskap i tid minimeras
-          risken för att falla offer för sina egna känslor och det möjliggör för
-          en förändring. Jag arbetar för att stötta utsatta kvinnor i deras kamp
-          om att bli fria från våld, hot och trakasserier. Förändringsarbetet är
-          svårt, skört och arbetsam men med rätt verktyg, stöttning och
-          hjälpinsats är det fullt möjligt.
+          Mitt namn är Frida Walter. Jag är utbildad forensisk undersköterska
+          samt jourkvinna med gedigen spetskunskap om våld i nära relationer.
+          Med kunskap i tid minimeras risken för att falla offer för sina egna
+          känslor och det möjliggör för en förändring. Jag arbetar för att
+          stötta utsatta kvinnor i deras kamp om att bli fria från våld, hot och
+          trakasserier. Förändringsarbetet är svårt, skört och arbetsam men med
+          rätt verktyg, stöttning och hjälpinsats är det fullt möjligt.
         </p>
       </Fade>
     </div>

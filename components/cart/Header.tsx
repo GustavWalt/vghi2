@@ -369,22 +369,26 @@ const Header = () => {
               </>
             ))}
           </div>
-          <h2 style={{ marginTop: "20px" }}>
-            {itemTotal === 0 ? (
-              <>
-                <b>Kundvagnen är tom</b>
-                <br />
-                <Link href="/shop">
-                  <button className={styles.checkoutBtn}>Beställ böcker</button>
-                </Link>
-              </>
-            ) : (
-              <>
-                <b>Att betala inkl moms: {itemTotal}kr</b>
-                <p>&#129047;</p>
-              </>
-            )}
-          </h2>
+          {itemTotal === 0 ? (
+            <>
+              <b>Kundvagnen är tom</b>
+              <br />
+              <Link href="/shop">
+                <button className={styles.checkoutBtn}>Beställ böcker</button>
+              </Link>
+            </>
+          ) : (
+            <>
+              <h2 style={{ marginTop: "20px" }}>
+                <b>Att betala inkl moms: {itemTotal}kr + frakt</b>
+              </h2>
+              <li>
+                Fraktkostnader tillkommer och kan variera beroende antal
+                beställda böcker.
+              </li>
+              <p>&#129047;</p>
+            </>
+          )}
           <hr />
         </div>
         <div className={styles.payment}>
@@ -553,7 +557,9 @@ const Header = () => {
                         ) : null}
 
                         {/* Email */}
-                        <label htmlFor="invoiceEmail">Email</label>
+                        <label htmlFor="invoiceEmail">
+                          Mailadress för e-faktura
+                        </label>
                         <Field
                           className={`${styles.input} ${
                             errors.invoiceEmail && touched.invoiceEmail
