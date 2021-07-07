@@ -68,6 +68,16 @@
         color: red;
       }
 
+      .label {
+        display: inline-flex;
+        .checkBox {
+        }
+        p {
+          text-align: left;
+          margin-left: 1rem;
+        }
+      }
+
       .input {
         border: solid 1px rgb(141, 141, 141);
         border-radius: 5px;
@@ -102,6 +112,12 @@
     color: white;
     background-color: #4caf50;
   }
+}
+
+.fakturering {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 0rem 0rem 0rem;
 }
 
 @media screen and (min-width: 1310px) {

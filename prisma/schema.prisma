@@ -10,45 +10,43 @@ datasource db {
 }
 
 // Creating the database tables/modules with relations.
-model User {
-  id       Int     @id @default(autoincrement())
-  name     String
-  phone    Int
-  address  String
-  neighbourhood String
-  zip      Int
-  email    String @unique
-  orders   Order[]
-}
-
-model Product {
-  id         Int         @id @default(autoincrement())
-  name       String      @unique
-  price      Int
-  orderItems OrderItem[]
-}
-
-model OrderItem {
-  orderId   Int
-  amount    Int
-  productId Int
-  order     Order   @relation(fields: [orderId], references: [id])
-  product   Product @relation(fields: [productId], references: [id])
-
-  @@id([productId, orderId])
-}
-
 model Order {
-  id        Int         @id @default(autoincrement())
-  userId    Int 
-  user      User        @relation(fields: [userId], references: [id])
-  OrderItem OrderItem[]
+  orderId      Int            @id @default(autoincrement())
+  deliveryInfo deliveryInfo[]
+  invoiceInfo  invoiceInfo[]
+  orderInfo    orderInfo[]
+  date         String
 }
 
-model Contact {
-  id        Int         @id @default(autoincrement())
-  name String
-  email String
-  subject String
-  description String
+model orderInfo {
+  id              Int    @id @default(autoincrement())
+  amountNuGarJag  Int
+  amountVagaFraga Int
+  Order           Order? @relation(fields: [orderOrderId], references: [orderId])
+  orderOrderId    Int?
+}
+
+model deliveryInfo {
+  id            Int    @id @default(autoincrement())
+  name          String
+  email         String
+  phone         String
+  adress        String
+  zip           String
+  neighbourhood String
+  Order         Order? @relation(fields: [orderOrderId], references: [orderId])
+  orderOrderId  Int?
+}
+
+model invoiceInfo {
+  id                     Int    @id @default(autoincrement())
+  corporateName          String
+  corporateReference     String
+  corporateEmail         String
+  corporatePhone         String
+  corporateAdress        String
+  corporateZip           String
+  corporateNeighbourhood String
+  Order                  Order? @relation(fields: [orderOrderId], references: [orderId])
+  orderOrderId           Int?
 }

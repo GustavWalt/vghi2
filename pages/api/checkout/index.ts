@@ -18,99 +18,92 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
       // Getting the data from client
       const bodyData = request.body;
 
-      //Yup schema
+      //Yup
       const schema = Yup.object().shape({
         name: Yup.string()
           .max(100, "För lång text.")
           .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
-          .required("Vänligen fyll i ett fullständigt namn."),
+          .required("Vänligen fyll i ditt fullständiga namn."),
 
         email: Yup.string()
           .max(100, "För lång text.")
           .email("Felaktig email.")
-          .required("Vänligen fyll i en korrekt email."),
+          .required("Vänligen fyll i korrekt email."),
 
         phone: Yup.string()
           .max(100, "För lång text.")
           .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
-          .required("Vänligen fyll i ett korrekt telefonnummer."),
+          .required("Vänligen fyll i ditt telefonnummer."),
 
         address: Yup.string()
           .max(100, "För lång text.")
-          .required("Vänligen fyll i en korrekt adress."),
+          .required("Vänligen fyll i din adress."),
 
         zip: Yup.string()
-          .max(5, "För många siffror.")
+          .max(6, "För många siffror.")
           .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
-          .required("Vänligen fyll i ett korrekt postnummer."),
+          .required("Vänligen fyll i ditt postnummer."),
 
         neighbourhood: Yup.string()
           .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
           .max(100, "För lång text.")
-          .required("Vänligen fyll i en korrekt ort."),
+          .required("Vänligen fyll i din ort."),
       });
 
       const isValid = await schema.isValid(bodyData);
+
       if (isValid === true) {
-        // See if you find a user with the provided email
-        const userDupe = await prisma.user.findUnique({
-          where: {
-            email: bodyData.email,
-          },
-        });
+        // Get current date
+        var rightNow = new Date();
+        var dateRightNow = rightNow
+          .toISOString()
+          .slice(0, 10)
+          .replace(/-/g, "/");
 
-        if (userDupe === null) {
-          // Creating the user
-          var user = await prisma.user.create({
-            data: {
-              name: bodyData.name,
-              phone: parseInt(bodyData.phone),
-              address: bodyData.address,
-              neighbourhood: bodyData.neighbourhood,
-              zip: parseInt(bodyData.zip),
-              email: bodyData.email,
-            },
-          });
-        }
-
-        // Creating the order with the userId
         const order = await prisma.order.create({
           data: {
-            userId: userDupe ? userDupe.id : user.id,
+            date: dateRightNow,
           },
         });
 
-        // Getting the orders into an array with the names
-        const orders: string[] = [];
-        bodyData.order.map((book) => {
-          orders.push(book.name);
+        const orderInfo = await prisma.orderInfo.create({
+          data: {
+            orderOrderId: order.orderId,
+            amountNuGarJag: bodyData.order[0].amount,
+            amountVagaFraga: bodyData.order[1].amount,
+          },
         });
 
-        // SQL query to get the ID's from the product table in DB.
-        for (const book of bodyData.order) {
-          const response = await prisma.product.findUnique({
-            where: {
-              name: book.name,
-            },
-          });
+        const deliveryInfo = await prisma.deliveryInfo.create({
+          data: {
+            name: bodyData.name,
+            email: bodyData.email,
+            phone: bodyData.phone,
+            adress: bodyData.address,
+            zip: bodyData.zip,
+            neighbourhood: bodyData.neighbourhood,
+            orderOrderId: order.orderId,
+          },
+        });
 
-          // Creating an orderItem in the table with correct data.
-          if (book.amount > 0) {
-            const orderItem = await prisma.orderItem.create({
-              data: {
-                amount: book.amount,
-                productId: response.id,
-                orderId: order.id,
-              },
-            });
-          }
-        }
+        const invoiceInfo = await prisma.invoiceInfo.create({
+          data: {
+            corporateName: bodyData.invoiceName,
+            corporateReference: bodyData.invoiceReference,
+            corporateEmail: bodyData.invoiceEmail,
+            corporatePhone: bodyData.invoicePhone,
+            corporateAdress: bodyData.invoiceAddress,
+            corporateZip: bodyData.invoiceZip,
+            corporateNeighbourhood: bodyData.invoiceNeighbourhood,
+            orderOrderId: order.orderId,
+          },
+        });
       }
 
       // Resonse to client.
       response.statusCode = 201;
       response.setHeader("Content-Type", "application/json");
-      response.end(JSON.stringify({}));
+      response.end(JSON.stringify({ bodyData }));
     }
   } catch (err) {
     throw err;

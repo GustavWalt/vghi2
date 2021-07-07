@@ -29,11 +29,18 @@ import Fade from "../assets/Fade";
 // Assigning type-safe for the form data.
 interface FormTypes {
   email: string;
-  name: String;
-  phone: String;
-  address: String;
-  neighbourhood: String;
-  zip: String;
+  invoiceEmail: string;
+  name: string;
+  invoiceName: string;
+  invoiceReference: string;
+  phone: string;
+  invoicePhone: string;
+  address: string;
+  invoiceAddress: string;
+  neighbourhood: string;
+  invoiceNeighbourhood: string;
+  zip: string;
+  invoiceZip: string;
 }
 
 //Yup
@@ -43,29 +50,55 @@ const schema = Yup.object().shape({
     .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
     .required("Vänligen fyll i ditt fullständiga namn."),
 
+  invoiceName: Yup.string()
+    .max(100, "För lång text.")
+    .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna."),
+
+  invoiceReference: Yup.string()
+    .max(100, "För lång text.")
+    .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna."),
+
   email: Yup.string()
     .max(100, "För lång text.")
     .email("Felaktig email.")
     .required("Vänligen fyll i korrekt email."),
+
+  invoiceEmail: Yup.string()
+    .max(100, "För lång text.")
+    .email("Felaktig email."),
 
   phone: Yup.string()
     .max(100, "För lång text.")
     .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
     .required("Vänligen fyll i ditt telefonnummer."),
 
+  invoicePhone: Yup.string()
+    .max(100, "För lång text.")
+    .matches(/^[0-9]*$/, "Endast siffror är tillåtna."),
+
   address: Yup.string()
     .max(100, "För lång text.")
     .required("Vänligen fyll i din adress."),
+
+  invoiceAddress: Yup.string().max(100, "För lång text."),
 
   zip: Yup.string()
     .max(6, "För många siffror.")
     .matches(/^[0-9]*$/, "Endast siffror är tillåtna.")
     .required("Vänligen fyll i ditt postnummer."),
 
+  invoiceZip: Yup.string()
+    .max(6, "För många siffror.")
+    .matches(/^[0-9]*$/, "Endast siffror är tillåtna."),
+
   neighbourhood: Yup.string()
     .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
     .max(100, "För lång text.")
     .required("Vänligen fyll i din ort."),
+
+  invoiceNeighbourhood: Yup.string()
+    .matches(/^[a-öA-Ö ,.'-]+$/, "Endast bokstäver är tillåtna.")
+    .max(100, "För lång text."),
 });
 
 // Handles the state.
@@ -85,6 +118,7 @@ const Header = () => {
   const [checkingOut, setCheckingOut] = useState(false);
   const [failedCheckout, setFailedCheckout] = useState(false);
   const [successCheckout, setSuccessCheckout] = useState(false);
+  const [newPaymentOpen, setNewPaymentOpen] = useState(true);
 
   const onCloseSuccessCheckout = () => {
     setSuccessCheckout(false);
@@ -95,13 +129,25 @@ const Header = () => {
     setFailedCheckout(false);
   };
 
+  const handleChange = (e) => {
+    let isChecked = e.target.checked;
+    setNewPaymentOpen(isChecked);
+  };
+
   const [modalData, setModalData] = useState<FormTypes>({
     name: "",
+    invoiceName: "",
     email: "",
+    invoiceEmail: "",
+    invoiceReference: "",
     phone: "",
+    invoicePhone: "",
     address: "",
+    invoiceAddress: "",
     zip: "",
+    invoiceZip: "",
     neighbourhood: "",
+    invoiceNeighbourhood: "",
   });
 
   // useReducer hook to set/get formData.
@@ -110,19 +156,6 @@ const Header = () => {
   const { addToast } = useToasts();
 
   const dispatch = useDispatch();
-
-  // Runs when you submit the form.
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
-
-  // Runs when you change something in the input fields.
-  const handleChange = (event) => {
-    setFormData({
-      name: event.target.name,
-      value: event.target.value,
-    });
-  };
 
   // Getting the data from the redux store (cart items).
   const data = useSelector((state: RootStateOrAny) => state);
@@ -144,13 +177,22 @@ const Header = () => {
       // Making API request to /api/questing to post the order.
       const response = await axios.post("/api/checkout", {
         email: props.email,
+        invoiceEmail: props.invoiceEmail,
         name: props.name,
+        invoiceName: props.invoiceName,
+        invoiceReference: props.invoiceReference,
         phone: props.phone,
+        invoicePhone: props.invoicePhone,
         address: props.address,
+        invoiceAddress: props.invoiceAddress,
         neighbourhood: props.neighbourhood,
+        invoiceNeighbourhood: props.invoiceNeighbourhood,
         zip: props.zip,
+        invoiceZip: props.invoiceZip,
         order: finalCart,
       });
+
+      console.log(response.data);
 
       //Remove spinner
       setCheckingOut(false);
@@ -207,7 +249,7 @@ const Header = () => {
         <h1 style={{ color: "red" }}>Hej {modalData.name}!</h1>
         <h4 style={{ color: "red" }}>Din varukorg är tom.</h4>
         <Link href="/shop">
-          <button className={styles.checkoutBtn}>Gå till shop</button>
+          <button className={styles.checkoutBtn}>Beställ böcker</button>
         </Link>
       </Modal>
 
@@ -224,6 +266,18 @@ const Header = () => {
         <p>Adress: {modalData.address}</p>
         <p>Postnummer: {modalData.zip}</p>
         <p>Ort: {modalData.neighbourhood}</p>
+        {modalData.invoiceNeighbourhood != "" && (
+          <>
+            <br />
+            <p>Faktureringsuppgifter:</p>
+            <p>Namn: {modalData.invoiceName}</p>
+            <p>Mail: {modalData.invoiceEmail}</p>
+            <p>Telefonnummer: {modalData.invoicePhone}</p>
+            <p>Adress: {modalData.invoiceAddress}</p>
+            <p>Postnummer: {modalData.invoiceZip}</p>
+            <p>Ort: {modalData.invoiceNeighbourhood}</p>
+          </>
+        )}
         <br />
         <p>Beställning:</p>
         {finalCart.map((item) => (
@@ -321,7 +375,7 @@ const Header = () => {
                 <b>Kundvagnen är tom</b>
                 <br />
                 <Link href="/shop">
-                  <button className={styles.checkoutBtn}>Gå till shop</button>
+                  <button className={styles.checkoutBtn}>Beställ böcker</button>
                 </Link>
               </>
             ) : (
@@ -339,11 +393,18 @@ const Header = () => {
             <Formik
               initialValues={{
                 name: "",
+                invoiceName: "",
+                invoiceReference: "",
                 email: "",
+                invoiceEmail: "",
                 phone: "",
+                invoicePhone: "",
                 address: "",
+                invoiceAddress: "",
                 zip: "",
+                invoiceZip: "",
                 neighbourhood: "",
+                invoiceNeighbourhood: "",
               }}
               validationSchema={schema}
               onSubmit={(values, { resetForm }) => {
@@ -354,6 +415,7 @@ const Header = () => {
             >
               {({ errors, touched }) => (
                 <Form className={styles.form}>
+                  {/* Name */}
                   <label htmlFor="name">Fullständigt namn</label>
                   <Field
                     className={`${styles.input} ${
@@ -365,6 +427,8 @@ const Header = () => {
                   {errors.name && touched.name ? (
                     <div className={styles.error}>{errors.name}</div>
                   ) : null}
+
+                  {/* Email */}
                   <label htmlFor="email">Email</label>
                   <Field
                     className={`${styles.input} ${
@@ -377,6 +441,8 @@ const Header = () => {
                   {errors.email && touched.email ? (
                     <div className={styles.error}>{errors.email}</div>
                   ) : null}
+
+                  {/* Phone */}
                   <label htmlFor="phone">Telefonnummer</label>
                   <Field
                     className={`${styles.input} ${
@@ -388,6 +454,8 @@ const Header = () => {
                   {errors.phone && touched.phone ? (
                     <div className={styles.error}>{errors.phone}</div>
                   ) : null}
+
+                  {/* Adress */}
                   <label htmlFor="address">Leveransadress</label>
                   <Field
                     className={`${styles.input} ${
@@ -399,6 +467,8 @@ const Header = () => {
                   {errors.address && touched.address ? (
                     <div className={styles.error}>{errors.address}</div>
                   ) : null}
+
+                  {/* Zip */}
                   <label htmlFor="zip">Postnummer</label>
                   <Field
                     className={`${styles.input} ${
@@ -410,6 +480,8 @@ const Header = () => {
                   {errors.zip && touched.zip ? (
                     <div className={styles.error}>{errors.zip}</div>
                   ) : null}
+
+                  {/* Neighbourhood */}
                   <label htmlFor="neighbourhood">Ort</label>
                   <Field
                     className={`${styles.input} ${
@@ -423,6 +495,153 @@ const Header = () => {
                   {errors.neighbourhood && touched.neighbourhood ? (
                     <div className={styles.error}>{errors.neighbourhood}</div>
                   ) : null}
+
+                  <label className={styles.label}>
+                    <input
+                      className={styles.checkBox}
+                      type="checkbox"
+                      name="newPayment"
+                      defaultChecked
+                      checked={newPaymentOpen}
+                      onChange={handleChange}
+                    />
+                    <span className={styles.checkmark}></span>
+                    <p>Min betalnings- och leveransadress är den samma.</p>
+                  </label>
+                  {console.log(newPaymentOpen)}
+
+                  {/* Extra fields */}
+                  {newPaymentOpen === false && (
+                    <Fade>
+                      <div className={styles.fakturering}>
+                        <H1 title="Steg 3 - Fakturerings-information" />
+
+                        {/* Name */}
+                        <label htmlFor="invoiceName">
+                          Fullständigt namn/företagsnamn
+                        </label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoiceName && touched.invoiceName
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoiceName"
+                          placeholder="Förnamn Efternamn / Bolaget AB"
+                        />
+                        {errors.invoiceName && touched.invoiceName ? (
+                          <div className={styles.error}>
+                            {errors.invoiceName}
+                          </div>
+                        ) : null}
+
+                        {/* Reference */}
+                        <label htmlFor="invoiceReference">Referens</label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoiceReference && touched.invoiceReference
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoiceReference"
+                          placeholder="Förnamn Efternamn"
+                        />
+                        {errors.invoiceReference && touched.invoiceReference ? (
+                          <div className={styles.error}>
+                            {errors.invoiceReference}
+                          </div>
+                        ) : null}
+
+                        {/* Email */}
+                        <label htmlFor="invoiceEmail">Email</label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoiceEmail && touched.invoiceEmail
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoiceEmail"
+                          type="email"
+                          placeholder="Exempel@gmail.com"
+                        />
+                        {errors.invoiceEmail && touched.invoiceEmail ? (
+                          <div className={styles.error}>
+                            {errors.invoiceEmail}
+                          </div>
+                        ) : null}
+                        {/* Phone */}
+                        <label htmlFor="invoicePhone">Telefonnummer</label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoicePhone && touched.invoicePhone
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoicePhone"
+                          placeholder="07XXXXXXXX"
+                        />
+                        {errors.invoicePhone && touched.invoicePhone ? (
+                          <div className={styles.error}>
+                            {errors.invoicePhone}
+                          </div>
+                        ) : null}
+                        {/* Adress */}
+                        <label htmlFor="invoiceAddress">
+                          Fakturaadress/box
+                        </label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoiceAddress && touched.invoiceAddress
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoiceAddress"
+                          placeholder="Gatan 87/Box"
+                        />
+                        {errors.invoiceAddress && touched.invoiceAddress ? (
+                          <div className={styles.error}>
+                            {errors.invoiceAddress}
+                          </div>
+                        ) : null}
+                        {/* Zip */}
+                        <label htmlFor="invoiceZip">Postnummer</label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoiceZip && touched.invoiceZip
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoiceZip"
+                          placeholder="XXXXX"
+                        />
+                        {errors.invoiceZip && touched.invoiceZip ? (
+                          <div className={styles.error}>
+                            {errors.invoiceZip}
+                          </div>
+                        ) : null}
+                        {/* Neighbourhood */}
+                        <label htmlFor="invoiceNeighbourhood">Ort</label>
+                        <Field
+                          className={`${styles.input} ${
+                            errors.invoiceNeighbourhood &&
+                            touched.invoiceNeighbourhood
+                              ? styles.inputError
+                              : ""
+                          }`}
+                          name="invoiceNeighbourhood"
+                          placeholder="Ort"
+                        />
+                        {errors.invoiceNeighbourhood &&
+                        touched.invoiceNeighbourhood ? (
+                          <div className={styles.error}>
+                            {errors.invoiceNeighbourhood}
+                          </div>
+                        ) : null}
+                      </div>
+                    </Fade>
+                  )}
+
+                  {/* Checkout */}
                   <button className={styles.checkoutBtn} type="submit">
                     Köp
                   </button>
