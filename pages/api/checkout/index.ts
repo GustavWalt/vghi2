@@ -62,7 +62,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
         const order = await prisma.order.create({
           data: {
-            date: dateRightNow,
+            orderDate: dateRightNow,
           },
         });
 

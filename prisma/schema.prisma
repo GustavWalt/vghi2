@@ -15,7 +15,7 @@ model Order {
   deliveryInfo deliveryInfo[]
   invoiceInfo  invoiceInfo[]
   orderInfo    orderInfo[]
-  date         String
+  orderDate         String
 }
 
 model orderInfo {
