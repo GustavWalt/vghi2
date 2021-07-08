@@ -7,6 +7,9 @@ const Header = () => {
     <>
       <div className={styles.headerBg}>
         <h1 className={styles.headerh1}>VGHI</h1>
+        <p>
+          <i>Varför går hon inte?</i>
+        </p>
         <h2>Varför går hon inte?</h2>
         <span />
         <div className={`flex ${styles.flex}`}>

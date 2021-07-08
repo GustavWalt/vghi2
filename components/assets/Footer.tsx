@@ -59,12 +59,12 @@ const About = () => {
             </p>
             <p>
               <Link href="/kunder">
-                <a>Kunder</a>
+                <a>Urval av kunder</a>
               </Link>
             </p>
             <p>
               <Link href="/shop">
-                <a>Shop</a>
+                <a>Beställ böcker</a>
               </Link>
             </p>
             <p>

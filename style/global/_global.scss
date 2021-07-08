@@ -63,7 +63,7 @@
 .lightButton,
 .darkButton {
   margin: 1rem auto;
-  width: 60%;
+  width: 90%;
   background-color: $white-beige;
   padding: 1rem;
   text-transform: uppercase;
@@ -90,6 +90,12 @@
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+@media screen and (min-width: 600px) {
+  .darkButton {
+    width: 60%;
+  }
 }
 
 @media screen and (min-width: 1024px) {

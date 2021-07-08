@@ -22,7 +22,7 @@ const Header = () => {
             kvinnor i deras kamp om att bli fria från våld, hot och
             trakasserier. Förändringsarbetet är svårt, skört och arbetsam men
             med rätt verktyg, stöttning och hjälpinsats är det fullt möjligt.
-            Jag är också författaren till handboken 'Nu går jag!' och 'Våga fråga!'."
+            Jag är också författaren till handböckerna 'Nu går jag!' och 'Våga fråga!'."
         />
         <Section
           title="Varför går hon inte?"

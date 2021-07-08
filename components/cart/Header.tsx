@@ -385,10 +385,9 @@ const Header = () => {
                 <b>Att betala inkl moms: {itemTotal}kr + frakt</b>
               </h2>
               <li>
-                Fraktkostnader tillkommer och kan variera beroende antal
+                Fraktkostnad tillkommer och kan variera beroende på antal
                 beställda böcker.
               </li>
-              <h2>&#129047;</h2>
             </>
           )}
           <hr />
@@ -520,7 +519,9 @@ const Header = () => {
                   {newPaymentOpen === false && (
                     <Fade>
                       <div className={styles.fakturering}>
-                        <H1 title="Steg 3 - Fakturerings-information" />
+                        <div className={styles.title}>
+                          <H1 title="Steg 3 - Fakturerings-information" />
+                        </div>
 
                         {/* Name */}
                         <label htmlFor="invoiceName">
@@ -533,7 +534,7 @@ const Header = () => {
                               : ""
                           }`}
                           name="invoiceName"
-                          placeholder="Förnamn Efternamn / Bolaget AB"
+                          placeholder="Namn/Bolaget AB"
                         />
                         {errors.invoiceName && touched.invoiceName ? (
                           <div className={styles.error}>
@@ -560,7 +561,7 @@ const Header = () => {
 
                         {/* Email */}
                         <label htmlFor="invoiceEmail">
-                          Mailadress för e-faktura
+                          Mailadress för faktura via email
                         </label>
                         <Field
                           className={`${styles.input} ${
@@ -586,7 +587,7 @@ const Header = () => {
                               : ""
                           }`}
                           name="invoicePhone"
-                          placeholder="07XXXXXXXX"
+                          placeholder="XXXXXXXX"
                         />
                         {errors.invoicePhone && touched.invoicePhone ? (
                           <div className={styles.error}>

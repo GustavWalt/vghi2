@@ -56,7 +56,7 @@
     .item {
       margin: 0.5rem;
       text-transform: uppercase;
-      font-size: 2rem;
+      font-size: 1.6em;
 
       &:nth-child(1) {
         margin-top: -180px;
@@ -70,6 +70,14 @@
       .link:hover {
         color: yellow;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .item {
+    .link {
+      font-size: 2rem;
     }
   }
 }

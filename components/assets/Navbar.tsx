@@ -45,7 +45,7 @@ const Navbar = (props) => {
           <MenuItem href="/" title="Hem" />
           <MenuItem href="/information" title="Information" />
           <MenuItem href="/kunder" title="Urval av kunder" />
-          <MenuItem href="/shop" title="Beställ" />
+          <MenuItem href="/shop" title="Beställ böcker" />
           <MenuItem href="/kontakt" title="Kontakt" />
           {width >= 1310 && <Cart />}
         </ul>
