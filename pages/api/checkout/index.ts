@@ -103,11 +103,14 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
         });
 
         const DOMAIN = "vghi.se";
+
         const mg = mailgun({
           apiKey: process.env.API_KEY,
           domain: DOMAIN,
           host: "api.eu.mailgun.net",
         });
+
+        console.log("Mailgun", mg);
 
         const data = {
           from: "Frida Walter <noreply@vghi.se>",
@@ -141,11 +144,15 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           </ul>
           `,
         };
+
+        console.log("mail data", data);
+
         await mg.messages().send(data, function (error, body) {
+          console.log("Sent email");
           if (error) {
-            console.log(error);
+            console.log("error", error);
           } else {
-            console.log(body);
+            console.log("success", body);
           }
         });
       }
