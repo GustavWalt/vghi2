@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { userInfo } from "os";
 
 //Mail stuff
+const mailgun = require("mailgun-js");
 
 const prisma = new PrismaClient();
 
@@ -99,6 +100,53 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
             corporateNeighbourhood: bodyData.invoiceNeighbourhood,
             orderOrderId: order.orderId,
           },
+        });
+
+        const DOMAIN = "vghi.se";
+        const mg = mailgun({
+          apiKey: process.env.API_KEY,
+          domain: DOMAIN,
+          host: "api.eu.mailgun.net",
+        });
+
+        const data = {
+          from: "Frida Walter <noreply@vghi.se>",
+          to: `varforgarhoninte@outlook.com, noreply@vghi.se`,
+          subject: `${deliveryInfo.name} vill beställa en bok!`,
+          text: "Test",
+          html: `<h1>${deliveryInfo.name} vill beställa en bok</h1>
+          <h2>Fraktinformation</h2>
+          <ul>
+          <li>Namn: ${deliveryInfo.name}</li>
+          <li>Email: ${deliveryInfo.email}</li>
+          <li>Telefonnummer: ${deliveryInfo.phone}</li>
+          <li>Adress: ${deliveryInfo.adress}</li>
+          <li>Postnummer: ${deliveryInfo.zip}</li>
+          <li>Ort: ${deliveryInfo.neighbourhood}</li>
+          </ul>
+          <h2>Orderinformation</h2>
+          <ul>
+          <li>Antal "Nu går jag!": ${orderInfo.amountNuGarJag}st</li>
+          <li>Antal "Våga fråga!": ${orderInfo.amountVagaFraga}st</li>
+          </ul>
+          <h2>Fakturainformation (kan vara tomma fält)</h2>
+          <ul>
+          <li>Namn/företagsnamn: ${invoiceInfo.corporateName}</li>
+          <li>Referens: ${invoiceInfo.corporateReference}</li>
+          <li>Mailadress för faktura: ${invoiceInfo.corporateEmail}</li>
+          <li>Telefonnummer: ${invoiceInfo.corporatePhone}</li>
+          <li>Fakturaadress/box: ${invoiceInfo.corporateAdress}</li>
+          <li>Postnummer: ${invoiceInfo.corporateZip}</li>
+          <li>Ort: ${invoiceInfo.corporateNeighbourhood}</li>
+          </ul>
+          `,
+        };
+        mg.messages().send(data, function (error, body) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log(body);
+          }
         });
       }
 
