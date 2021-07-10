@@ -141,7 +141,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           </ul>
           `,
         };
-        mg.messages().send(data, function (error, body) {
+        await mg.messages().send(data, function (error, body) {
           if (error) {
             console.log(error);
           } else {
