@@ -141,19 +141,21 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           </ul>
           `,
         };
-        await mg.messages().send(data, function (error, body) {
-          if (error) {
-            console.log(error);
-          } else {
-            console.log(body);
-          }
-        });
+        var mailResponse = await mg
+          .messages()
+          .send(data, function (error, body) {
+            if (error) {
+              console.log(error);
+            } else {
+              console.log(body);
+            }
+          });
       }
 
       // Resonse to client.
       response.statusCode = 201;
       response.setHeader("Content-Type", "application/json");
-      response.end(JSON.stringify({ bodyData }));
+      response.end(JSON.stringify({ mailResponse }));
     }
   } catch (err) {
     throw err;
