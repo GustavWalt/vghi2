@@ -114,7 +114,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
         const data = {
           from: "Frida Walter <noreply@vghi.se>",
-          to: `shardoomtv@gmail.com, noreply@vghi.se`,
+          to: `varforgarhoninte@outlook.com, noreply@vghi.se`,
           subject: `${deliveryInfo.name} vill beställa en bok!`,
           text: "Test",
           html: `<h1>${deliveryInfo.name} vill beställa en bok</h1>
@@ -151,12 +151,16 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           console.log("Sent email");
           if (error) {
             console.log("error", error);
+            // Resonse to client.
+            response.statusCode = 500;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify("bad"));
           } else {
             console.log("success", body);
             // Resonse to client.
             response.statusCode = 201;
             response.setHeader("Content-Type", "application/json");
-            response.end(JSON.stringify({}));
+            response.end(JSON.stringify("good"));
           }
         });
       }

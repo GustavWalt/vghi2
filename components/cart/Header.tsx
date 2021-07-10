@@ -167,7 +167,6 @@ const Header = () => {
   // Function for checkout, runs when you submit the form.
   const checkout = async (props) => {
     if (cart.length === 0) {
-      console.log("Din varukorg är tom. Vänligen lägg till produkter.");
       setFailedCheckout(true);
     } else {
       // Display spinner
@@ -192,8 +191,6 @@ const Header = () => {
         order: finalCart,
       });
 
-      console.log(response.data);
-
       //Remove spinner
       setCheckingOut(false);
       document.body.classList.toggle("overflow-hidden");
@@ -204,6 +201,7 @@ const Header = () => {
         setSuccessCheckout(true);
       } else {
         setFailedCheckout(true);
+        alert("Något gick fel vid din beställning. Vänligen försök igen.");
       }
     }
   };
@@ -247,7 +245,10 @@ const Header = () => {
 
       <Modal open={failedCheckout} onClose={onCloseFailedCheckout} center>
         <h1 style={{ color: "red" }}>Hej {modalData.name}!</h1>
-        <h4 style={{ color: "red" }}>Din varukorg är tom.</h4>
+        <h4 style={{ color: "red" }}>
+          Din varukorg är tom eller så gick något fel med din beställning.
+          Vänligen försök igen.
+        </h4>
         <Link href="/shop">
           <button className={styles.checkoutBtn}>Beställ böcker</button>
         </Link>
@@ -514,7 +515,6 @@ const Header = () => {
                     <span className={styles.checkmark}></span>
                     <p>Min betalnings- och leveransadress är den samma.</p>
                   </label>
-                  {console.log(newPaymentOpen)}
 
                   {/* Extra fields */}
                   {newPaymentOpen === false && (
