@@ -62,62 +62,70 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           .toISOString()
           .slice(0, 10)
           .replace(/-/g, "/");
-
-        const order = await prisma.order.create({
-          data: {
-            orderDate: dateRightNow,
+        const ordersToday = await prisma.order.findMany({
+          where: {
+            orderDate: {
+              equals: dateRightNow,
+            },
           },
         });
 
-        const orderInfo = await prisma.orderInfo.create({
-          data: {
-            orderOrderId: order.orderId,
-            amountNuGarJag: bodyData.order[0].amount,
-            amountVagaFraga: bodyData.order[1].amount,
-          },
-        });
+        if (ordersToday.length < 50) {
+          const order = await prisma.order.create({
+            data: {
+              orderDate: dateRightNow,
+            },
+          });
 
-        const deliveryInfo = await prisma.deliveryInfo.create({
-          data: {
-            name: bodyData.name,
-            email: bodyData.email,
-            phone: bodyData.phone,
-            adress: bodyData.address,
-            zip: bodyData.zip,
-            neighbourhood: bodyData.neighbourhood,
-            orderOrderId: order.orderId,
-          },
-        });
+          const orderInfo = await prisma.orderInfo.create({
+            data: {
+              orderOrderId: order.orderId,
+              amountNuGarJag: bodyData.order[0].amount,
+              amountVagaFraga: bodyData.order[1].amount,
+            },
+          });
 
-        const invoiceInfo = await prisma.invoiceInfo.create({
-          data: {
-            corporateName: bodyData.invoiceName,
-            corporateReference: bodyData.invoiceReference,
-            corporateEmail: bodyData.invoiceEmail,
-            corporatePhone: bodyData.invoicePhone,
-            corporateAdress: bodyData.invoiceAddress,
-            corporateZip: bodyData.invoiceZip,
-            corporateNeighbourhood: bodyData.invoiceNeighbourhood,
-            orderOrderId: order.orderId,
-          },
-        });
+          const deliveryInfo = await prisma.deliveryInfo.create({
+            data: {
+              name: bodyData.name,
+              email: bodyData.email,
+              phone: bodyData.phone,
+              adress: bodyData.address,
+              zip: bodyData.zip,
+              neighbourhood: bodyData.neighbourhood,
+              orderOrderId: order.orderId,
+            },
+          });
 
-        const DOMAIN = "vghi.se";
+          const invoiceInfo = await prisma.invoiceInfo.create({
+            data: {
+              corporateName: bodyData.invoiceName,
+              corporateReference: bodyData.invoiceReference,
+              corporateEmail: bodyData.invoiceEmail,
+              corporatePhone: bodyData.invoicePhone,
+              corporateAdress: bodyData.invoiceAddress,
+              corporateZip: bodyData.invoiceZip,
+              corporateNeighbourhood: bodyData.invoiceNeighbourhood,
+              orderOrderId: order.orderId,
+            },
+          });
 
-        const mg = mailgun({
-          apiKey: process.env.API_KEY,
-          domain: DOMAIN,
-          host: "api.eu.mailgun.net",
-        });
+          const DOMAIN = "vghi.se";
 
-        console.log("Mailgun", mg);
+          const mg = mailgun({
+            apiKey: process.env.API_KEY,
+            domain: DOMAIN,
+            host: "api.eu.mailgun.net",
+          });
 
-        const data = {
-          from: "Frida Walter <noreply@vghi.se>",
-          to: `varforgarhoninte@outlook.com, noreply@vghi.se`,
-          subject: `${deliveryInfo.name} vill beställa en bok!`,
-          text: "Test",
-          html: `<h1>${deliveryInfo.name} vill beställa en bok</h1>
+          console.log("Mailgun", mg);
+
+          const data = {
+            from: "Frida Walter <noreply@vghi.se>",
+            to: `varforgarhoninte@outlook.com, noreply@vghi.se`,
+            subject: `${deliveryInfo.name} vill beställa en bok!`,
+            text: "Test",
+            html: `<h1>${deliveryInfo.name} vill beställa en bok</h1>
           <h2>Fraktinformation</h2>
           <ul>
           <li>Namn: ${deliveryInfo.name}</li>
@@ -143,26 +151,32 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           <li>Ort: ${invoiceInfo.corporateNeighbourhood}</li>
           </ul>
           `,
-        };
+          };
 
-        console.log("mail data", data);
+          console.log("mail data", data);
 
-        mg.messages().send(data, function (error, body) {
-          console.log("Sent email");
-          if (error) {
-            console.log("error", error);
-            // Resonse to client.
-            response.statusCode = 500;
-            response.setHeader("Content-Type", "application/json");
-            response.end(JSON.stringify("bad"));
-          } else {
-            console.log("success", body);
-            // Resonse to client.
-            response.statusCode = 201;
-            response.setHeader("Content-Type", "application/json");
-            response.end(JSON.stringify("good"));
-          }
-        });
+          mg.messages().send(data, function (error, body) {
+            console.log("Sent email");
+            if (error) {
+              console.log("error", error);
+              // Resonse to client.
+              response.statusCode = 500;
+              response.setHeader("Content-Type", "application/json");
+              response.end(JSON.stringify("bad"));
+            } else {
+              console.log("success", body);
+              // Resonse to client.
+              response.statusCode = 201;
+              response.setHeader("Content-Type", "application/json");
+              response.end(JSON.stringify("good"));
+            }
+          });
+        } else {
+          // Resonse to client.
+          response.statusCode = 500;
+          response.setHeader("Content-Type", "application/json");
+          response.end(JSON.stringify("bad"));
+        }
       }
     }
   } catch (err) {
