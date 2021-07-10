@@ -147,7 +147,7 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
 
         console.log("mail data", data);
 
-        await mg.messages().send(data, async function (error, body) {
+        mg.messages().send(data, function (error, body) {
           console.log("Sent email");
           if (error) {
             console.log("error", error);
