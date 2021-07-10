@@ -5,6 +5,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import * as Yup from "yup";
 import { userInfo } from "os";
 
+//Mail stuff
+
 const prisma = new PrismaClient();
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {

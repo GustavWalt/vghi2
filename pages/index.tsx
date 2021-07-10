@@ -22,7 +22,7 @@ const homePage = (props) => {
   return (
     <>
       <Head>
-        <title>Home | RSBoosts | Cheap & Reliable OSRS Services</title>
+        <title>Varför går hon inte | Frida Walter</title>
         <Meta />
       </Head>
       <Fade>

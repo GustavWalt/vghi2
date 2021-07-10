@@ -293,7 +293,8 @@ const Header = () => {
         ))}
         <br />
         <p>
-          Vid några funderingar tveka inte att kontakta mig på vghi@gmail.com
+          Vid några funderingar tveka inte att kontakta mig på
+          varforgarhoninte@outlook.com
         </p>
         <button className={styles.checkoutBtn} onClick={onCloseSuccessCheckout}>
           STÄNG
