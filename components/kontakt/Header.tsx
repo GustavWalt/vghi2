@@ -61,9 +61,13 @@ const Header = () => {
   });
   const [openModal, setOpenModal] = useState(false);
   const onCloseModal = () => setOpenModal(false);
+  const [checkingOut, setCheckingOut] = useState(false);
 
   // Function for checkout, runs when you submit the form.
   const checkout = async (props) => {
+    setCheckingOut(true);
+    document.body.classList.toggle("overflow-hidden");
+
     // Making API request to /api/questing to post the order.
     const response = await axios.post("/api/kontakt", {
       name: props.name,
@@ -71,6 +75,9 @@ const Header = () => {
       subject: props.subject,
       description: props.description,
     });
+
+    setCheckingOut(false);
+    document.body.classList.toggle("overflow-hidden");
 
     // Logging response
     if (response.status === 201) {
@@ -85,6 +92,18 @@ const Header = () => {
   // Frontend
   return (
     <>
+      {checkingOut && (
+        <div className={styles.loader}>
+          <Loader
+            visible={true}
+            type="Puff"
+            color="#00BFFF"
+            height={100}
+            width={100}
+          />
+        </div>
+      )}
+
       <Modal open={openModal} onClose={onCloseModal} center>
         <h1>Tack för att du har kontaktat mig, {modalData.name}!</h1>
         <p>Namn: {modalData.name}</p>

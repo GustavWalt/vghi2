@@ -118,8 +118,6 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
             host: "api.eu.mailgun.net",
           });
 
-          console.log("Mailgun", mg);
-
           const data = {
             from: "Frida Walter <noreply@vghi.se>",
             to: `varforgarhoninte@outlook.com, noreply@vghi.se`,
@@ -152,8 +150,6 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
           </ul>
           `,
           };
-
-          console.log("mail data", data);
 
           mg.messages().send(data, function (error, body) {
             console.log("Sent email");

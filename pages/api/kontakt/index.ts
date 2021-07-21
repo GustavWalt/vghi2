@@ -5,6 +5,9 @@ import { NextApiRequest, NextApiResponse } from "next";
 import * as Yup from "yup";
 import { userInfo } from "os";
 
+//Mail stuff
+const mailgun = require("mailgun-js");
+
 const prisma = new PrismaClient();
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
@@ -49,12 +52,53 @@ export default async (request: NextApiRequest, response: NextApiResponse) => {
             description: bodyData.description,
           },
         });
-      }
 
-      // Resonse to client.
-      response.statusCode = 201;
-      response.setHeader("Content-Type", "application/json");
-      response.end(JSON.stringify({ bodyData }));
+        const DOMAIN = "vghi.se";
+
+        const mg = mailgun({
+          apiKey: process.env.API_KEY,
+          domain: DOMAIN,
+          host: "api.eu.mailgun.net",
+        });
+
+        const data = {
+          from: "Frida Walter <noreply@vghi.se>",
+          to: `varforgarhoninte@outlook.com, noreply@vghi.se`,
+          subject: `${bodyData.name} har kontaktat dig via VGHI.SE`,
+          text: "Test",
+          html: `
+        <h2>Information</h2>
+        <ul>
+        <li>Namn: ${bodyData.name}</li>
+        <li>Email: ${bodyData.email}</li>
+        <li>Ämne: ${bodyData.subject}</li>
+        <li>Beskrivning: ${bodyData.description}</li>
+        </ul>
+        `,
+        };
+
+        mg.messages().send(data, function (error, body) {
+          console.log("Sent email");
+          if (error) {
+            console.log("error", error);
+            // Resonse to client.
+            response.statusCode = 500;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ bodyData }));
+          } else {
+            console.log("success", body);
+            // Resonse to client.
+            response.statusCode = 201;
+            response.setHeader("Content-Type", "application/json");
+            response.end(JSON.stringify({ bodyData }));
+          }
+        });
+      } else {
+        // Resonse to client.
+        response.statusCode = 500;
+        response.setHeader("Content-Type", "application/json");
+        response.end(JSON.stringify({ bodyData }));
+      }
     }
   } catch (err) {
     throw err;
