@@ -53,6 +53,8 @@ const Header = () => {
             </li>
             <br />
             <ul>
+              <li>- ISBN: 978-91-7885-498-1</li>
+              <li>- Bandtyp: Hårdinbunden med 64 sidor</li>
               <li>- Format: 120x150mm</li>
             </ul>
             <div className={styles.order}>
