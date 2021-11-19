@@ -25,7 +25,7 @@ const Navbar = (props) => {
         <div className={styles.flex}>
           <div className={styles.logo}>
             <Link href="/">
-              <a className={styles.link}>VGHI</a>
+              <a className={styles.link}>ALIMO</a>
             </Link>
           </div>
           <div className="permFlex">

@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       <div className={styles.headerBg}>
-        <h1 className={styles.headerh1}>VGHI</h1>
+        <h1 className={styles.headerh1}>ALIMO</h1>
         <p>
           <i>Varför går hon inte?</i>
         </p>

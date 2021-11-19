@@ -13,6 +13,17 @@ const Header = () => {
     <div className={styles.header}>
       <div className={styles.commonQuestions}>
         <H1 title="INFORMATION" />
+        <Fade>
+          <div className={styles.imgWrap}>
+            <Image
+              className={styles.profile}
+              src="/logo.png"
+              alt="me"
+              width="391"
+              height="234.5"
+            />
+          </div>
+        </Fade>
         <Section
           title="Om mig"
           paragraph="Mitt namn är Frida Walter. Jag är utbildad forensisk undersköterska samt jourkvinna med
