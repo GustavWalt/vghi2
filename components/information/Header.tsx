@@ -82,8 +82,8 @@ const Header = () => {
             className={styles.profile}
             src="/profile.jpg"
             alt="me"
-            width="272.5"
-            height="346"
+            width="300"
+            height="310"
           />
         </div>
       </Fade>
