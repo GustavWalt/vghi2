@@ -67,6 +67,78 @@ const Header = () => {
               height="160"
             />
           </div>
+          <div className={styles.img}>
+            <Image
+              src="/kunder/advokatbolagetopus.jpg"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+          <div className={styles.img}>
+            <Image
+              src="/kunder/karolinska-institutet.jpg"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+          <div className={styles.img}>
+            <Image
+              src="/kunder/kvinno-social.png"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+        </div>
+      </div>
+      <div className={styles.logoSection}>
+        <div className="flex">
+          <div className={styles.img}>
+            <Image
+              src="/kunder/kvinnojour2.jpg"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+          <div className={styles.img}>
+            <Image
+              src="/kunder/kvinnojourhuddinge.jpg"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+          <div className={styles.img}>
+            <Image
+              src="/kunder/luleakommun.png"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+          <div className={styles.img}>
+            <Image
+              src="/kunder/skeppsholmensfolkhogskola.jpg"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
+        </div>
+      </div>
+      <div className={styles.logoSection}>
+        <div className="flex">
+          <div className={styles.img}>
+            <Image
+              src="/kunder/tyresokvinnojour.jpg"
+              alt="me"
+              width="250"
+              height="160"
+            />
+          </div>
         </div>
       </div>
     </div>

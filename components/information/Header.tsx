@@ -53,22 +53,6 @@ const Header = () => {
           att öppna upp för dialog samt sprida kunskap kring detta tabubelagda
           ämne. Jag arbetar mobilt i hela Sverige."
         />
-        <Fade>
-          <div className={styles.section}>
-            <p>Några som redan bokat min föreläsning:</p>
-            <ul>
-              <li>- Svenska kyrkan</li>
-              <li>- Akutmottagningen för våldtagna Södersjukhuset </li>
-              <li>- Friskis & svettis</li>
-              <li>- Stadsmissionen Folkhögskola</li>
-              <li>- Tyresö tjej- och kvinnojour</li>
-              <li>- Katrineholm och Vingåkers socialförvaltning </li>
-              <li>- UngFritid Nynäshamn</li>
-              <li>- Brännpunkten Tyresö</li>
-              <li>- Handens sjukhus</li>
-            </ul>
-          </div>
-        </Fade>
         <Section
           paragraph="För bokning av föreläsning, mejla till varforgarhoninte@outlook.com
           så gör vi tillsammans ett upplägg som passar just er verksamhet
@@ -82,8 +66,8 @@ const Header = () => {
             className={styles.profile}
             src="/profile.jpg"
             alt="me"
-            width="300"
-            height="310"
+            width="341.5"
+            height="455.5"
           />
         </div>
       </Fade>
