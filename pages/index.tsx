@@ -13,6 +13,7 @@ import Meta from "../components/assets/Meta";
 
 //HomePage components
 import Header from "../components/homePage/Header";
+import Closed from "../components/temp/Closed";
 import Services from "../components/homePage/Services";
 import About from "../components/homePage/About";
 import BlogPosts from "../components/homePage/BlogPosts";
@@ -26,11 +27,7 @@ const homePage = (props) => {
         <Meta />
       </Head>
       <Fade>
-        <Navbar />
-        <Header />
-        <Services />
-        <About />
-        <Footer />
+        <Closed />
       </Fade>
     </>
   );
